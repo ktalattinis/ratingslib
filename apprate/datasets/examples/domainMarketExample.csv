@@ -1,0 +1,11 @@
+DomainNameI,DomainNameJ,TrendsI,TrendsJ
+jean.com,desirous.com,88,0
+jean.com,authorization.com,88,4
+jean.com,true.com,76,73
+jean.com,peaked.com,88,0
+desirous.com,authorization.com,1,93
+desirous.com,true.com,0,73
+desirous.com,peaked.com,20,80
+authorization.com,true.com,3,73
+authorization.com,peaked.com,93,5
+true.com,peaked.com,73,0

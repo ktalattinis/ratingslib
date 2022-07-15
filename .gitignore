@@ -1,0 +1,6 @@
+/.mypy_cache
+/.vscode
+/docs/build
+*.pyc
+*~
+*.ipynb_checkpoints
