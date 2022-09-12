@@ -24,7 +24,7 @@ setup(
     packages=find_packages(),
     package_data={"ratingslib": ["py.typed"]},
     include_package_data=True,
-    python_requires='>=3.8, <4',
+    python_requires='>=3.8',
     project_urls={
         'Source': 'https://github.com/ktalattinis/ratingslib',
     },
