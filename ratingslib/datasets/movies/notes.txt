@@ -1,0 +1,2 @@
+Create a new directory with name data under movies and enter the dataset.
+The path of MOVIES_DATA_PATH variable can be changed in ratingslib/datasets/filenames.py

@@ -1,0 +1,8 @@
+/.mypy_cache
+/.vscode
+/docs/build
+/ratingslib/datasets/movies/data
+/ratingslib/datasets/sports/soccer/footballdata-co-uk/*.csv
+*.pyc
+*~
+*.ipynb_checkpoints
