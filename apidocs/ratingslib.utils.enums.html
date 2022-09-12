@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib.utils.enums module &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ratingslib.utils.logmsg module" href="ratingslib.utils.logmsg.html" />
+    <link rel="prev" title="ratingslib.utils.tests.test_methods module" href="ratingslib.utils.tests.test_methods.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ratingslib.html">ratingslib package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.utils.tests.html">ratingslib.utils.tests package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ratingslib.utils.enums module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.utils.logmsg.html">ratingslib.utils.logmsg module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.utils.methods.html">ratingslib.utils.methods module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.utils.validation.html">ratingslib.utils.validation module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="ratingslib.html">ratingslib package</a> &raquo;</li>
+          <li><a href="ratingslib.utils.html">ratingslib.utils package</a> &raquo;</li>
+      <li>ratingslib.utils.enums module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.utils.enums.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib.utils.enums">
+<span id="ratingslib-utils-enums-module"></span><h1>ratingslib.utils.enums module<a class="headerlink" href="#module-ratingslib.utils.enums" title="Permalink to this heading"></a></h1>
+<p>This module includes implementation of Enums and the
+available versions of rating systems</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.MyEnum">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MyEnum</span></span><a class="headerlink" href="#ratingslib.utils.enums.MyEnum" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for Enums</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.MyEnum.add">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.utils.enums.MyEnum.add" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.MyEnum.get_attrs_names">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_attrs_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span></span></span><a class="headerlink" href="#ratingslib.utils.enums.MyEnum.get_attrs_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.MyEnum.get_attrs_values">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_attrs_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span></span></span><a class="headerlink" href="#ratingslib.utils.enums.MyEnum.get_attrs_values" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ratings</span></span><a class="headerlink" href="#ratingslib.utils.enums.ratings" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ratingslib.utils.enums.MyEnum" title="ratingslib.utils.enums.MyEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">MyEnum</span></code></a></p>
+<p>Rating Systems versions</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.COLLEY">
+<span class="sig-name descname"><span class="pre">COLLEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Colley'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.COLLEY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.MASSEY">
+<span class="sig-name descname"><span class="pre">MASSEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Massey'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.MASSEY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.KEENER">
+<span class="sig-name descname"><span class="pre">KEENER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Keener'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.KEENER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.MARKOV">
+<span class="sig-name descname"><span class="pre">MARKOV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Markov'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.MARKOV" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.OD">
+<span class="sig-name descname"><span class="pre">OD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'OffenseDefense'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.OD" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.ELOWIN">
+<span class="sig-name descname"><span class="pre">ELOWIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'EloWin'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.ELOWIN" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.ELOPOINT">
+<span class="sig-name descname"><span class="pre">ELOPOINT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'EloPoint'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.ELOPOINT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.WINLOSS">
+<span class="sig-name descname"><span class="pre">WINLOSS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Winloss'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.WINLOSS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.ACCURATE">
+<span class="sig-name descname"><span class="pre">ACCURATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AccuRATE'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.ACCURATE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.AGGREGATIONOD">
+<span class="sig-name descname"><span class="pre">AGGREGATIONOD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AggrOD'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.AGGREGATIONOD" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.AGGREGATIONMARKOV">
+<span class="sig-name descname"><span class="pre">AGGREGATIONMARKOV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AggrMarkov'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.AGGREGATIONMARKOV" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.AGGREGATIONPERRON">
+<span class="sig-name descname"><span class="pre">AGGREGATIONPERRON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AggrPerron'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.AGGREGATIONPERRON" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.RANKINGBORDA">
+<span class="sig-name descname"><span class="pre">RANKINGBORDA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Borda'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.RANKINGBORDA" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.utils.enums.ratings.RANKINGAVG">
+<span class="sig-name descname"><span class="pre">RANKINGAVG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AvgRank'</span></em><a class="headerlink" href="#ratingslib.utils.enums.ratings.RANKINGAVG" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ratingslib.utils.tests.test_methods.html" class="btn btn-neutral float-left" title="ratingslib.utils.tests.test_methods module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ratingslib.utils.logmsg.html" class="btn btn-neutral float-right" title="ratingslib.utils.logmsg module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

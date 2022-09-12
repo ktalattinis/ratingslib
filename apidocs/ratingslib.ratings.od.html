@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib.ratings.od module &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ratingslib.ratings.rating module" href="ratingslib.ratings.rating.html" />
+    <link rel="prev" title="ratingslib.ratings.metrics module" href="ratingslib.ratings.metrics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ratingslib.html">ratingslib package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.tests.html">ratingslib.ratings.tests package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.accurate.html">ratingslib.ratings.accurate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.aggregation.html">ratingslib.ratings.aggregation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.colley.html">ratingslib.ratings.colley module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.elo.html">ratingslib.ratings.elo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.keener.html">ratingslib.ratings.keener module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.markov.html">ratingslib.ratings.markov module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.massey.html">ratingslib.ratings.massey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.methods.html">ratingslib.ratings.methods module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.metrics.html">ratingslib.ratings.metrics module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ratingslib.ratings.od module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.rating.html">ratingslib.ratings.rating module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.winloss.html">ratingslib.ratings.winloss module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="ratingslib.html">ratingslib package</a> &raquo;</li>
+          <li><a href="ratingslib.ratings.html">ratingslib.ratings package</a> &raquo;</li>
+      <li>ratingslib.ratings.od module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.ratings.od.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib.ratings.od">
+<span id="ratingslib-ratings-od-module"></span><h1>ratingslib.ratings.od module<a class="headerlink" href="#module-ratingslib.ratings.od" title="Permalink to this heading"></a></h1>
+<p>Offense-Defense rating system</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OffenseDefense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ratings.OD</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RatingSystem</span></code></a></p>
+<p>Offense-Defense is a modified version of ranking algorithm HITS used
+in Ask search engine. This rating system developed by Anjela Govan during
+her PhD <a class="footnote-reference brackets" href="#id3" id="id1">1</a> <a class="footnote-reference brackets" href="#id4" id="id2">2</a> for sport teams rating. The main idea of this method is
+to separate the offensive and defensive strength of each team and the final
+rating vector can be generated by combining offensive and defensive lists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version</strong> (<em>str</em><em>, </em><em>default=ratings.OD</em>) – A string that shows the version of rating system. The available
+versions can be found in <a class="reference internal" href="ratingslib.utils.enums.html#ratingslib.utils.enums.ratings" title="ratingslib.utils.enums.ratings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.utils.enums.ratings</span></code></a> class.</p></li>
+<li><p><strong>tol</strong> (<em>float</em><em>, </em><em>default=0.0001</em>) – Tolerance level</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.A">
+<span class="sig-name descname"><span class="pre">A</span></span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.A" title="Permalink to this definition"></a></dt>
+<dd><p>Adjacency matrix of items scores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.P">
+<span class="sig-name descname"><span class="pre">P</span></span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.P" title="Permalink to this definition"></a></dt>
+<dd><p>P matrix of OD method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.defense">
+<span class="sig-name descname"><span class="pre">defense</span></span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.defense" title="Permalink to this definition"></a></dt>
+<dd><p>Defense rating vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.offense">
+<span class="sig-name descname"><span class="pre">offense</span></span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.offense" title="Permalink to this definition"></a></dt>
+<dd><p>Offense rating vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.error">
+<span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.error" title="Permalink to this definition"></a></dt>
+<dd><p>Error until convergence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.iter">
+<span class="sig-name descname"><span class="pre">iter</span></span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.iter" title="Permalink to this definition"></a></dt>
+<dd><p>Number of iterations to produce convergence of both of the Offense and
+Defense vectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Govan, A. Y., Langville, A. N., &amp; Meyer, C. D. (2009).
+Offense-defense approach to ranking team sports.
+Journal of Quantitative Analysis in Sports, 5(1)</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Govan, A. Y. (2008). Ranking Theory with Application to Popular Sports.
+Ph.D. dissertation, North Carolina State University.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>The following example demonstrates Offense-Defense rating system,
+for the 20 first soccer matches that took place during the 2018-2019
+season of English Premier League.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.datasets.filenames</span> <span class="kn">import</span> <span class="n">dataset_path</span><span class="p">,</span> <span class="n">FILENAME_EPL_2018_2019_20_GAMES</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.ratings.od</span> <span class="kn">import</span> <span class="n">OffenseDefense</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="n">dataset_path</span><span class="p">(</span><span class="n">FILENAME_EPL_2018_2019_20_GAMES</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">OffenseDefense</span><span class="p">(</span><span class="n">tol</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">)</span><span class="o">.</span><span class="n">rate_from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="go">              Item        rating  ranking</span>
+<span class="go">0          Arsenal  1.934298e+00       12</span>
+<span class="go">1      Bournemouth  1.312759e+06        3</span>
+<span class="go">2         Brighton  3.712401e+00       11</span>
+<span class="go">3          Burnley  4.103263e+05        4</span>
+<span class="go">4          Cardiff  4.757391e-04       14</span>
+<span class="go">5          Chelsea  4.576599e+00       10</span>
+<span class="go">6   Crystal Palace  1.049852e+03        7</span>
+<span class="go">7          Everton  2.080318e-07       16</span>
+<span class="go">8           Fulham  1.532621e-12       20</span>
+<span class="go">9     Huddersfield  5.583941e-01       13</span>
+<span class="go">10       Leicester  1.876215e+04        6</span>
+<span class="go">11       Liverpool  3.403605e+12        1</span>
+<span class="go">12        Man City  5.284698e+00        9</span>
+<span class="go">13      Man United  6.223487e+00        8</span>
+<span class="go">14       Newcastle  9.071493e-08       18</span>
+<span class="go">15     Southampton  2.510896e-07       15</span>
+<span class="go">16       Tottenham  9.071797e-08       17</span>
+<span class="go">17         Watford  1.864760e+06        2</span>
+<span class="go">18        West Ham  2.311787e+05        5</span>
+<span class="go">19          Wolves  3.793810e-11       19</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.computation_phase">
+<span class="sig-name descname"><span class="pre">computation_phase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.computation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>Compute offense, defense vectors and overall ratings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.create_score_matrices">
+<span class="sig-name descname"><span class="pre">create_score_matrices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.create_score_matrices" title="Permalink to this definition"></a></dt>
+<dd><p>Construct score matrix A and P</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.preparation_phase">
+<span class="sig-name descname"><span class="pre">preparation_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.preparation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>Create A and P matrices</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.od.OffenseDefense.rate">
+<span class="sig-name descname"><span class="pre">rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ratingslib.ratings.od.OffenseDefense.rate" title="Permalink to this definition"></a></dt>
+<dd><p>This method computes ratings for a pairwise data.
+(e.g. soccer teams games). To be overridden in subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_df</strong> (<em>pandas.DataFrame</em>) – The pairwise data.</p></li>
+<li><p><strong>items_df</strong> (<em>pandas.DataFrame</em>) – Set of items (e.g. teams) to be rated</p></li>
+<li><p><strong>sort</strong> (<em>bool</em><em>, </em><em>default=``True``.</em>) – If true, the output is sorted by rating value</p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – The column names of data file.
+See <code class="docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters.COLUMNS_DICT</span></code> for more
+details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>items_df</strong> – The set of items with their rating and ranking.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ratingslib.ratings.metrics.html" class="btn btn-neutral float-left" title="ratingslib.ratings.metrics module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ratingslib.ratings.rating.html" class="btn btn-neutral float-right" title="ratingslib.ratings.rating module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

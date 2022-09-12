@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib.ratings.aggregation module &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ratingslib.ratings.colley module" href="ratingslib.ratings.colley.html" />
+    <link rel="prev" title="ratingslib.ratings.accurate module" href="ratingslib.ratings.accurate.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ratingslib.html">ratingslib package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.tests.html">ratingslib.ratings.tests package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.accurate.html">ratingslib.ratings.accurate module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ratingslib.ratings.aggregation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.colley.html">ratingslib.ratings.colley module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.elo.html">ratingslib.ratings.elo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.keener.html">ratingslib.ratings.keener module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.markov.html">ratingslib.ratings.markov module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.massey.html">ratingslib.ratings.massey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.methods.html">ratingslib.ratings.methods module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.metrics.html">ratingslib.ratings.metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.od.html">ratingslib.ratings.od module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.rating.html">ratingslib.ratings.rating module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.winloss.html">ratingslib.ratings.winloss module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="ratingslib.html">ratingslib package</a> &raquo;</li>
+          <li><a href="ratingslib.ratings.html">ratingslib.ratings package</a> &raquo;</li>
+      <li>ratingslib.ratings.aggregation module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.ratings.aggregation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib.ratings.aggregation">
+<span id="ratingslib-ratings-aggregation-module"></span><h1>ratingslib.ratings.aggregation module<a class="headerlink" href="#module-ratingslib.ratings.aggregation" title="Permalink to this heading"></a></h1>
+<p>Module that implements rating and ranking aggregation methods</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RatingAggregation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RatingAggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ratings.AGGREGATIONMARKOV</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">votes_or_weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.9</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.aggregation.RatingAggregation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RatingSystem</span></code></a></p>
+<p>Class for Rating aggregation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version</strong> (<em>str</em><em>, </em><em>default=ratings.AGGREGATIONMARKOV</em>) – A string that shows the version of rating system. The available
+versions can be found in <a class="reference internal" href="ratingslib.utils.enums.html#ratingslib.utils.enums.ratings" title="ratingslib.utils.enums.ratings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.utils.enums.ratings</span></code></a> class.</p></li>
+<li><p><strong>votes_or_weights</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Votes or weigths for matrices</p></li>
+<li><p><strong>b</strong> (<em>float</em><em>, </em><em>optional</em>) – Valid if aggregation method = ratings.AGGREGATIONMARKOV, by default 0.9</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RatingAggregation.calc_rating_distances">
+<span class="sig-name descname"><span class="pre">calc_rating_distances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating_column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ratingslib.ratings.aggregation.RatingAggregation.calc_rating_distances" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate and create pairwise matrix by taking into account
+the rating differences (as distances)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_df</strong> (<em>pd.DataFrame</em>) – dataset of ratings</p></li>
+<li><p><strong>rating_column_name</strong> (<em>str</em>) – which is the rating column of dataset</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>matrix</strong> – rating distances matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RatingAggregation.calc_dict_rating_distances">
+<span class="sig-name descname"><span class="pre">calc_dict_rating_distances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.ratings.aggregation.RatingAggregation.calc_dict_rating_distances" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate and create dictionary of pairwise matrices by
+taking into account the rating differences (as distances).
+Each column represents the rating method name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_df</strong> (<em>pd.DataFrame</em>) – dataset of ratings</p></li>
+<li><p><strong>rating_columns</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of columns that refers to ratings</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>matrices_dict</strong> – dictionary that maps column to rating distance matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[str, np.ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RatingAggregation.rating_aggregation">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rating_aggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrices_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">votes_or_weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregation_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ratings.AGGREGATIONMARKOV</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.9</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ratingslib.ratings.aggregation.RatingAggregation.rating_aggregation" title="Permalink to this definition"></a></dt>
+<dd><p>Rating aggregation from rating lists</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrices_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>np.ndarray</em><em>]</em>) – Dictionary that maps name to rating distance matrix</p></li>
+<li><p><strong>votes_or_weights</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Votes or weigths for matrices</p></li>
+<li><p><strong>aggregation_method</strong> (<em>str</em><em>, </em><em>default=ratings.AGGREGATIONMARKOV</em>) – Name of aggregation method</p></li>
+<li><p><strong>b</strong> (<em>float</em><em>, </em><em>optional</em>) – Valid if aggregation method = ratings.AGGREGATIONMARKOV, by default 0.9</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rating</strong> – Aggregated rating vector</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If matrices_dict and votes_or_weights parameters
+    don’t have the same size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RatingAggregation.computation_phase">
+<span class="sig-name descname"><span class="pre">computation_phase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.aggregation.RatingAggregation.computation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>To be overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RatingAggregation.preparation_phase">
+<span class="sig-name descname"><span class="pre">preparation_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.aggregation.RatingAggregation.preparation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>To be overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RatingAggregation.rate">
+<span class="sig-name descname"><span class="pre">rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ratingslib.ratings.aggregation.RatingAggregation.rate" title="Permalink to this definition"></a></dt>
+<dd><p>This method computes ratings for a pairwise data.
+(e.g. soccer teams games). To be overridden in subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_df</strong> (<em>pandas.DataFrame</em>) – The pairwise data.</p></li>
+<li><p><strong>items_df</strong> (<em>pandas.DataFrame</em>) – Set of items (e.g. teams) to be rated</p></li>
+<li><p><strong>sort</strong> (<em>bool</em><em>, </em><em>default=``True``.</em>) – If true, the output is sorted by rating value</p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – The column names of data file.
+See <code class="docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters.COLUMNS_DICT</span></code> for more
+details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>items_df</strong> – The set of items with their rating and ranking.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RankingAggregation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RankingAggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ratings.RANKINGAVG</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.aggregation.RankingAggregation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RatingSystem</span></code></a></p>
+<p>Class for Ranking Aggregation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>version</strong> (<em>str</em><em>, </em><em>default=ratings.RANKINGAVG</em>) – A string that shows the version of rating system. The available
+versions can be found in <a class="reference internal" href="ratingslib.utils.enums.html#ratingslib.utils.enums.ratings" title="ratingslib.utils.enums.ratings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.utils.enums.ratings</span></code></a> class.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RankingAggregation.ranking_aggregation">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ranking_aggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregation_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ratings.RANKINGAVG</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ratingslib.ratings.aggregation.RankingAggregation.ranking_aggregation" title="Permalink to this definition"></a></dt>
+<dd><p>Ranking aggregation from ranking lists</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_df</strong> (<em>pd.DataFrame</em>) – Rating values are the columns of DataFrame</p></li>
+<li><p><strong>aggregation_method</strong> (<em>str</em><em>, </em><em>default=ratings.AGGREGATIONAVG</em>) – Name of aggregation method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rating</strong> – Aggregated rating vector</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If matrices_dict and votes_or_weights parameters
+    don’t have the same size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RankingAggregation.computation_phase">
+<span class="sig-name descname"><span class="pre">computation_phase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.aggregation.RankingAggregation.computation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>All the calculations are made in
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">ratingslib.ratings.aggregations.RankingAggregation.ranking_aggregation()</span></code> method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RankingAggregation.preparation_phase">
+<span class="sig-name descname"><span class="pre">preparation_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.aggregation.RankingAggregation.preparation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>To be overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.aggregation.RankingAggregation.rate">
+<span class="sig-name descname"><span class="pre">rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ratingslib.ratings.aggregation.RankingAggregation.rate" title="Permalink to this definition"></a></dt>
+<dd><p>This method computes ratings for a pairwise data.
+(e.g. soccer teams games). To be overridden in subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_df</strong> (<em>pandas.DataFrame</em>) – The pairwise data.</p></li>
+<li><p><strong>items_df</strong> (<em>pandas.DataFrame</em>) – Set of items (e.g. teams) to be rated</p></li>
+<li><p><strong>sort</strong> (<em>bool</em><em>, </em><em>default=``True``.</em>) – If true, the output is sorted by rating value</p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – The column names of data file.
+See <code class="docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters.COLUMNS_DICT</span></code> for more
+details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>items_df</strong> – The set of items with their rating and ranking.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ratingslib.ratings.accurate.html" class="btn btn-neutral float-left" title="ratingslib.ratings.accurate module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ratingslib.ratings.colley.html" class="btn btn-neutral float-right" title="ratingslib.ratings.colley module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

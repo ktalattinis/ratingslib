@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib.ratings.markov module &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ratingslib.ratings.massey module" href="ratingslib.ratings.massey.html" />
+    <link rel="prev" title="ratingslib.ratings.keener module" href="ratingslib.ratings.keener.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ratingslib.html">ratingslib package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.tests.html">ratingslib.ratings.tests package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.accurate.html">ratingslib.ratings.accurate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.aggregation.html">ratingslib.ratings.aggregation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.colley.html">ratingslib.ratings.colley module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.elo.html">ratingslib.ratings.elo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.keener.html">ratingslib.ratings.keener module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ratingslib.ratings.markov module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.massey.html">ratingslib.ratings.massey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.methods.html">ratingslib.ratings.methods module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.metrics.html">ratingslib.ratings.metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.od.html">ratingslib.ratings.od module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.rating.html">ratingslib.ratings.rating module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.winloss.html">ratingslib.ratings.winloss module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="ratingslib.html">ratingslib package</a> &raquo;</li>
+          <li><a href="ratingslib.ratings.html">ratingslib.ratings package</a> &raquo;</li>
+      <li>ratingslib.ratings.markov module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.ratings.markov.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib.ratings.markov">
+<span id="ratingslib-ratings-markov-module"></span><h1>ratingslib.ratings.markov module<a class="headerlink" href="#module-ratingslib.ratings.markov" title="Permalink to this heading"></a></h1>
+<p>Markov (GeM) Rating System</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Markov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ratings.MARKOV</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_markov_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.markov.Markov" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RatingSystem</span></code></a></p>
+<p>This class implements the Markov (GeM - Generalized Markov Method)
+rating system.
+GeM was first used by graduate students, Angela Govan <a class="footnote-reference brackets" href="#id4" id="id1">1</a> and
+Luke Ingram <a class="footnote-reference brackets" href="#id5" id="id2">2</a> to successfully rank NFL football and NCAA basketball
+teams respectively.
+The Markov (GeM) method is related to the famous PageRank method <a class="footnote-reference brackets" href="#id6" id="id3">3</a> and
+it uses parts of finite Markov chains and graph theory in order to
+generate ratings of n objects in a finite set.
+Not only sports but also any problem that can be represented as a weighted
+directed graph can be solved using GeM model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version</strong> (<em>str</em><em>, </em><em>default=ratings.MARKOV</em>) – A string that shows the version of rating system. The available
+versions can be found in <a class="reference internal" href="ratingslib.utils.enums.html#ratingslib.utils.enums.ratings" title="ratingslib.utils.enums.ratings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.utils.enums.ratings</span></code></a> class.</p></li>
+<li><p><strong>b</strong> (<em>float</em><em>, </em><em>default=1</em>) – The damping factor. Valid numbers are in the range [0,1]</p></li>
+<li><p><strong>stats_markov_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>Any</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – <p>A dictionary containing statistics details for the method. For instance
+for soccer teams rating, the following dictionary
+<code class="docutils literal notranslate"><span class="pre">stats_markov_dict</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stats_markov_dict</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">&#39;TotalWins&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;VOTE&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;ITEM_I&#39;</span><span class="p">:</span> <span class="s1">&#39;FTHG&#39;</span><span class="p">,</span> <span class="s1">&#39;ITEM_J&#39;</span><span class="p">:</span> <span class="s1">&#39;FTAG&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;METHOD&#39;</span><span class="p">:</span> <span class="s1">&#39;VotingWithLosses&#39;</span><span class="p">},</span>
+<span class="s1">&#39;TotalGoals&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;VOTE&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;ITEM_I&#39;</span><span class="p">:</span> <span class="s1">&#39;FTHG&#39;</span><span class="p">,</span> <span class="s1">&#39;ITEM_J&#39;</span><span class="p">:</span> <span class="s1">&#39;FTAG&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;METHOD&#39;</span><span class="p">:</span> <span class="s1">&#39;WinnersAndLosersVotePoint&#39;</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>specifies the following details:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">TotalGoals</span></code> and <code class="docutils literal notranslate"><span class="pre">TotalWins</span></code> are the names of two statistics</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'VOTE'</span> <span class="pre">:</span> <span class="pre">10</span></code> means that the vote is 10. Those votes will be
+converted as weights. The statistics in this example are equally
+weighted</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'ITEM_I':</span> <span class="pre">'FTHG'</span></code> and <code class="docutils literal notranslate"><span class="pre">'ITEM_J':</span> <span class="pre">'FTAG'</span></code> are the column names for home
+and away team respectively</p></li>
+<li><p>The key <code class="docutils literal notranslate"><span class="pre">'METHOD'</span></code> specifies which method constructs the
+voting matrix. The available methods are:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'VotingWithLosses'</span></code> when the losing team casts a
+number of votes equal to the margin of victory in its matchup
+with a stronger opponent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'WinnersAndLosersVotePoint'</span></code> when both the winning and losing
+teams vote with the number of points given up.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'LosersVotePointDiff'</span></code> when the losing team cast a number of
+votes</p></li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>See also the implementation of the method</dt><dd><p><a class="reference internal" href="#ratingslib.ratings.markov.Markov.create_voting_matrix" title="ratingslib.ratings.markov.Markov.create_voting_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_voting_matrix()</span></code></a></p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.stats">
+<span class="sig-name descname"><span class="pre">stats</span></span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.stats" title="Permalink to this definition"></a></dt>
+<dd><p>Dictionary that maps voting and stochastic arrays.
+The keys that starts with V map the voting matrices and with S map
+the stochastic matrices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Dict[str, np.ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.params">
+<span class="sig-name descname"><span class="pre">params</span></span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.params" title="Permalink to this definition"></a></dt>
+<dd><p>Dictionary that maps parameters to their values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Dict[str, Optional[Dict[str, Dict[Any, Any]]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.stochastic_matrix">
+<span class="sig-name descname"><span class="pre">stochastic_matrix</span></span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.stochastic_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>A Stochastic Markov  matrix is a square matrix where each entry
+describes the probability that the item will vote for the respective
+item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.stochastic_matrix_asch">
+<span class="sig-name descname"><span class="pre">stochastic_matrix_asch</span></span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.stochastic_matrix_asch" title="Permalink to this definition"></a></dt>
+<dd><p>A Stochastic Markov matrix that is irreducible</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.pi_steady">
+<span class="sig-name descname"><span class="pre">pi_steady</span></span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.pi_steady" title="Permalink to this definition"></a></dt>
+<dd><p>The stationary vector or dominant eigenvector of the
+<a class="reference internal" href="#ratingslib.ratings.markov.Markov.stochastic_matrix" title="ratingslib.ratings.markov.Markov.stochastic_matrix"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stochastic_matrix</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.group">
+<span class="sig-name descname"><span class="pre">group</span></span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.group" title="Permalink to this definition"></a></dt>
+<dd><p>Set of statistics names</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Set[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Value of <cite>b</cite> ∈ [0, 1]</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>The following example demonstrate GeM rating system,
+for the 20 first soccer matches that took place during the 2018-2019
+season of English Premier League.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.datasets.filenames</span> <span class="kn">import</span> <span class="n">dataset_path</span><span class="p">,</span> <span class="n">FILENAME_EPL_2018_2019_20_GAMES</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.ratings.markov</span> <span class="kn">import</span> <span class="n">Markov</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="n">dataset_path</span><span class="p">(</span><span class="n">FILENAME_EPL_2018_2019_20_GAMES</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">votes</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">        &#39;TW&#39;: {</span>
+<span class="go">            &#39;VOTE&#39;: 10,</span>
+<span class="go">            &#39;ITEM_I&#39;: &#39;FTHG&#39;,</span>
+<span class="go">            &#39;ITEM_J&#39;: &#39;FTAG&#39;,</span>
+<span class="go">            &#39;METHOD&#39;: &#39;VotingWithLosses&#39;},</span>
+<span class="go">        &#39;TG&#39;: {</span>
+<span class="go">            &#39;VOTE&#39;: 10,</span>
+<span class="go">            &#39;ITEM_I&#39;: &#39;FTHG&#39;,</span>
+<span class="go">            &#39;ITEM_J&#39;: &#39;FTAG&#39;,</span>
+<span class="go">            &#39;METHOD&#39;: &#39;WinnersAndLosersVotePoint&#39;},</span>
+<span class="go">        &#39;TST&#39;: {</span>
+<span class="go">            &#39;VOTE&#39;: 10,</span>
+<span class="go">            &#39;ITEM_I&#39;: &#39;HST&#39;,</span>
+<span class="go">            &#39;ITEM_J&#39;: &#39;AST&#39;,</span>
+<span class="go">            &#39;METHOD&#39;: &#39;WinnersAndLosersVotePoint&#39;},</span>
+<span class="go">        &#39;TS&#39;: {</span>
+<span class="go">            &#39;VOTE&#39;: 10,</span>
+<span class="go">            &#39;ITEM_I&#39;: &#39;HS&#39;,</span>
+<span class="go">            &#39;ITEM_J&#39;: &#39;AS&#39;,</span>
+<span class="go">            &#39;METHOD&#39;: &#39;WinnersAndLosersVotePoint&#39;},</span>
+<span class="go">    }</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Markov</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">stats_markov_dict</span><span class="o">=</span><span class="n">votes</span><span class="p">)</span><span class="o">.</span><span class="n">rate_from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="go">                Item    rating  ranking</span>
+<span class="go">    0          Arsenal  0.050470       11</span>
+<span class="go">    1      Bournemouth  0.039076       15</span>
+<span class="go">    2         Brighton  0.051460       10</span>
+<span class="go">    3          Burnley  0.071596        2</span>
+<span class="go">    4          Cardiff  0.024085       20</span>
+<span class="go">    5          Chelsea  0.045033       13</span>
+<span class="go">    6   Crystal Palace  0.037678       16</span>
+<span class="go">    7          Everton  0.066307        3</span>
+<span class="go">    8           Fulham  0.036356       17</span>
+<span class="go">    9     Huddersfield  0.032164       19</span>
+<span class="go">    10       Leicester  0.055491        7</span>
+<span class="go">    11       Liverpool  0.056879        6</span>
+<span class="go">    12        Man City  0.048325       12</span>
+<span class="go">    13      Man United  0.061052        4</span>
+<span class="go">    14       Newcastle  0.035814       18</span>
+<span class="go">    15     Southampton  0.051716        9</span>
+<span class="go">    16       Tottenham  0.053079        8</span>
+<span class="go">    17         Watford  0.082788        1</span>
+<span class="go">    18        West Ham  0.041824       14</span>
+<span class="go">    19          Wolves  0.058807        5</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Govan, A. Y. (2008). Ranking Theory with Application to Popular Sports.
+Ph.D. dissertation, North Carolina State University.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Ingram, L. C. (2007). Ranking NCAA sports teams with Linear algebra.
+Ranking NCAA sports teams with Linear algebra. Charleston</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Sergey Brin and Lawrence Page. The Anatomy of a Large-Scale
+Hypertextual Web Search Engine. Computer Networks and
+ISDN Systems, 33:107-17, 1998.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.set_group">
+<span class="sig-name descname"><span class="pre">set_group</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.set_group" title="Permalink to this definition"></a></dt>
+<dd><p>Set the group of statistics.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.do_stochastic">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">do_stochastic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voting_matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.do_stochastic" title="Permalink to this definition"></a></dt>
+<dd><p>Normalize the rows of the voting matrix to develop a
+stochastic transition probability matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>voting_matrix</strong> (<em>List</em><em>[</em><em>list</em><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>stochastic_matrix</strong> – Stochastic matrix built from the corresponding voting</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.compute">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stochastic_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.compute" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.computation_phase">
+<span class="sig-name descname"><span class="pre">computation_phase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.computation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the stationary vector or dominant
+eigenvector of the transpose of irreducible matrix. Stationary vector
+is the rating vector.
+Note:  irreducible matrix is the <a class="reference internal" href="#ratingslib.ratings.markov.Markov.stochastic_matrix_asch" title="ratingslib.ratings.markov.Markov.stochastic_matrix_asch"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stochastic_matrix_asch</span></code></a> and
+stationary vector is the <a class="reference internal" href="#ratingslib.ratings.markov.Markov.pi_steady" title="ratingslib.ratings.markov.Markov.pi_steady"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pi_steady</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.create_voting_matrix">
+<span class="sig-name descname"><span class="pre">create_voting_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voting_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'VotingWithLosses'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'WinnersAndLosersVotePoint'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'LosersVotePointDiff'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name_away</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.create_voting_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Selection of method for developing voting matrix.
+The available methods are:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'VotingWithLosses'</span></code> when the losing team casts a
+number of votes equal to the margin of victory in its matchup
+with a stronger opponent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'WinnersAndLosersVotePoint'</span></code> when both the winning and losing
+teams vote with the number of points given up.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'LosersVotePointDiff'</span></code> when the losing team cast a number of
+votes.</p></li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.preparation_phase">
+<span class="sig-name descname"><span class="pre">preparation_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.preparation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>During preparation phase, voting and stochastic matrices are
+constructed for each statistic according to the method specified
+in the dictionary of attr:<cite>stats_markov_dict</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.rate">
+<span class="sig-name descname"><span class="pre">rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.rate" title="Permalink to this definition"></a></dt>
+<dd><p>This method computes ratings for a pairwise data.
+(e.g. soccer teams games). To be overridden in subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_df</strong> (<em>pandas.DataFrame</em>) – The pairwise data.</p></li>
+<li><p><strong>items_df</strong> (<em>pandas.DataFrame</em>) – Set of items (e.g. teams) to be rated</p></li>
+<li><p><strong>sort</strong> (<em>bool</em><em>, </em><em>default=``True``.</em>) – If true, the output is sorted by rating value</p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – The column names of data file.
+See <code class="docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters.COLUMNS_DICT</span></code> for more
+details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>items_df</strong> – The set of items with their rating and ranking.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.markov.Markov.validate_stats_markov_dict">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_stats_markov_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stats_markov_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.markov.Markov.validate_stats_markov_dict" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ratingslib.ratings.keener.html" class="btn btn-neutral float-left" title="ratingslib.ratings.keener module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ratingslib.ratings.massey.html" class="btn btn-neutral float-right" title="ratingslib.ratings.massey module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

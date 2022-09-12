@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foresight and Hindsight Predictions &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Rating systems and predictions" href="soccer_rs.html" />
+    <link rel="prev" title="Comparisons of Ranking List Example" href="soccer_rankings_compare.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Applications &amp; Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sports.html">Sports</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="soccer_get_data.html">Data from football-data.co.uk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_ratings.html">Rating/Ranking Soccer Teams Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_rankings_compare.html">Comparisons of Ranking List Example</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Foresight and Hindsight Predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_rs.html">Rating systems and predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_ml.html">Combination of rating systems and ML methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nfl_ratings.html">Ranking NFL Teams Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../finance/finance.html">Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_names/domain_names.html">Domain Names Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movies/movies.html">Movies</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/ratingslib.html">ratingslib package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../examples.html">Applications &amp; Examples</a> &raquo;</li>
+          <li><a href="sports.html">Sports</a> &raquo;</li>
+      <li>Foresight and Hindsight Predictions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/examples/sports/soccer_predictions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="foresight-and-hindsight-predictions">
+<h1>Foresight and Hindsight Predictions<a class="headerlink" href="#foresight-and-hindsight-predictions" title="Permalink to this heading"></a></h1>
+<p>An example of code is provided to illustrate how to turn ratings into predictions of the winner of soccer outcome.</p>
+<p>Teams ratings are produced by the following methods:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>WinLoss</p></li>
+<li><p>Colley</p></li>
+<li><p>Massey</p></li>
+<li><p>Elo (win version)</p></li>
+<li><p>Elo (points version)</p></li>
+<li><p>Keener</p></li>
+<li><p>OffenseDefense</p></li>
+<li><p>AccuRATE</p></li>
+<li><p>GeM</p></li>
+</ul>
+</div></blockquote>
+<p>Two type of predictions for the final oucome are made:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>hindsight - predicting past matches using the ratings of teams (the first 20 matches of EPL 2018-2019)</p></li>
+<li><p>foresight - predicting upcoming matches (the 3rd match week of EPL 2018-2019) using the ratings of teams for previous weeks (the first 20 matches of EPL 2018-2019)</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Data (hindsight)</dt><dd><p><a class="reference internal" href="soccer_data.html#soccer-data-20first"><span class="std std-ref">Soccer Data: The first 20 games of EPL (2018-2019 season)</span></a></p>
+</dd>
+<dt>Data (foresight)</dt><dd><p><a class="reference internal" href="soccer_data.html#soccer-data-third"><span class="std std-ref">Soccer Data: The 3rd match-week of EPL (2018-2019 season)</span></a></p>
+</dd>
+</dl>
+<section id="python-code">
+<h2>Python code<a class="headerlink" href="#python-code" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Soccer hindsight and foresight predictions&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">ratingslib.ratings</span> <span class="k">as</span> <span class="nn">rl</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="linenos"> 5</span><span class="kn">from</span> <span class="nn">ratingslib.app_sports.methods</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Predictions</span><span class="p">,</span> <span class="n">predict_hindsight</span><span class="p">,</span>
+<span class="linenos"> 6</span>                                           <span class="n">prepare_sport_dataset</span><span class="p">,</span>
+<span class="linenos"> 7</span>                                           <span class="n">show_list_of_accuracy_results</span><span class="p">)</span>
+<span class="linenos"> 8</span><span class="kn">from</span> <span class="nn">ratingslib.application</span> <span class="kn">import</span> <span class="n">SoccerOutcome</span>
+<span class="linenos"> 9</span><span class="kn">from</span> <span class="nn">ratingslib.datasets.filenames</span> <span class="kn">import</span> <span class="p">(</span><span class="n">FILENAME_EPL_2018_2019_3RD_WEEK</span><span class="p">,</span>
+<span class="linenos">10</span>                                           <span class="n">FILENAME_EPL_2018_2019_20_GAMES</span><span class="p">,</span>
+<span class="linenos">11</span>                                           <span class="n">datasets_paths</span><span class="p">)</span>
+<span class="linenos">12</span><span class="kn">from</span> <span class="nn">ratingslib.datasets.parameters</span> <span class="kn">import</span> <span class="p">(</span><span class="n">COLUMNS_DICT</span><span class="p">,</span> <span class="n">DATE_COL</span><span class="p">,</span> <span class="n">WEEK_PERIOD</span><span class="p">,</span>
+<span class="linenos">13</span>                                            <span class="n">stats</span><span class="p">)</span>
+<span class="linenos">14</span><span class="kn">from</span> <span class="nn">ratingslib.datasets.parse</span> <span class="kn">import</span> <span class="n">parse_pairs_data</span>
+<span class="linenos">15</span><span class="kn">from</span> <span class="nn">ratingslib.ratings.methods</span> <span class="kn">import</span> <span class="n">rating_systems_to_dict</span>
+<span class="linenos">16</span><span class="kn">from</span> <span class="nn">ratingslib.utils.enums</span> <span class="kn">import</span> <span class="n">ratings</span>
+<span class="linenos">17</span><span class="kn">from</span> <span class="nn">ratingslib.utils.methods</span> <span class="kn">import</span> <span class="n">print_info</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="c1"># rating systems</span>
+<span class="linenos">20</span><span class="n">ratings_list</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos">21</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Winloss</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">22</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Colley</span><span class="p">(),</span>
+<span class="linenos">23</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Massey</span><span class="p">(</span><span class="n">data_limit</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+<span class="linenos">24</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Elo</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">ELOWIN</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">ks</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">HA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">25</span>           <span class="n">starting_point</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos">26</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Elo</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">ELOPOINT</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">ks</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">HA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">27</span>           <span class="n">starting_point</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos">28</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Keener</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">29</span>    <span class="n">rl</span><span class="o">.</span><span class="n">OffenseDefense</span><span class="p">(</span><span class="n">tol</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">),</span>
+<span class="linenos">30</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Markov</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">stats_markov_dict</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">STATS_MARKOV_DICT</span><span class="p">),</span>
+<span class="linenos">31</span>    <span class="n">rl</span><span class="o">.</span><span class="n">AccuRate</span><span class="p">(),</span>
+<span class="linenos">32</span><span class="p">]</span>
+<span class="linenos">33</span><span class="c1"># convert list to dictionary</span>
+<span class="linenos">34</span><span class="n">ratings_dict</span> <span class="o">=</span> <span class="n">rating_systems_to_dict</span><span class="p">(</span><span class="n">ratings_list</span><span class="p">)</span>
+<span class="linenos">35</span><span class="c1"># get train and test filenames</span>
+<span class="linenos">36</span><span class="n">filename</span><span class="p">,</span> <span class="n">filename_test</span> <span class="o">=</span> <span class="n">datasets_paths</span><span class="p">(</span>
+<span class="linenos">37</span>    <span class="n">FILENAME_EPL_2018_2019_20_GAMES</span><span class="p">,</span> <span class="n">FILENAME_EPL_2018_2019_3RD_WEEK</span><span class="p">)</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="c1"># set columns dictionry and outcome</span>
+<span class="linenos">40</span><span class="n">columns_dict</span> <span class="o">=</span> <span class="n">COLUMNS_DICT</span>
+<span class="linenos">41</span><span class="n">outcome</span> <span class="o">=</span> <span class="n">SoccerOutcome</span><span class="p">()</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span><span class="c1"># prediction methods</span>
+<span class="linenos">44</span><span class="n">pred_methods_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MLE&#39;</span><span class="p">,</span> <span class="s1">&#39;RANK&#39;</span><span class="p">]</span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="c1"># parse train and test data</span>
+<span class="linenos">47</span><span class="n">data_train</span><span class="p">,</span> <span class="n">teams_df</span> <span class="o">=</span> <span class="n">parse_pairs_data</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span>
+<span class="linenos">48</span>                                        <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="n">DATE_COL</span><span class="p">],</span>
+<span class="linenos">49</span>                                        <span class="n">frequency</span><span class="o">=</span><span class="n">WEEK_PERIOD</span><span class="p">,</span>
+<span class="linenos">50</span>                                        <span class="n">outcome</span><span class="o">=</span><span class="n">outcome</span><span class="p">,</span>
+<span class="linenos">51</span>                                        <span class="n">columns_dict</span><span class="o">=</span><span class="n">columns_dict</span><span class="p">)</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="c1"># ==========================================================================</span>
+<span class="linenos">54</span><span class="c1"># HINDSIGHT PREDICTIONS</span>
+<span class="linenos">55</span><span class="c1"># ==========================================================================</span>
+<span class="linenos">56</span><span class="n">pred_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">57</span><span class="n">test_Y_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">58</span><span class="n">print_info</span><span class="p">(</span><span class="s2">&quot;HINDSIGHT RESULTS&quot;</span><span class="p">)</span>
+<span class="linenos">59</span><span class="k">for</span> <span class="n">pm</span> <span class="ow">in</span> <span class="n">pred_methods_list</span><span class="p">:</span>
+<span class="linenos">60</span>    <span class="k">for</span> <span class="n">rs</span> <span class="ow">in</span> <span class="n">ratings_list</span><span class="p">:</span>
+<span class="linenos">61</span>        <span class="n">pred</span><span class="p">,</span> <span class="n">test_y</span> <span class="o">=</span> <span class="n">predict_hindsight</span><span class="p">(</span>
+<span class="linenos">62</span>            <span class="n">data_train</span><span class="p">,</span> <span class="n">rs</span><span class="o">.</span><span class="n">rate_from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">pm</span><span class="p">)</span>
+<span class="linenos">63</span>        <span class="n">test_Y_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
+<span class="linenos">64</span>        <span class="n">pred_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">test_y</span><span class="p">)</span>
+<span class="linenos">65</span>    <span class="n">print_info</span><span class="p">(</span><span class="n">pm</span><span class="p">)</span>
+<span class="linenos">66</span>    <span class="n">show_list_of_accuracy_results</span><span class="p">(</span>
+<span class="linenos">67</span>        <span class="nb">list</span><span class="p">(</span><span class="n">ratings_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="n">test_Y_list</span><span class="p">,</span> <span class="n">pred_list</span><span class="p">,</span> <span class="n">print_predictions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">68</span>
+<span class="linenos">69</span><span class="c1"># ==========================================================================</span>
+<span class="linenos">70</span><span class="c1"># FORESIGHT PREDICTIONS</span>
+<span class="linenos">71</span><span class="c1"># ==========================================================================</span>
+<span class="linenos">72</span>
+<span class="linenos">73</span><span class="c1"># the test file start from the 3rd week (start_period = 3)</span>
+<span class="linenos">74</span><span class="n">data_test</span><span class="p">,</span> <span class="n">teams_df</span> <span class="o">=</span> <span class="n">parse_pairs_data</span><span class="p">(</span><span class="n">filename_test</span><span class="p">,</span>
+<span class="linenos">75</span>                                       <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="n">DATE_COL</span><span class="p">],</span>
+<span class="linenos">76</span>                                       <span class="n">frequency</span><span class="o">=</span><span class="n">WEEK_PERIOD</span><span class="p">,</span>
+<span class="linenos">77</span>                                       <span class="n">outcome</span><span class="o">=</span><span class="n">outcome</span><span class="p">,</span>
+<span class="linenos">78</span>                                       <span class="n">start_period_from</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos">79</span>                                       <span class="n">columns_dict</span><span class="o">=</span><span class="n">columns_dict</span><span class="p">)</span>
+<span class="linenos">80</span>
+<span class="linenos">81</span>
+<span class="linenos">82</span><span class="c1"># concat 2 files</span>
+<span class="linenos">83</span><span class="n">data_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data_train</span><span class="p">,</span> <span class="n">data_test</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">84</span><span class="c1"># prepare the dataset</span>
+<span class="linenos">85</span><span class="n">data</span> <span class="o">=</span> <span class="n">prepare_sport_dataset</span><span class="p">(</span><span class="n">data_season</span><span class="o">=</span><span class="n">data_all</span><span class="p">,</span>
+<span class="linenos">86</span>                             <span class="n">teams_df</span><span class="o">=</span><span class="n">teams_df</span><span class="p">,</span>
+<span class="linenos">87</span>                             <span class="n">rating_systems</span><span class="o">=</span><span class="n">ratings_dict</span><span class="p">,</span>
+<span class="linenos">88</span>                             <span class="n">start_week</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos">89</span>                             <span class="n">columns_dict</span><span class="o">=</span><span class="n">columns_dict</span><span class="p">)</span>
+<span class="linenos">90</span>
+<span class="linenos">91</span><span class="n">print_info</span><span class="p">(</span><span class="s2">&quot;FORESIGHT RESULTS&quot;</span><span class="p">)</span>
+<span class="linenos">92</span><span class="c1"># make foresight predictions for the 3rd week (start_from_week=3)</span>
+<span class="linenos">93</span><span class="n">results</span> <span class="o">=</span> <span class="n">Predictions</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">outcome</span><span class="p">,</span> <span class="n">start_from_week</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos">94</span>                      <span class="n">print_accuracy_report</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">95</span>                      <span class="n">print_predictions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">96</span>                      <span class="n">print_classification_report</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">rs_pred_parallel</span><span class="p">(</span>
+<span class="linenos">97</span>    <span class="n">rating_systems</span><span class="o">=</span><span class="n">ratings_dict</span><span class="p">,</span>
+<span class="linenos">98</span>    <span class="n">pred_methods_list</span><span class="o">=</span><span class="n">pred_methods_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h2>
+<p>Below are shown the results of hindsight and foresight predictions:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=====HINDSIGHT RESULTS=====</span>
+
+
+<span class="go">=====MLE=====</span>
+
+
+<span class="go">=====Accuracy results=====</span>
+
+<span class="go">                              Accuracy  Correct Games  Wrong Games  Total Games                                                                                           Predictions</span>
+<span class="go">Winloss[normalization=False]      0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Colley                            0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Massey[data_limit=10]             0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/2, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">EloWin[HA=0_K=40_ks=400]          0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">EloPoint[HA=0_K=40_ks=400]        0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Keener[normalization=False]       0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">OffenseDefense[tol=0.0001]        0.55             11            9           20  [1/1, 1/1, 2/1, 2/1, 2/1, 1/1, 3/1, 2/1, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/1, 1/1, 2/1, 1/1, 2/2]</span>
+<span class="go">Markov[b=0.85]                    0.65             13            7           20  [1/1, 1/1, 2/1, 2/2, 2/2, 1/1, 3/2, 2/1, 1/1, 3/2, 3/2, 1/1, 1/1, 1/1, 1/1, 2/1, 1/2, 2/2, 1/1, 2/2]</span>
+<span class="go">AccuRATE                          0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+
+<span class="go">*** Predictions columns notation: (Predicted / Actual), 1 = Home Win, 2 = Away Win, 3 = Draw</span>
+
+
+<span class="go">=====RANK=====</span>
+
+
+<span class="go">=====Accuracy results=====</span>
+
+<span class="go">                              Accuracy  Correct Games  Wrong Games  Total Games                                                                                           Predictions</span>
+<span class="go">Winloss[normalization=False]      0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Colley                            0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Massey[data_limit=10]             0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/2, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">EloWin[HA=0_K=40_ks=400]          0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">EloPoint[HA=0_K=40_ks=400]        0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Keener[normalization=False]       0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">OffenseDefense[tol=0.0001]        0.55             11            9           20  [1/1, 1/1, 2/1, 2/1, 2/1, 1/1, 3/1, 2/1, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/1, 1/1, 2/1, 1/1, 2/2]</span>
+<span class="go">Markov[b=0.85]                    0.65             13            7           20  [1/1, 1/1, 2/1, 2/2, 2/2, 1/1, 3/2, 2/1, 1/1, 3/2, 3/2, 1/1, 1/1, 1/1, 1/1, 2/1, 1/2, 2/2, 1/1, 2/2]</span>
+<span class="go">AccuRATE                          0.85             17            3           20  [1/1, 1/1, 2/2, 2/2, 2/2, 1/1, 3/2, 2/2, 1/1, 3/1, 3/1, 1/1, 1/1, 1/1, 1/1, 2/2, 1/1, 2/2, 1/1, 2/2]</span>
+
+<span class="go">*** Predictions columns notation: (Predicted / Actual), 1 = Home Win, 2 = Away Win, 3 = Draw</span>
+
+
+<span class="go">=====FORESIGHT RESULTS=====</span>
+
+
+<span class="go">=====MLE=====</span>
+
+
+<span class="go">=====Accuracy results=====</span>
+
+<span class="go">                           Accuracy Correct Games Wrong Games  Total Games                                         Predictions</span>
+<span class="go">Winloss[normalization=False]      0.7             7           3           10  [1/1, 1/3, 1/3, 1/1, 2/2, 2/3, 1/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Colley                            0.5             5           5           10  [1/1, 1/3, 1/3, 1/1, 1/2, 2/3, 1/1, 2/2, 1/1, 1/2]</span>
+<span class="go">Massey[data_limit=10]              NA            NA          NA            0                                                  NA</span>
+<span class="go">EloWin[HA=0_K=40_ks=400]          0.5             5           5           10  [1/1, 1/3, 1/3, 1/1, 1/2, 2/3, 1/1, 2/2, 1/1, 1/2]</span>
+<span class="go">EloPoint[HA=0_K=40_ks=400]        0.5             5           5           10  [1/1, 1/3, 1/3, 1/1, 1/2, 2/3, 1/1, 2/2, 1/1, 1/2]</span>
+<span class="go">Keener[normalization=False]       0.5             5           5           10  [1/1, 1/3, 1/3, 1/1, 1/2, 2/3, 1/1, 2/2, 1/1, 1/2]</span>
+<span class="go">OffenseDefense[tol=0.0001]        0.4             4           6           10  [1/1, 1/3, 1/3, 1/1, 1/2, 1/3, 1/1, 1/2, 1/1, 1/2]</span>
+<span class="go">Markov[b=0.85]                    0.4             4           6           10  [1/1, 1/3, 1/3, 1/1, 1/2, 1/3, 1/1, 1/2, 1/1, 1/2]</span>
+<span class="go">AccuRATE                          0.4             4           6           10  [1/1, 1/3, 2/3, 1/1, 1/2, 2/3, 1/1, 1/2, 1/1, 1/2]</span>
+
+<span class="go">*** Predictions columns notation: (Predicted / Actual), 1 = Home Win, 2 = Away Win, 3 = Draw</span>
+
+
+<span class="go">=====RANK=====</span>
+
+
+<span class="go">=====Accuracy results=====</span>
+
+<span class="go">                              Accuracy  Correct Games  Wrong Games  Total Games                                         Predictions</span>
+<span class="go">Winloss[normalization=False]       0.6              6            4           10  [3/1, 1/3, 3/3, 1/1, 2/2, 2/3, 3/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Colley                             0.5              5            5           10  [2/1, 1/3, 2/3, 1/1, 2/2, 2/3, 2/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Massey[data_limit=10]              0.4              4            6           10  [2/1, 1/3, 2/3, 1/1, 2/2, 2/3, 1/1, 1/2, 2/1, 2/2]</span>
+<span class="go">EloWin[HA=0_K=40_ks=400]           0.5              5            5           10  [3/1, 1/3, 2/3, 1/1, 2/2, 2/3, 2/1, 2/2, 1/1, 2/2]</span>
+<span class="go">EloPoint[HA=0_K=40_ks=400]         0.6              6            4           10  [1/1, 1/3, 2/3, 1/1, 2/2, 2/3, 2/1, 2/2, 1/1, 2/2]</span>
+<span class="go">Keener[normalization=False]        0.6              6            4           10  [1/1, 1/3, 2/3, 1/1, 2/2, 2/3, 2/1, 2/2, 1/1, 2/2]</span>
+<span class="go">OffenseDefense[tol=0.0001]         0.4              4            6           10  [2/1, 1/3, 1/3, 1/1, 2/2, 2/3, 2/1, 2/2, 1/1, 1/2]</span>
+<span class="go">Markov[b=0.85]                     0.4              4            6           10  [1/1, 2/3, 1/3, 2/1, 2/2, 1/3, 2/1, 2/2, 1/1, 1/2]</span>
+<span class="go">AccuRATE                           0.6              6            4           10  [1/1, 1/3, 2/3, 1/1, 2/2, 2/3, 2/1, 2/2, 1/1, 2/2]</span>
+
+<span class="go">*** Predictions columns notation: (Predicted / Actual), 1 = Home Win, 2 = Away Win, 3 = Draw</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="soccer_rankings_compare.html" class="btn btn-neutral float-left" title="Comparisons of Ranking List Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="soccer_rs.html" class="btn btn-neutral float-right" title="Rating systems and predictions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

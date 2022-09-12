@@ -1,0 +1,310 @@
+{
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "# Prediction of soccer outcome (2009-2010 EPL)"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "In this example we use the rating values from \"AccuRATE method\" as machine learning features to predict soccer outcome.\n",
+                "The dataset is composed of soccer matches of the English Premier League (season 2009-2010).\n",
+                "The predictions are performed through Naive Bayes classifier of scikit-learn library and we apply the walk-forward procedure."
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "Load packages"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 1,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "from ratingslib.app_sports.methods import Predictions, prepare_sports_seasons\n",
+                "from ratingslib.application import SoccerOutcome\n",
+                "from ratingslib.datasets.filenames import get_seasons_dict_footballdata_online\n",
+                "from ratingslib.datasets.soccer import championships\n",
+                "from ratingslib.ratings.accurate import AccuRate\n",
+                "from sklearn.naive_bayes import GaussianNB"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "Set target outcome"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 2,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "outcome = SoccerOutcome()"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "Firstly, we get the filename from football-data.co.uk for season 2009-2010 (English Premier League).\n",
+                "Then, we create rating system and we add it to a dictionary and finally we prepare the dataset.\n",
+                "The ratings in the dataset start from the second match week."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 3,
+            "metadata": {},
+            "outputs": [
+                {
+                    "name": "stdout",
+                    "output_type": "stream",
+                    "text": [
+                        "Load season: 2009 - 2010\n",
+                        "2.9%5.7%8.6%11.4%14.3%17.1%20.0%22.9%25.7%28.6%31.4%34.3%37.1%40.0%42.9%45.7%48.6%51.4%54.3%57.1%60.0%62.9%65.7%68.6%71.4%74.3%77.1%80.0%82.9%85.7%88.6%91.4%94.3%97.1%100.0%\n"
+                    ]
+                }
+            ],
+            "source": [
+                "filenames_dict = get_seasons_dict_footballdata_online(\n",
+                "    season_start=2009, season_end=2010, championship=championships.PREMIERLEAGUE)\n",
+                "ratings_dict = {'AccuRATE': AccuRate()}\n",
+                "data_ml = prepare_sports_seasons(filenames_dict,\n",
+                "                                 outcome,\n",
+                "                                 rating_systems=ratings_dict,\n",
+                "                                 start_week=2)"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "We show the columns of 2009 season dataframe"
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 4,
+            "metadata": {},
+            "outputs": [
+                {
+                    "data": {
+                        "text/plain": [
+                            "Index(['Div', 'Date', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG', 'FTR', 'HTHG',\n",
+                            "       'HTAG', 'HTR', 'Referee', 'HS', 'AS', 'HST', 'AST', 'HF', 'AF', 'HC',\n",
+                            "       'AC', 'HY', 'AY', 'HR', 'AR', 'B365H', 'B365D', 'B365A', 'BWH', 'BWD',\n",
+                            "       'BWA', 'GBH', 'GBD', 'GBA', 'IWH', 'IWD', 'IWA', 'LBH', 'LBD', 'LBA',\n",
+                            "       'SBH', 'SBD', 'SBA', 'WHH', 'WHD', 'WHA', 'SJH', 'SJD', 'SJA', 'VCH',\n",
+                            "       'VCD', 'VCA', 'BSH', 'BSD', 'BSA', 'Bb1X2', 'BbMxH', 'BbAvH', 'BbMxD',\n",
+                            "       'BbAvD', 'BbMxA', 'BbAvA', 'BbOU', 'BbMx>2.5', 'BbAv>2.5', 'BbMx<2.5',\n",
+                            "       'BbAv<2.5', 'BbAH', 'BbAHh', 'BbMxAHH', 'BbAvAHH', 'BbMxAHA', 'BbAvAHA',\n",
+                            "       'Period', 'Week_Number', 'FT', 'HAccuRATE', 'AAccuRATE',\n",
+                            "       'HratingnormAccuRATE', 'AratingnormAccuRATE'],\n",
+                            "      dtype='object')"
+                        ]
+                    },
+                    "execution_count": 4,
+                    "metadata": {},
+                    "output_type": "execute_result"
+                }
+            ],
+            "source": [
+                "data_ml[2009].columns"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "We will only use the normalized ratings from AccuRATE as features for ml classifier."
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 5,
+            "metadata": {},
+            "outputs": [
+                {
+                    "data": {
+                        "text/html": [
+                            "<div>\n",
+                            "<style scoped>\n",
+                            "    .dataframe tbody tr th:only-of-type {\n",
+                            "        vertical-align: middle;\n",
+                            "    }\n",
+                            "\n",
+                            "    .dataframe tbody tr th {\n",
+                            "        vertical-align: top;\n",
+                            "    }\n",
+                            "\n",
+                            "    .dataframe thead th {\n",
+                            "        text-align: right;\n",
+                            "    }\n",
+                            "</style>\n",
+                            "<table border=\"1\" class=\"dataframe\">\n",
+                            "  <thead>\n",
+                            "    <tr style=\"text-align: right;\">\n",
+                            "      <th></th>\n",
+                            "      <th>HratingnormAccuRATE</th>\n",
+                            "      <th>AratingnormAccuRATE</th>\n",
+                            "    </tr>\n",
+                            "  </thead>\n",
+                            "  <tbody>\n",
+                            "    <tr>\n",
+                            "      <th>0</th>\n",
+                            "      <td>0.848092</td>\n",
+                            "      <td>0.061352</td>\n",
+                            "    </tr>\n",
+                            "    <tr>\n",
+                            "      <th>1</th>\n",
+                            "      <td>0.401452</td>\n",
+                            "      <td>0.288341</td>\n",
+                            "    </tr>\n",
+                            "    <tr>\n",
+                            "      <th>2</th>\n",
+                            "      <td>0.000000</td>\n",
+                            "      <td>0.231402</td>\n",
+                            "    </tr>\n",
+                            "    <tr>\n",
+                            "      <th>3</th>\n",
+                            "      <td>0.663704</td>\n",
+                            "      <td>0.343821</td>\n",
+                            "    </tr>\n",
+                            "    <tr>\n",
+                            "      <th>4</th>\n",
+                            "      <td>0.369277</td>\n",
+                            "      <td>0.165818</td>\n",
+                            "    </tr>\n",
+                            "  </tbody>\n",
+                            "</table>\n",
+                            "</div>"
+                        ],
+                        "text/plain": [
+                            "   HratingnormAccuRATE  AratingnormAccuRATE\n",
+                            "0             0.848092             0.061352\n",
+                            "1             0.401452             0.288341\n",
+                            "2             0.000000             0.231402\n",
+                            "3             0.663704             0.343821\n",
+                            "4             0.369277             0.165818"
+                        ]
+                    },
+                    "execution_count": 5,
+                    "metadata": {},
+                    "output_type": "execute_result"
+                }
+            ],
+            "source": [
+                "features_names = ['HratingnormAccuRATE',\n",
+                "                  'AratingnormAccuRATE']\n",
+                "data_ml[2009][features_names].head()"
+            ]
+        },
+        {
+            "cell_type": "markdown",
+            "metadata": {},
+            "source": [
+                "We have selected the Naive Bayes classifier and we start making predictions from the 4th week.\n",
+                "We apply the anchored walk-farward procedure with window size = 1 which means that every week we make predictions\n",
+                "by using previous weeks data for training set. For example for the 4th week, the training set is consisted of the 1st, 2nd and 3rd week. "
+            ]
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 6,
+            "metadata": {},
+            "outputs": [
+                {
+                    "name": "stdout",
+                    "output_type": "stream",
+                    "text": [
+                        "\n",
+                        "\n",
+                        "=====GaussianNB()-[features: HratingnormAccuRATE AratingnormAccuRATE]=====\n",
+                        "              precision    recall  f1-score   support\n",
+                        "\n",
+                        "         1.0     0.5630    0.8686    0.6831       175\n",
+                        "         2.0     0.4821    0.3553    0.4091        76\n",
+                        "         3.0     0.2222    0.0430    0.0721        93\n",
+                        "\n",
+                        "    accuracy                         0.5320       344\n",
+                        "   macro avg     0.4224    0.4223    0.3881       344\n",
+                        "weighted avg     0.4530    0.5320    0.4574       344\n",
+                        "\n",
+                        "confusion matrix:\n",
+                        "[[152  14   9]\n",
+                        "  [ 44  27   5]\n",
+                        "  [ 74  15   4]]\n",
+                        "Correct games: 183\n",
+                        "Wrong games: 161\n",
+                        "Total predicted Games: 344\n",
+                        "\n",
+                        "\n",
+                        "\n",
+                        "=====GaussianNB()-[features: HratingnormAccuRATE AratingnormAccuRATE]=====\n",
+                        "\n",
+                        "\n",
+                        "=====Accuracy results=====\n",
+                        "\n",
+                        "                                                                  Accuracy  \\\n",
+                        "GaussianNB()-[features: HratingnormAccuRATE AratingnormAccuRATE]  0.531977   \n",
+                        "\n",
+                        "                                                                  Correct Games  \\\n",
+                        "GaussianNB()-[features: HratingnormAccuRATE AratingnormAccuRATE]            183   \n",
+                        "\n",
+                        "                                                                  Wrong Games  \\\n",
+                        "GaussianNB()-[features: HratingnormAccuRATE AratingnormAccuRATE]          161   \n",
+                        "\n",
+                        "                                                                  Total Games  \n",
+                        "GaussianNB()-[features: HratingnormAccuRATE AratingnormAccuRATE]          344  \n"
+                    ]
+                }
+            ],
+            "source": [
+                "test_y, pred = Predictions(data_ml,\n",
+                "                           outcome,\n",
+                "                           start_from_week=4,\n",
+                "                           print_classification_report=True).ml_pred(\n",
+                "                            clf=GaussianNB(),\n",
+                "                            features_names=features_names)"
+            ]
+        }
+    ],
+    "metadata": {
+        "kernelspec": {
+            "display_name": "Python 3.8.13 ('py38')",
+            "language": "python",
+            "name": "python3"
+        },
+        "language_info": {
+            "codemirror_mode": {
+                "name": "ipython",
+                "version": 3
+            },
+            "file_extension": ".py",
+            "mimetype": "text/x-python",
+            "name": "python",
+            "nbconvert_exporter": "python",
+            "pygments_lexer": "ipython3",
+            "version": "3.8.13"
+        },
+        "orig_nbformat": 4,
+        "vscode": {
+            "interpreter": {
+                "hash": "23ceb7112fbf9d0e38ecbf60d6e6d5e2dcebcc82200eeb1e5a5d5f9ffb9e27ca"
+            }
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 2
+}

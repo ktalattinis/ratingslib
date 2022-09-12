@@ -1,0 +1,3319 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NFL Data &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/ratingslib.html">ratingslib package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>NFL Data</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/examples/sports/nfl_data.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="nfl-data">
+<h1>NFL Data<a class="headerlink" href="#nfl-data" title="Permalink to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following game statistics have been selected:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>FTHG = Home Team Score</p></li>
+<li><p>FTAG = Away Team Score</p></li>
+</ul>
+</div></blockquote>
+</div>
+<p class="rubric">NFL 1st-17th week of 2009-2010 games (short names of teams without play offs)</p>
+<table class="docutils align-default" id="label1">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Date</p></th>
+<th class="head"><p>HomeTeam</p></th>
+<th class="head"><p>AwayTeam</p></th>
+<th class="head"><p>FTHG</p></th>
+<th class="head"><p>FTAG</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>11.09.03:30</p></td>
+<td><p>Steelers</p></td>
+<td><p>Titans</p></td>
+<td><p>13</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>Cowboys</p></td>
+<td><p>21</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.20:00</p></td>
+<td><p>Saints</p></td>
+<td><p>Lions</p></td>
+<td><p>45</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Colts</p></td>
+<td><p>Jaguars</p></td>
+<td><p>14</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.20:00</p></td>
+<td><p>Texans</p></td>
+<td><p>Jets</p></td>
+<td><p>7</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Browns</p></td>
+<td><p>Vikings</p></td>
+<td><p>20</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.20:00</p></td>
+<td><p>Bengals</p></td>
+<td><p>Broncos</p></td>
+<td><p>7</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Panthers</p></td>
+<td><p>Eagles</p></td>
+<td><p>10</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.20:00</p></td>
+<td><p>Ravens</p></td>
+<td><p>Chiefs</p></td>
+<td><p>38</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Falcons</p></td>
+<td><p>Dolphins</p></td>
+<td><p>19</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.23:15</p></td>
+<td><p>Seahawks</p></td>
+<td><p>Rams</p></td>
+<td><p>28</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.23:15</p></td>
+<td><p>Giants</p></td>
+<td><p>Redskins</p></td>
+<td><p>23</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.23:15</p></td>
+<td><p>Cardinals</p></td>
+<td><p>Niners</p></td>
+<td><p>16</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>14.09.03:20</p></td>
+<td><p>Packers</p></td>
+<td><p>Bears</p></td>
+<td><p>21</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>15.09.02:00</p></td>
+<td><p>Patriots</p></td>
+<td><p>Bills</p></td>
+<td><p>25</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.09.05:15</p></td>
+<td><p>Raiders</p></td>
+<td><p>Chargers</p></td>
+<td><p>20</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Redskins</p></td>
+<td><p>Rams</p></td>
+<td><p>9</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.20:00</p></td>
+<td><p>Titans</p></td>
+<td><p>Texans</p></td>
+<td><p>31</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Eagles</p></td>
+<td><p>Saints</p></td>
+<td><p>22</p></td>
+<td><p>48</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.20:00</p></td>
+<td><p>Jets</p></td>
+<td><p>Patriots</p></td>
+<td><p>16</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Chiefs</p></td>
+<td><p>Raiders</p></td>
+<td><p>10</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.20:00</p></td>
+<td><p>Jaguars</p></td>
+<td><p>Cardinals</p></td>
+<td><p>17</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Packers</p></td>
+<td><p>Bengals</p></td>
+<td><p>24</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.20:00</p></td>
+<td><p>Lions</p></td>
+<td><p>Vikings</p></td>
+<td><p>13</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Falcons</p></td>
+<td><p>Panthers</p></td>
+<td><p>28</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.23:05</p></td>
+<td><p>Niners</p></td>
+<td><p>Seahawks</p></td>
+<td><p>23</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.23:05</p></td>
+<td><p>Bills</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>33</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.23:15</p></td>
+<td><p>Chargers</p></td>
+<td><p>Ravens</p></td>
+<td><p>26</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.23:15</p></td>
+<td><p>Broncos</p></td>
+<td><p>Browns</p></td>
+<td><p>27</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.23:15</p></td>
+<td><p>Bears</p></td>
+<td><p>Steelers</p></td>
+<td><p>17</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>21.09.03:20</p></td>
+<td><p>Cowboys</p></td>
+<td><p>Giants</p></td>
+<td><p>31</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.09.03:30</p></td>
+<td><p>Dolphins</p></td>
+<td><p>Colts</p></td>
+<td><p>23</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>Giants</p></td>
+<td><p>0</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.20:00</p></td>
+<td><p>Eagles</p></td>
+<td><p>Chiefs</p></td>
+<td><p>34</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>Jets</p></td>
+<td><p>Titans</p></td>
+<td><p>24</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.20:00</p></td>
+<td><p>Patriots</p></td>
+<td><p>Falcons</p></td>
+<td><p>26</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>Vikings</p></td>
+<td><p>Niners</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.20:00</p></td>
+<td><p>Rams</p></td>
+<td><p>Packers</p></td>
+<td><p>17</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>Texans</p></td>
+<td><p>Jaguars</p></td>
+<td><p>24</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.20:00</p></td>
+<td><p>Lions</p></td>
+<td><p>Redskins</p></td>
+<td><p>19</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>Ravens</p></td>
+<td><p>Browns</p></td>
+<td><p>34</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.23:05</p></td>
+<td><p>Seahawks</p></td>
+<td><p>Bears</p></td>
+<td><p>19</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.23:05</p></td>
+<td><p>Bills</p></td>
+<td><p>Saints</p></td>
+<td><p>7</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.23:15</p></td>
+<td><p>Raiders</p></td>
+<td><p>Broncos</p></td>
+<td><p>3</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.23:15</p></td>
+<td><p>Chargers</p></td>
+<td><p>Dolphins</p></td>
+<td><p>23</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.23:15</p></td>
+<td><p>Bengals</p></td>
+<td><p>Steelers</p></td>
+<td><p>23</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>28.09.03:20</p></td>
+<td><p>Cardinals</p></td>
+<td><p>Colts</p></td>
+<td><p>10</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.09.03:30</p></td>
+<td><p>Cowboys</p></td>
+<td><p>Panthers</p></td>
+<td><p>21</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.20:00</p></td>
+<td><p>Redskins</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>16</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.20:00</p></td>
+<td><p>Patriots</p></td>
+<td><p>Ravens</p></td>
+<td><p>27</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.20:00</p></td>
+<td><p>Chiefs</p></td>
+<td><p>Giants</p></td>
+<td><p>16</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.20:00</p></td>
+<td><p>Jaguars</p></td>
+<td><p>Titans</p></td>
+<td><p>37</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.20:00</p></td>
+<td><p>Colts</p></td>
+<td><p>Seahawks</p></td>
+<td><p>34</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.20:00</p></td>
+<td><p>Texans</p></td>
+<td><p>Raiders</p></td>
+<td><p>29</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.20:00</p></td>
+<td><p>Browns</p></td>
+<td><p>Bengals</p></td>
+<td><p>20</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.20:00</p></td>
+<td><p>Bears</p></td>
+<td><p>Lions</p></td>
+<td><p>48</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.23:05</p></td>
+<td><p>Saints</p></td>
+<td><p>Jets</p></td>
+<td><p>24</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.23:05</p></td>
+<td><p>Dolphins</p></td>
+<td><p>Bills</p></td>
+<td><p>38</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.23:15</p></td>
+<td><p>Niners</p></td>
+<td><p>Rams</p></td>
+<td><p>35</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.23:15</p></td>
+<td><p>Broncos</p></td>
+<td><p>Cowboys</p></td>
+<td><p>17</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>05.10.03:20</p></td>
+<td><p>Steelers</p></td>
+<td><p>Chargers</p></td>
+<td><p>38</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.10.03:30</p></td>
+<td><p>Vikings</p></td>
+<td><p>Packers</p></td>
+<td><p>30</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.20:00</p></td>
+<td><p>Eagles</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>33</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.20:00</p></td>
+<td><p>Giants</p></td>
+<td><p>Raiders</p></td>
+<td><p>44</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.20:00</p></td>
+<td><p>Rams</p></td>
+<td><p>Vikings</p></td>
+<td><p>10</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.20:00</p></td>
+<td><p>Chiefs</p></td>
+<td><p>Cowboys</p></td>
+<td><p>20</p></td>
+<td><p>26</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.20:00</p></td>
+<td><p>Lions</p></td>
+<td><p>Steelers</p></td>
+<td><p>20</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.20:00</p></td>
+<td><p>Panthers</p></td>
+<td><p>Redskins</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.20:00</p></td>
+<td><p>Bills</p></td>
+<td><p>Browns</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.20:00</p></td>
+<td><p>Ravens</p></td>
+<td><p>Bengals</p></td>
+<td><p>14</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.23:05</p></td>
+<td><p>Niners</p></td>
+<td><p>Falcons</p></td>
+<td><p>10</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.23:15</p></td>
+<td><p>Seahawks</p></td>
+<td><p>Jaguars</p></td>
+<td><p>41</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.23:15</p></td>
+<td><p>Broncos</p></td>
+<td><p>Patriots</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.23:15</p></td>
+<td><p>Cardinals</p></td>
+<td><p>Texans</p></td>
+<td><p>28</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>12.10.03:20</p></td>
+<td><p>Titans</p></td>
+<td><p>Colts</p></td>
+<td><p>9</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.10.03:30</p></td>
+<td><p>Dolphins</p></td>
+<td><p>Jets</p></td>
+<td><p>31</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.20:00</p></td>
+<td><p>Redskins</p></td>
+<td><p>Chiefs</p></td>
+<td><p>6</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.20:00</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>Panthers</p></td>
+<td><p>21</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.20:00</p></td>
+<td><p>Steelers</p></td>
+<td><p>Browns</p></td>
+<td><p>27</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.20:00</p></td>
+<td><p>Saints</p></td>
+<td><p>Giants</p></td>
+<td><p>48</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.20:00</p></td>
+<td><p>Vikings</p></td>
+<td><p>Ravens</p></td>
+<td><p>33</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.20:00</p></td>
+<td><p>Jaguars</p></td>
+<td><p>Rams</p></td>
+<td><p>23</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.20:00</p></td>
+<td><p>Packers</p></td>
+<td><p>Lions</p></td>
+<td><p>26</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.20:00</p></td>
+<td><p>Bengals</p></td>
+<td><p>Texans</p></td>
+<td><p>17</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.23:05</p></td>
+<td><p>Seahawks</p></td>
+<td><p>Cardinals</p></td>
+<td><p>3</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.23:05</p></td>
+<td><p>Raiders</p></td>
+<td><p>Eagles</p></td>
+<td><p>13</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.23:15</p></td>
+<td><p>Jets</p></td>
+<td><p>Bills</p></td>
+<td><p>13</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.23:15</p></td>
+<td><p>Patriots</p></td>
+<td><p>Titans</p></td>
+<td><p>59</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>19.10.03:20</p></td>
+<td><p>Falcons</p></td>
+<td><p>Bears</p></td>
+<td><p>21</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.10.03:30</p></td>
+<td><p>Chargers</p></td>
+<td><p>Broncos</p></td>
+<td><p>23</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.19:00</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>Patriots</p></td>
+<td><p>7</p></td>
+<td><p>35</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.19:00</p></td>
+<td><p>Steelers</p></td>
+<td><p>Vikings</p></td>
+<td><p>27</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.19:00</p></td>
+<td><p>Rams</p></td>
+<td><p>Colts</p></td>
+<td><p>6</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.19:00</p></td>
+<td><p>Chiefs</p></td>
+<td><p>Chargers</p></td>
+<td><p>7</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.19:00</p></td>
+<td><p>Texans</p></td>
+<td><p>Niners</p></td>
+<td><p>24</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.19:00</p></td>
+<td><p>Browns</p></td>
+<td><p>Packers</p></td>
+<td><p>3</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.22:05</p></td>
+<td><p>Raiders</p></td>
+<td><p>Jets</p></td>
+<td><p>0</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.22:05</p></td>
+<td><p>Panthers</p></td>
+<td><p>Bills</p></td>
+<td><p>9</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.22:15</p></td>
+<td><p>Dolphins</p></td>
+<td><p>Saints</p></td>
+<td><p>34</p></td>
+<td><p>46</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.22:15</p></td>
+<td><p>Cowboys</p></td>
+<td><p>Falcons</p></td>
+<td><p>37</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.22:15</p></td>
+<td><p>Bengals</p></td>
+<td><p>Bears</p></td>
+<td><p>45</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>26.10.02:20</p></td>
+<td><p>Giants</p></td>
+<td><p>Cardinals</p></td>
+<td><p>17</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>27.10.02:30</p></td>
+<td><p>Redskins</p></td>
+<td><p>Eagles</p></td>
+<td><p>17</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.20:00</p></td>
+<td><p>Eagles</p></td>
+<td><p>Giants</p></td>
+<td><p>40</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.20:00</p></td>
+<td><p>Jets</p></td>
+<td><p>Dolphins</p></td>
+<td><p>25</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.20:00</p></td>
+<td><p>Colts</p></td>
+<td><p>Niners</p></td>
+<td><p>18</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.20:00</p></td>
+<td><p>Lions</p></td>
+<td><p>Rams</p></td>
+<td><p>10</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.20:00</p></td>
+<td><p>Cowboys</p></td>
+<td><p>Seahawks</p></td>
+<td><p>38</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.20:00</p></td>
+<td><p>Bears</p></td>
+<td><p>Browns</p></td>
+<td><p>30</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.20:00</p></td>
+<td><p>Bills</p></td>
+<td><p>Texans</p></td>
+<td><p>10</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.20:00</p></td>
+<td><p>Ravens</p></td>
+<td><p>Broncos</p></td>
+<td><p>30</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.23:05</p></td>
+<td><p>Titans</p></td>
+<td><p>Jaguars</p></td>
+<td><p>30</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.23:05</p></td>
+<td><p>Chargers</p></td>
+<td><p>Raiders</p></td>
+<td><p>24</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.23:15</p></td>
+<td><p>Packers</p></td>
+<td><p>Vikings</p></td>
+<td><p>26</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.23:15</p></td>
+<td><p>Cardinals</p></td>
+<td><p>Panthers</p></td>
+<td><p>21</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.11.03:30</p></td>
+<td><p>Saints</p></td>
+<td><p>Falcons</p></td>
+<td><p>35</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.20:00</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>Packers</p></td>
+<td><p>38</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.20:00</p></td>
+<td><p>Patriots</p></td>
+<td><p>Dolphins</p></td>
+<td><p>27</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.20:00</p></td>
+<td><p>Jaguars</p></td>
+<td><p>Chiefs</p></td>
+<td><p>24</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.20:00</p></td>
+<td><p>Colts</p></td>
+<td><p>Texans</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.20:00</p></td>
+<td><p>Bengals</p></td>
+<td><p>Ravens</p></td>
+<td><p>17</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.20:00</p></td>
+<td><p>Bears</p></td>
+<td><p>Cardinals</p></td>
+<td><p>21</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.20:00</p></td>
+<td><p>Falcons</p></td>
+<td><p>Redskins</p></td>
+<td><p>31</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.23:05</p></td>
+<td><p>Seahawks</p></td>
+<td><p>Lions</p></td>
+<td><p>32</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.23:05</p></td>
+<td><p>Saints</p></td>
+<td><p>Panthers</p></td>
+<td><p>30</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.23:15</p></td>
+<td><p>Niners</p></td>
+<td><p>Titans</p></td>
+<td><p>27</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.23:15</p></td>
+<td><p>Giants</p></td>
+<td><p>Chargers</p></td>
+<td><p>20</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>09.11.03:20</p></td>
+<td><p>Eagles</p></td>
+<td><p>Cowboys</p></td>
+<td><p>16</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>10.11.03:30</p></td>
+<td><p>Broncos</p></td>
+<td><p>Steelers</p></td>
+<td><p>10</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.11.03:20</p></td>
+<td><p>Niners</p></td>
+<td><p>Bears</p></td>
+<td><p>10</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.20:00</p></td>
+<td><p>Redskins</p></td>
+<td><p>Broncos</p></td>
+<td><p>27</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.20:00</p></td>
+<td><p>Titans</p></td>
+<td><p>Bills</p></td>
+<td><p>41</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.20:00</p></td>
+<td><p>Steelers</p></td>
+<td><p>Bengals</p></td>
+<td><p>12</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.20:00</p></td>
+<td><p>Jets</p></td>
+<td><p>Jaguars</p></td>
+<td><p>22</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.20:00</p></td>
+<td><p>Vikings</p></td>
+<td><p>Lions</p></td>
+<td><p>27</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.20:00</p></td>
+<td><p>Dolphins</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>25</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.20:00</p></td>
+<td><p>Rams</p></td>
+<td><p>Saints</p></td>
+<td><p>23</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.20:00</p></td>
+<td><p>Panthers</p></td>
+<td><p>Falcons</p></td>
+<td><p>28</p></td>
+<td><p>19</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.23:05</p></td>
+<td><p>Raiders</p></td>
+<td><p>Chiefs</p></td>
+<td><p>10</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.23:15</p></td>
+<td><p>Chargers</p></td>
+<td><p>Eagles</p></td>
+<td><p>31</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.23:15</p></td>
+<td><p>Packers</p></td>
+<td><p>Cowboys</p></td>
+<td><p>17</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.23:15</p></td>
+<td><p>Cardinals</p></td>
+<td><p>Seahawks</p></td>
+<td><p>31</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>16.11.03:20</p></td>
+<td><p>Colts</p></td>
+<td><p>Patriots</p></td>
+<td><p>35</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>17.11.03:30</p></td>
+<td><p>Browns</p></td>
+<td><p>Ravens</p></td>
+<td><p>0</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p>20.11.03:20</p></td>
+<td><p>Panthers</p></td>
+<td><p>Dolphins</p></td>
+<td><p>17</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>Saints</p></td>
+<td><p>7</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.20:00</p></td>
+<td><p>Giants</p></td>
+<td><p>Falcons</p></td>
+<td><p>34</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Vikings</p></td>
+<td><p>Seahawks</p></td>
+<td><p>35</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.20:00</p></td>
+<td><p>Chiefs</p></td>
+<td><p>Steelers</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Jaguars</p></td>
+<td><p>Bills</p></td>
+<td><p>18</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.20:00</p></td>
+<td><p>Packers</p></td>
+<td><p>Niners</p></td>
+<td><p>30</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Lions</p></td>
+<td><p>Browns</p></td>
+<td><p>38</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.20:00</p></td>
+<td><p>Cowboys</p></td>
+<td><p>Redskins</p></td>
+<td><p>7</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Ravens</p></td>
+<td><p>Colts</p></td>
+<td><p>15</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.23:05</p></td>
+<td><p>Rams</p></td>
+<td><p>Cardinals</p></td>
+<td><p>13</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.23:15</p></td>
+<td><p>Raiders</p></td>
+<td><p>Bengals</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.23:15</p></td>
+<td><p>Patriots</p></td>
+<td><p>Jets</p></td>
+<td><p>31</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.23:15</p></td>
+<td><p>Broncos</p></td>
+<td><p>Chargers</p></td>
+<td><p>3</p></td>
+<td><p>32</p></td>
+</tr>
+<tr class="row-even"><td><p>23.11.03:20</p></td>
+<td><p>Bears</p></td>
+<td><p>Eagles</p></td>
+<td><p>20</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>24.11.03:30</p></td>
+<td><p>Texans</p></td>
+<td><p>Titans</p></td>
+<td><p>17</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>26.11.19:30</p></td>
+<td><p>Lions</p></td>
+<td><p>Packers</p></td>
+<td><p>12</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>26.11.23:15</p></td>
+<td><p>Cowboys</p></td>
+<td><p>Raiders</p></td>
+<td><p>24</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>27.11.03:20</p></td>
+<td><p>Broncos</p></td>
+<td><p>Giants</p></td>
+<td><p>26</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.20:00</p></td>
+<td><p>Eagles</p></td>
+<td><p>Redskins</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.20:00</p></td>
+<td><p>Jets</p></td>
+<td><p>Panthers</p></td>
+<td><p>17</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.20:00</p></td>
+<td><p>Rams</p></td>
+<td><p>Seahawks</p></td>
+<td><p>17</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.20:00</p></td>
+<td><p>Texans</p></td>
+<td><p>Colts</p></td>
+<td><p>27</p></td>
+<td><p>35</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.20:00</p></td>
+<td><p>Bengals</p></td>
+<td><p>Browns</p></td>
+<td><p>16</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.20:00</p></td>
+<td><p>Bills</p></td>
+<td><p>Dolphins</p></td>
+<td><p>31</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.20:00</p></td>
+<td><p>Falcons</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.23:05</p></td>
+<td><p>Niners</p></td>
+<td><p>Jaguars</p></td>
+<td><p>20</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.23:05</p></td>
+<td><p>Chargers</p></td>
+<td><p>Chiefs</p></td>
+<td><p>43</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.23:15</p></td>
+<td><p>Titans</p></td>
+<td><p>Cardinals</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.23:15</p></td>
+<td><p>Vikings</p></td>
+<td><p>Bears</p></td>
+<td><p>36</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>30.11.03:20</p></td>
+<td><p>Ravens</p></td>
+<td><p>Steelers</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.12.03:30</p></td>
+<td><p>Saints</p></td>
+<td><p>Patriots</p></td>
+<td><p>38</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>04.12.03:20</p></td>
+<td><p>Bills</p></td>
+<td><p>Jets</p></td>
+<td><p>13</p></td>
+<td><p>19</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Redskins</p></td>
+<td><p>Saints</p></td>
+<td><p>30</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Steelers</p></td>
+<td><p>Raiders</p></td>
+<td><p>24</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Dolphins</p></td>
+<td><p>Patriots</p></td>
+<td><p>22</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Chiefs</p></td>
+<td><p>Broncos</p></td>
+<td><p>13</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Jaguars</p></td>
+<td><p>Texans</p></td>
+<td><p>23</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Colts</p></td>
+<td><p>Titans</p></td>
+<td><p>27</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Bengals</p></td>
+<td><p>Lions</p></td>
+<td><p>23</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Bears</p></td>
+<td><p>Rams</p></td>
+<td><p>17</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Panthers</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>16</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Falcons</p></td>
+<td><p>Eagles</p></td>
+<td><p>7</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.23:05</p></td>
+<td><p>Browns</p></td>
+<td><p>Chargers</p></td>
+<td><p>23</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.23:15</p></td>
+<td><p>Seahawks</p></td>
+<td><p>Niners</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.23:15</p></td>
+<td><p>Giants</p></td>
+<td><p>Cowboys</p></td>
+<td><p>31</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>07.12.03:20</p></td>
+<td><p>Cardinals</p></td>
+<td><p>Vikings</p></td>
+<td><p>30</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.12.03:30</p></td>
+<td><p>Packers</p></td>
+<td><p>Ravens</p></td>
+<td><p>27</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>11.12.03:20</p></td>
+<td><p>Browns</p></td>
+<td><p>Steelers</p></td>
+<td><p>13</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>Jets</p></td>
+<td><p>3</p></td>
+<td><p>26</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>Patriots</p></td>
+<td><p>Panthers</p></td>
+<td><p>20</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Vikings</p></td>
+<td><p>Bengals</p></td>
+<td><p>30</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>Chiefs</p></td>
+<td><p>Bills</p></td>
+<td><p>10</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Jaguars</p></td>
+<td><p>Dolphins</p></td>
+<td><p>10</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>Colts</p></td>
+<td><p>Broncos</p></td>
+<td><p>28</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Texans</p></td>
+<td><p>Seahawks</p></td>
+<td><p>34</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>Bears</p></td>
+<td><p>Packers</p></td>
+<td><p>14</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Ravens</p></td>
+<td><p>Lions</p></td>
+<td><p>48</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>Falcons</p></td>
+<td><p>Saints</p></td>
+<td><p>23</p></td>
+<td><p>26</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.23:05</p></td>
+<td><p>Titans</p></td>
+<td><p>Rams</p></td>
+<td><p>47</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.23:05</p></td>
+<td><p>Raiders</p></td>
+<td><p>Redskins</p></td>
+<td><p>13</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.23:15</p></td>
+<td><p>Cowboys</p></td>
+<td><p>Chargers</p></td>
+<td><p>17</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>14.12.03:20</p></td>
+<td><p>Giants</p></td>
+<td><p>Eagles</p></td>
+<td><p>38</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.12.03:30</p></td>
+<td><p>Niners</p></td>
+<td><p>Cardinals</p></td>
+<td><p>24</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>18.12.03:20</p></td>
+<td><p>Jaguars</p></td>
+<td><p>Colts</p></td>
+<td><p>31</p></td>
+<td><p>35</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.03:20</p></td>
+<td><p>Saints</p></td>
+<td><p>Cowboys</p></td>
+<td><p>17</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.20:00</p></td>
+<td><p>Titans</p></td>
+<td><p>Dolphins</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.20:00</p></td>
+<td><p>Jets</p></td>
+<td><p>Falcons</p></td>
+<td><p>7</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.20:00</p></td>
+<td><p>Rams</p></td>
+<td><p>Texans</p></td>
+<td><p>13</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.20:00</p></td>
+<td><p>Chiefs</p></td>
+<td><p>Browns</p></td>
+<td><p>34</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.20:00</p></td>
+<td><p>Lions</p></td>
+<td><p>Cardinals</p></td>
+<td><p>24</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.20:00</p></td>
+<td><p>Bills</p></td>
+<td><p>Patriots</p></td>
+<td><p>10</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.23:05</p></td>
+<td><p>Chargers</p></td>
+<td><p>Bengals</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.23:05</p></td>
+<td><p>Broncos</p></td>
+<td><p>Raiders</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.23:15</p></td>
+<td><p>Seahawks</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>7</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.23:15</p></td>
+<td><p>Steelers</p></td>
+<td><p>Packers</p></td>
+<td><p>37</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.23:15</p></td>
+<td><p>Eagles</p></td>
+<td><p>Niners</p></td>
+<td><p>27</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.23:15</p></td>
+<td><p>Ravens</p></td>
+<td><p>Bears</p></td>
+<td><p>31</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>21.12.03:20</p></td>
+<td><p>Panthers</p></td>
+<td><p>Vikings</p></td>
+<td><p>26</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.12.03:30</p></td>
+<td><p>Redskins</p></td>
+<td><p>Giants</p></td>
+<td><p>12</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-even"><td><p>26.12.02:30</p></td>
+<td><p>Titans</p></td>
+<td><p>Chargers</p></td>
+<td><p>17</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>Steelers</p></td>
+<td><p>Ravens</p></td>
+<td><p>23</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.20:00</p></td>
+<td><p>Giants</p></td>
+<td><p>Panthers</p></td>
+<td><p>9</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>Saints</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>17</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.20:00</p></td>
+<td><p>Patriots</p></td>
+<td><p>Jaguars</p></td>
+<td><p>35</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>Dolphins</p></td>
+<td><p>Texans</p></td>
+<td><p>20</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.20:00</p></td>
+<td><p>Packers</p></td>
+<td><p>Seahawks</p></td>
+<td><p>48</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>Browns</p></td>
+<td><p>Raiders</p></td>
+<td><p>23</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.20:00</p></td>
+<td><p>Bengals</p></td>
+<td><p>Chiefs</p></td>
+<td><p>17</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>Falcons</p></td>
+<td><p>Bills</p></td>
+<td><p>31</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.23:05</p></td>
+<td><p>Niners</p></td>
+<td><p>Lions</p></td>
+<td><p>20</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.23:05</p></td>
+<td><p>Cardinals</p></td>
+<td><p>Rams</p></td>
+<td><p>31</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.23:15</p></td>
+<td><p>Eagles</p></td>
+<td><p>Broncos</p></td>
+<td><p>30</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.23:15</p></td>
+<td><p>Colts</p></td>
+<td><p>Jets</p></td>
+<td><p>15</p></td>
+<td><p>29</p></td>
+</tr>
+<tr class="row-even"><td><p>28.12.03:20</p></td>
+<td><p>Redskins</p></td>
+<td><p>Cowboys</p></td>
+<td><p>0</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.12.03:30</p></td>
+<td><p>Bears</p></td>
+<td><p>Vikings</p></td>
+<td><p>36</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Buccaneers</p></td>
+<td><p>Falcons</p></td>
+<td><p>10</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.20:00</p></td>
+<td><p>Vikings</p></td>
+<td><p>Giants</p></td>
+<td><p>44</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Dolphins</p></td>
+<td><p>Steelers</p></td>
+<td><p>24</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.20:00</p></td>
+<td><p>Rams</p></td>
+<td><p>Niners</p></td>
+<td><p>6</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Texans</p></td>
+<td><p>Patriots</p></td>
+<td><p>34</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.20:00</p></td>
+<td><p>Lions</p></td>
+<td><p>Bears</p></td>
+<td><p>23</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Browns</p></td>
+<td><p>Jaguars</p></td>
+<td><p>23</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.20:00</p></td>
+<td><p>Panthers</p></td>
+<td><p>Saints</p></td>
+<td><p>23</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Bills</p></td>
+<td><p>Colts</p></td>
+<td><p>30</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.23:15</p></td>
+<td><p>Seahawks</p></td>
+<td><p>Titans</p></td>
+<td><p>13</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.23:15</p></td>
+<td><p>Raiders</p></td>
+<td><p>Ravens</p></td>
+<td><p>13</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.23:15</p></td>
+<td><p>Chargers</p></td>
+<td><p>Redskins</p></td>
+<td><p>23</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.23:15</p></td>
+<td><p>Broncos</p></td>
+<td><p>Chiefs</p></td>
+<td><p>24</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.23:15</p></td>
+<td><p>Cowboys</p></td>
+<td><p>Eagles</p></td>
+<td><p>24</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.23:15</p></td>
+<td><p>Cardinals</p></td>
+<td><p>Packers</p></td>
+<td><p>7</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.01.03:20</p></td>
+<td><p>Jets</p></td>
+<td><p>Bengals</p></td>
+<td><p>37</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">NFL of 2009-2010 games (full names of teams)</p>
+<table class="docutils align-default" id="label2">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Date</p></th>
+<th class="head"><p>HomeTeam</p></th>
+<th class="head"><p>AwayTeam</p></th>
+<th class="head"><p>FTHG</p></th>
+<th class="head"><p>FTAG</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>11.09.03:30</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>13</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>21</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.20:00</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>45</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>14</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.20:00</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>New York Jets</p></td>
+<td><p>7</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>20</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.20:00</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>7</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>10</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.20:00</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>38</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.20:00</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>19</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.23:15</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>28</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.09.23:15</p></td>
+<td><p>New York Giants</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>23</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>13.09.23:15</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>16</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>14.09.03:20</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>21</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>15.09.02:00</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>25</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.09.05:15</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>20</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>9</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.20:00</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>31</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>22</p></td>
+<td><p>48</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.20:00</p></td>
+<td><p>New York Jets</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>16</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>10</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.20:00</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>17</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>24</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.20:00</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>13</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.20:00</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>28</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.23:05</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>23</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.23:05</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>33</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.23:15</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>26</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-even"><td><p>20.09.23:15</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>27</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.09.23:15</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>17</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>21.09.03:20</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>New York Giants</p></td>
+<td><p>31</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.09.03:30</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>23</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>New York Giants</p></td>
+<td><p>0</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.20:00</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>34</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>New York Jets</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>24</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.20:00</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>26</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.20:00</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>17</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>24</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.20:00</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>19</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.20:00</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>34</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.23:05</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>19</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.23:05</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>7</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.23:15</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>3</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>27.09.23:15</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>23</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.09.23:15</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>23</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>28.09.03:20</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>10</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.09.03:30</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>21</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.20:00</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>16</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.20:00</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>27</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.20:00</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>New York Giants</p></td>
+<td><p>16</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.20:00</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>37</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.20:00</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>34</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.20:00</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>29</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.20:00</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>20</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.20:00</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>48</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.23:05</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>New York Jets</p></td>
+<td><p>24</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.23:05</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>38</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>04.10.23:15</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>35</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.10.23:15</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>17</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>05.10.03:20</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>38</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.10.03:30</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>30</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.20:00</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>33</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.20:00</p></td>
+<td><p>New York Giants</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>44</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.20:00</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>10</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.20:00</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>20</p></td>
+<td><p>26</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.20:00</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>20</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.20:00</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.20:00</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.20:00</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>14</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.23:05</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>10</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.23:15</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>41</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>11.10.23:15</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>11.10.23:15</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>28</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>12.10.03:20</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>9</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.10.03:30</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>New York Jets</p></td>
+<td><p>31</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.20:00</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>6</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.20:00</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>21</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.20:00</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>27</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.20:00</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>New York Giants</p></td>
+<td><p>48</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.20:00</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>33</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.20:00</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>23</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.20:00</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>26</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.20:00</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>17</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.23:05</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>3</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.23:05</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>13</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>18.10.23:15</p></td>
+<td><p>New York Jets</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>13</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>18.10.23:15</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>59</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>19.10.03:20</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>21</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.10.03:30</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>23</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.19:00</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>7</p></td>
+<td><p>35</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.19:00</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>27</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.19:00</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>6</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.19:00</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>7</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.19:00</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>24</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.19:00</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>3</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.22:05</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>New York Jets</p></td>
+<td><p>0</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.22:05</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>9</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.22:15</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>34</p></td>
+<td><p>46</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.10.22:15</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>37</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>25.10.22:15</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>45</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>26.10.02:20</p></td>
+<td><p>New York Giants</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>17</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>27.10.02:30</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>17</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.20:00</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>New York Giants</p></td>
+<td><p>40</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.20:00</p></td>
+<td><p>New York Jets</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>25</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.20:00</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>18</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.20:00</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>10</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.20:00</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>38</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.20:00</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>30</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.20:00</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>10</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.20:00</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>30</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.23:05</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>30</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.23:05</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>24</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.11.23:15</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>26</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-even"><td><p>01.11.23:15</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>21</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.11.03:30</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>35</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.20:00</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>38</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.20:00</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>27</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.20:00</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>24</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.20:00</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.20:00</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>17</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.20:00</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>21</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.20:00</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>31</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.23:05</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>32</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.23:05</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>30</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.11.23:15</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>27</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>08.11.23:15</p></td>
+<td><p>New York Giants</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>20</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>09.11.03:20</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>16</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>10.11.03:30</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>10</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.11.03:20</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>10</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.20:00</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>27</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.20:00</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>41</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.20:00</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>12</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.20:00</p></td>
+<td><p>New York Jets</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>22</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.20:00</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>27</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.20:00</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>25</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.20:00</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>23</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.20:00</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>28</p></td>
+<td><p>19</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.23:05</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>10</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.23:15</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>31</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>15.11.23:15</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>17</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.11.23:15</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>31</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>16.11.03:20</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>35</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>17.11.03:30</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>0</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p>20.11.03:20</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>17</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>7</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.20:00</p></td>
+<td><p>New York Giants</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>34</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>35</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.20:00</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>18</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.20:00</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>30</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>38</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.20:00</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>7</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.20:00</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>15</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.23:05</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>13</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.23:15</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>22.11.23:15</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>New York Jets</p></td>
+<td><p>31</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.11.23:15</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>3</p></td>
+<td><p>32</p></td>
+</tr>
+<tr class="row-even"><td><p>23.11.03:20</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>20</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>24.11.03:30</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>17</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>26.11.19:30</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>12</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>26.11.23:15</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>24</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>27.11.03:20</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>New York Giants</p></td>
+<td><p>26</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.20:00</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.20:00</p></td>
+<td><p>New York Jets</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>17</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.20:00</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>17</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.20:00</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>27</p></td>
+<td><p>35</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.20:00</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>16</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.20:00</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>31</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.20:00</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.23:05</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>20</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.23:05</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>43</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>29.11.23:15</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.11.23:15</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>36</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>30.11.03:20</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>01.12.03:30</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>38</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>04.12.03:20</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>New York Jets</p></td>
+<td><p>13</p></td>
+<td><p>19</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>30</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>24</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>22</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>13</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>23</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>27</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>23</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>17</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.20:00</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>16</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.20:00</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>7</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.23:05</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>23</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-even"><td><p>06.12.23:15</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>20</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>06.12.23:15</p></td>
+<td><p>New York Giants</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>31</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>07.12.03:20</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>30</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>08.12.03:30</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>27</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>11.12.03:20</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>13</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>New York Jets</p></td>
+<td><p>3</p></td>
+<td><p>26</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>20</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>30</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>10</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>10</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>28</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>34</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>14</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.20:00</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>48</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.20:00</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>23</p></td>
+<td><p>26</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.23:05</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>47</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>13.12.23:05</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>13</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-odd"><td><p>13.12.23:15</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>17</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>14.12.03:20</p></td>
+<td><p>New York Giants</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>38</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-odd"><td><p>15.12.03:30</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>24</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>18.12.03:20</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>31</p></td>
+<td><p>35</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.03:20</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>17</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.20:00</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.20:00</p></td>
+<td><p>New York Jets</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>7</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.20:00</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>13</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.20:00</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>34</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.20:00</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>24</p></td>
+<td><p>31</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.20:00</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>10</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.23:05</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>27</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.23:05</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.23:15</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>7</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.23:15</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>37</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-even"><td><p>20.12.23:15</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>27</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-odd"><td><p>20.12.23:15</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>31</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>21.12.03:20</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>26</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>22.12.03:30</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>New York Giants</p></td>
+<td><p>12</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-even"><td><p>26.12.02:30</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>17</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>23</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.20:00</p></td>
+<td><p>New York Giants</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>9</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>17</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.20:00</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>35</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>20</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.20:00</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>48</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>23</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.20:00</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>17</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.20:00</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>31</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.23:05</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>20</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.23:05</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>31</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>27.12.23:15</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>30</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>27.12.23:15</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>New York Jets</p></td>
+<td><p>15</p></td>
+<td><p>29</p></td>
+</tr>
+<tr class="row-even"><td><p>28.12.03:20</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>0</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>29.12.03:30</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>36</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Tampa Bay Buccaneers</p></td>
+<td><p>Atlanta Falcons</p></td>
+<td><p>10</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.20:00</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>New York Giants</p></td>
+<td><p>44</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Miami Dolphins</p></td>
+<td><p>Pittsburgh Steelers</p></td>
+<td><p>24</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.20:00</p></td>
+<td><p>Los Angeles Rams</p></td>
+<td><p>San Francisco 49ers</p></td>
+<td><p>6</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Houston Texans</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>34</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.20:00</p></td>
+<td><p>Detroit Lions</p></td>
+<td><p>Chicago Bears</p></td>
+<td><p>23</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Cleveland Browns</p></td>
+<td><p>Jacksonville Jaguars</p></td>
+<td><p>23</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.20:00</p></td>
+<td><p>Carolina Panthers</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>23</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.20:00</p></td>
+<td><p>Buffalo Bills</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>30</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.23:15</p></td>
+<td><p>Seattle Seahawks</p></td>
+<td><p>Tennessee Titans</p></td>
+<td><p>13</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.23:15</p></td>
+<td><p>Oakland Raiders</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>13</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.23:15</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>Washington Redskins</p></td>
+<td><p>23</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.23:15</p></td>
+<td><p>Denver Broncos</p></td>
+<td><p>Kansas City Chiefs</p></td>
+<td><p>24</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-odd"><td><p>03.01.23:15</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>24</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>03.01.23:15</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>7</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-odd"><td><p>04.01.03:20</p></td>
+<td><p>New York Jets</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>37</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>09.01.23:30</p></td>
+<td><p>Cincinnati Bengals</p></td>
+<td><p>New York Jets</p></td>
+<td><p>14</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>10.01.03:00</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>Philadelphia Eagles</p></td>
+<td><p>34</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>10.01.20:00</p></td>
+<td><p>New England Patriots</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>14</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-odd"><td><p>10.01.23:40</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>Green Bay Packers</p></td>
+<td><p>51</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-even"><td><p>16.01.23:30</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>Arizona Cardinals</p></td>
+<td><p>45</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>17.01.03:15</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>Baltimore Ravens</p></td>
+<td><p>20</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>17.01.20:00</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>Dallas Cowboys</p></td>
+<td><p>34</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>17.01.23:40</p></td>
+<td><p>Los Angeles Chargers</p></td>
+<td><p>New York Jets</p></td>
+<td><p>14</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>24.01.22:00</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>New York Jets</p></td>
+<td><p>30</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>25.01.01:40</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>Minnesota Vikings</p></td>
+<td><p>31</p></td>
+<td><p>28</p></td>
+</tr>
+<tr class="row-even"><td><p>08.02.01:00</p></td>
+<td><p>Indianapolis Colts</p></td>
+<td><p>New Orleans Saints</p></td>
+<td><p>17</p></td>
+<td><p>31</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

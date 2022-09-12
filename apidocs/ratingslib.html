@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib package &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ratingslib.app_movies package" href="ratingslib.app_movies.html" />
+    <link rel="prev" title="Movie Rankings" href="../examples/movies/movies_rankings.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ratingslib package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>ratingslib package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib">
+<span id="ratingslib-package"></span><h1>ratingslib package<a class="headerlink" href="#module-ratingslib" title="Permalink to this heading"></a></h1>
+<section id="ratingslib-a-python-library-for-rating-methods-with-applications">
+<h2>RatingsLib: A python library for rating methods with applications<a class="headerlink" href="#ratingslib-a-python-library-for-rating-methods-with-applications" title="Permalink to this heading"></a></h2>
+<p>RatingsLib is a Python library dedicated to rating/ranking systems implementation
+with applications in sports and other fields.</p>
+<dl class="simple">
+<dt>Applications:</dt><dd><ol class="arabic simple">
+<li><p>Sports</p></li>
+<li><p>Finance</p></li>
+<li><p>Domain names</p></li>
+<li><p>Movies</p></li>
+</ol>
+</dd>
+</dl>
+</section>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.app_movies.tests.html">ratingslib.app_movies.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ratingslib.app_movies.tests.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.app_movies.preparedata.html">ratingslib.app_movies.preparedata module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.app_sports.tests.html">ratingslib.app_sports.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ratingslib.app_sports.tests.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.app_sports.methods.html">ratingslib.app_sports.methods module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.datasets.filenames.html">ratingslib.datasets.filenames module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.datasets.parameters.html">ratingslib.datasets.parameters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.datasets.parse.html">ratingslib.datasets.parse module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.datasets.preprocess.html">ratingslib.datasets.preprocess module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.datasets.soccer.html">ratingslib.datasets.soccer module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.ratings.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.tests.html">ratingslib.ratings.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ratingslib.ratings.tests.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.ratings.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.accurate.html">ratingslib.ratings.accurate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.aggregation.html">ratingslib.ratings.aggregation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.colley.html">ratingslib.ratings.colley module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.elo.html">ratingslib.ratings.elo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.keener.html">ratingslib.ratings.keener module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.markov.html">ratingslib.ratings.markov module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.massey.html">ratingslib.ratings.massey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.methods.html">ratingslib.ratings.methods module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.metrics.html">ratingslib.ratings.metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.od.html">ratingslib.ratings.od module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.rating.html">ratingslib.ratings.rating module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.winloss.html">ratingslib.ratings.winloss module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.tests.test_all.html">ratingslib.tests.test_all module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.utils.tests.html">ratingslib.utils.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ratingslib.utils.tests.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.utils.enums.html">ratingslib.utils.enums module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.utils.logmsg.html">ratingslib.utils.logmsg module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.utils.methods.html">ratingslib.utils.methods module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.utils.validation.html">ratingslib.utils.validation module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../examples/movies/movies_rankings.html" class="btn btn-neutral float-left" title="Movie Rankings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ratingslib.app_movies.html" class="btn btn-neutral float-right" title="ratingslib.app_movies package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

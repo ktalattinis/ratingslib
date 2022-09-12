@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib.ratings.elo module &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ratingslib.ratings.keener module" href="ratingslib.ratings.keener.html" />
+    <link rel="prev" title="ratingslib.ratings.colley module" href="ratingslib.ratings.colley.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ratingslib.html">ratingslib package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.tests.html">ratingslib.ratings.tests package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.accurate.html">ratingslib.ratings.accurate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.aggregation.html">ratingslib.ratings.aggregation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.colley.html">ratingslib.ratings.colley module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ratingslib.ratings.elo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.keener.html">ratingslib.ratings.keener module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.markov.html">ratingslib.ratings.markov module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.massey.html">ratingslib.ratings.massey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.methods.html">ratingslib.ratings.methods module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.metrics.html">ratingslib.ratings.metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.od.html">ratingslib.ratings.od module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.rating.html">ratingslib.ratings.rating module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.winloss.html">ratingslib.ratings.winloss module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="ratingslib.html">ratingslib package</a> &raquo;</li>
+          <li><a href="ratingslib.ratings.html">ratingslib.ratings package</a> &raquo;</li>
+      <li>ratingslib.ratings.elo module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.ratings.elo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib.ratings.elo">
+<span id="ratingslib-ratings-elo-module"></span><h1>ratingslib.ratings.elo module<a class="headerlink" href="#module-ratingslib.ratings.elo" title="Permalink to this heading"></a></h1>
+<p>Elo Rating System</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.ratings.elo.Elo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Elo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ratings.ELOWIN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">starting_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.elo.Elo" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RatingSystem</span></code></a></p>
+<p>Elo ranking system developed by Arpad Elo <a class="footnote-reference brackets" href="#id3" id="id1">1</a> in order to
+rank chess players, this system has been adopted by quite a lot of sports
+and organizations.</p>
+<p>This implementation includes two basic versions of Elo:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The first is called EloWin and takes into account total wins of
+items. In soccer teams the final outcome determines the
+winner.</p></li>
+<li><p>The second is called EloPoint and takes into account items scores.
+In soccer the points are the goals scored be each team.</p></li>
+</ul>
+</div></blockquote>
+<p>Note that for any kind of items, there are many ways to define the
+notion of a hypothetical matchup and then to determine scores and winners.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version</strong> (<em>str</em><em>, </em><em>default=ratings.ELOWIN</em>) – a string that shows version of rating system</p></li>
+<li><p><strong>K</strong> (<em>int</em><em>, </em><em>default=40</em>) – K-factor is the maximum possible adjustment per pair of items.
+For soccer, K–factor plays an important role because it balances the
+deviation for the goal difference in the game against prior ratings.</p></li>
+<li><p><strong>HA</strong> (<em>int</em><em>, </em><em>default=0</em>) – The home advantage factor is an adjustment that is used due to the fact
+that home teams tend to score more goals. Elo system applies the
+home-field advantage factor, by adding it to the rating of home team.
+Many implementations of Elo model for soccer, set the home-field
+advantage to 100. The default value <code class="docutils literal notranslate"><span class="pre">0</span></code> means that method does not
+take into account home advantage factor.</p></li>
+<li><p><strong>ks</strong> (<em>float</em><em>, </em><em>default=400</em>) – Parameter ξ (<code class="docutils literal notranslate"><span class="pre">ks</span></code>) affects the spread of ratings and comes from
+logistic function. For chess and soccer games usually, ξ is set to 400.</p></li>
+<li><p><strong>starting_point</strong> (<em>float</em><em>, </em><em>default = 1500</em>) – The value where the initial rating starts</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Soccer application and Elo:
+According to the type of soccer tournament the following values represents
+the K-Factor value suggested by several internet sites <a class="footnote-reference brackets" href="#id4" id="id2">2</a>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>World Cup Finals = 60</p></li>
+<li><p>Continental Championship Finals and Major Intercontinental
+tournaments = 50</p></li>
+<li><p>World Cup Qualifiers and Major Tournaments = 40</p></li>
+<li><p>All other tournaments = 30</p></li>
+<li><p>Friendly matches = 20</p></li>
+</ul>
+</div></blockquote>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Elo, A. E. (1978). The rating of chessplayers, past and present. Arco Pub.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><a class="reference external" href="http://www.eloratings.net/about">http://www.eloratings.net/about</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>The following examples demonstrates the EloWin and the EloPoint version,
+for the 20 first soccer matches that took place during the 2018-2019
+season of English Premier League.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.datasets.filenames</span> <span class="kn">import</span> <span class="n">dataset_path</span><span class="p">,</span> <span class="n">FILENAME_EPL_2018_2019_20_GAMES</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.ratings.elo</span> <span class="kn">import</span> <span class="n">Elo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.utils.enums</span> <span class="kn">import</span> <span class="n">ratings</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="n">dataset_path</span><span class="p">(</span><span class="n">FILENAME_EPL_2018_2019_20_GAMES</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Elo</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">ELOWIN</span><span class="p">,</span> <span class="n">starting_point</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">rate_from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="go">              Item     rating  ranking</span>
+<span class="go">0          Arsenal -37.707535       12</span>
+<span class="go">1      Bournemouth  37.707535        3</span>
+<span class="go">2         Brighton   2.292465        5</span>
+<span class="go">3          Burnley -18.849977        9</span>
+<span class="go">4          Cardiff -20.000000       10</span>
+<span class="go">5          Chelsea  37.707535        3</span>
+<span class="go">6   Crystal Palace   0.000000        7</span>
+<span class="go">7          Everton  20.000000        4</span>
+<span class="go">8           Fulham -37.707535       12</span>
+<span class="go">9     Huddersfield -37.707535       12</span>
+<span class="go">10       Leicester   1.150023        6</span>
+<span class="go">11       Liverpool  40.000000        1</span>
+<span class="go">12        Man City  37.707535        3</span>
+<span class="go">13      Man United  -2.292465        8</span>
+<span class="go">14       Newcastle -20.000000       10</span>
+<span class="go">15     Southampton -20.000000       10</span>
+<span class="go">16       Tottenham  37.707535        3</span>
+<span class="go">17         Watford  38.849977        2</span>
+<span class="go">18        West Ham -37.707535       12</span>
+<span class="go">19          Wolves -21.150023       11</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Elo</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">ELOPOINT</span><span class="p">,</span> <span class="n">starting_point</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">rate_from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="go">              Item     rating  ranking</span>
+<span class="go">0          Arsenal -11.592411       17</span>
+<span class="go">1      Bournemouth  12.658841        5</span>
+<span class="go">2         Brighton  -6.337388       14</span>
+<span class="go">3          Burnley  -6.091179       13</span>
+<span class="go">4          Cardiff  -9.654647       15</span>
+<span class="go">5          Chelsea  13.592411        4</span>
+<span class="go">6   Crystal Palace   0.191876       10</span>
+<span class="go">7          Everton   4.000000        8</span>
+<span class="go">8           Fulham -15.861198       18</span>
+<span class="go">9     Huddersfield -21.846379       20</span>
+<span class="go">10       Leicester   6.230248        7</span>
+<span class="go">11       Liverpool  23.141457        1</span>
+<span class="go">12        Man City  19.846379        2</span>
+<span class="go">13      Man United   0.337388        9</span>
+<span class="go">14       Newcastle  -4.345353       12</span>
+<span class="go">15     Southampton  -4.000000       11</span>
+<span class="go">16       Tottenham   9.861198        6</span>
+<span class="go">17         Watford  16.091179        3</span>
+<span class="go">18        West Ham -15.992174       19</span>
+<span class="go">19          Wolves -10.230248       16</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.elo.Elo.create_rating_vector">
+<span class="sig-name descname"><span class="pre">create_rating_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ratingslib.ratings.elo.Elo.create_rating_vector" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates Elo ratings according to pairs of items data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.elo.Elo.computation_phase">
+<span class="sig-name descname"><span class="pre">computation_phase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.elo.Elo.computation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>Nothing to compute, all computations are made in
+<a class="reference internal" href="#ratingslib.ratings.elo.Elo.create_rating_vector" title="ratingslib.ratings.elo.Elo.create_rating_vector"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ratingslib.ratings.elo.Elo.create_rating_vector()</span></code></a> method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.elo.Elo.preparation_phase">
+<span class="sig-name descname"><span class="pre">preparation_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.elo.Elo.preparation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>To be overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.elo.Elo.rate">
+<span class="sig-name descname"><span class="pre">rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ratingslib.ratings.elo.Elo.rate" title="Permalink to this definition"></a></dt>
+<dd><p>This method computes ratings for a pairwise data.
+(e.g. soccer teams games). To be overridden in subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_df</strong> (<em>pandas.DataFrame</em>) – The pairwise data.</p></li>
+<li><p><strong>items_df</strong> (<em>pandas.DataFrame</em>) – Set of items (e.g. teams) to be rated</p></li>
+<li><p><strong>sort</strong> (<em>bool</em><em>, </em><em>default=``True``.</em>) – If true, the output is sorted by rating value</p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – The column names of data file.
+See <code class="docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters.COLUMNS_DICT</span></code> for more
+details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>items_df</strong> – The set of items with their rating and ranking.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.elo.Elo.prepare_for_gridsearch_tuning">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prepare_for_gridsearch_tuning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ks_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HA_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.ratings.elo.Elo.prepare_for_gridsearch_tuning" title="Permalink to this definition"></a></dt>
+<dd><p>Create instances that are intended for tuning parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of Elo versions</p></li>
+<li><p><strong>k_range</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>float</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – List of k values. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then
+parameter is not intended for tuning</p></li>
+<li><p><strong>ks_range</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>float</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – List of ks values. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then
+parameter is not intended for tuning</p></li>
+<li><p><strong>HA_range</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>float</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – List of HA values. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then
+parameter is not intended for tuning</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rating_systems_dict</strong> – Dictionary that contains Elo instances with the
+parameters we want for tuning.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ratingslib.ratings.colley.html" class="btn btn-neutral float-left" title="ratingslib.ratings.colley module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ratingslib.ratings.keener.html" class="btn btn-neutral float-right" title="ratingslib.ratings.keener module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

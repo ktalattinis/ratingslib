@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib.app_sports.methods module &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ratingslib.datasets package" href="ratingslib.datasets.html" />
+    <link rel="prev" title="ratingslib.app_sports.tests.test_methods module" href="ratingslib.app_sports.tests.test_methods.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ratingslib.html">ratingslib package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.app_sports.tests.html">ratingslib.app_sports.tests package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ratingslib.app_sports.methods module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="ratingslib.html">ratingslib package</a> &raquo;</li>
+          <li><a href="ratingslib.app_sports.html">ratingslib.app_sports package</a> &raquo;</li>
+      <li>ratingslib.app_sports.methods module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.app_sports.methods.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib.app_sports.methods">
+<span id="ratingslib-app-sports-methods-module"></span><h1>ratingslib.app_sports.methods module<a class="headerlink" href="#module-ratingslib.app_sports.methods" title="Permalink to this heading"></a></h1>
+<p>Predictions of sport outcome without backtester</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.predict_hindsight">
+<span class="sig-name descname"><span class="pre">predict_hindsight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">teams_rating_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcome</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ratingslib.application.html#ratingslib.application.SportOutcome" title="ratingslib.application.SportOutcome"><span class="pre">SportOutcome</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MLE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RANK'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'RANK'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.predict_hindsight" title="Permalink to this definition"></a></dt>
+<dd><p>Hindsight prediction refers to predicting past games using the ratings
+of entire games.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – Data of games</p></li>
+<li><p><strong>teams_rating_df</strong> (<em>pd.DataFrame</em>) – Rating values of teams. Note that ‘rating’ column must be in the
+DataFrame columns</p></li>
+<li><p><strong>outcome</strong> (<a class="reference internal" href="ratingslib.application.html#ratingslib.application.SportOutcome" title="ratingslib.application.SportOutcome"><em>SportOutcome</em></a>) – The <cite>outcome</cite> parameter is associated with application type
+e.g. for soccer the type of outcome is
+<a class="reference internal" href="ratingslib.application.html#ratingslib.application.SoccerOutcome" title="ratingslib.application.SoccerOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.application.SoccerOutcome</span></code></a>.
+For more details see <a class="reference internal" href="ratingslib.application.html#module-ratingslib.application" title="ratingslib.application"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ratingslib.application</span></code></a> module.</p></li>
+<li><p><strong>pred_method</strong> (<em>Literal</em><em>[</em><em>'RANK'</em><em>, </em><em>'MLE'</em><em>]</em><em>, </em><em>default='RANK'</em>) – Two available methods for predictions: ‘RANK’ or ‘MLE’
+More details at <a class="reference internal" href="ratingslib.application.html#ratingslib.application.SoccerOutcome" title="ratingslib.application.SoccerOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.application.SoccerOutcome</span></code></a></p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – A dictionary mapping the column names of the dataset.
+See the module <a class="reference internal" href="ratingslib.datasets.parameters.html#module-ratingslib.datasets.parameters" title="ratingslib.datasets.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters</span></code></a> for more details</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pred : List of predictions
+Y : Correct outcome values</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[list, list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.accuracy_results">
+<span class="sig-name descname"><span class="pre">accuracy_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_Y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.accuracy_results" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the accuracy results in a percentage and as
+correctly classified samples.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>test_Y</strong> (<em>list</em>) – Ground truth (correct) labels.</p></li>
+<li><p><strong>predictions</strong> (<em>list</em>) – Predicted labels</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>accuracy</strong> (<em>float</em>) – Accuracy metric</p></li>
+<li><p><strong>correct</strong> (<em>int</em>) – Correctly classified samples</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.show_list_of_accuracy_results">
+<span class="sig-name descname"><span class="pre">show_list_of_accuracy_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_Y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.app_sports.methods.show_list_of_accuracy_results" title="Permalink to this definition"></a></dt>
+<dd><p>Show accuracy results for a list of models</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>names_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Model name list</p></li>
+<li><p><strong>test_Y</strong> (<em>list</em>) – List of correct labels</p></li>
+<li><p><strong>predictions_list</strong> (<em>list</em>) – List that contains lists of predicted labels</p></li>
+<li><p><strong>print_predictions</strong> (<em>bool</em>) – If True then predictions are printed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.classification_details">
+<span class="sig-name descname"><span class="pre">classification_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_Y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.classification_details" title="Permalink to this definition"></a></dt>
+<dd><p>Return classification details for a prediction model based on
+truth labels and predictions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of prediction model</p></li>
+<li><p><strong>test_Y</strong> (<em>list</em>) – List of correct labels</p></li>
+<li><p><strong>pred</strong> (<em>list</em>) – List of predictions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Classification details as string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcome</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ratingslib.application.html#ratingslib.application.SportOutcome" title="ratingslib.application.SportOutcome"><span class="pre">SportOutcome</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_test</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_from_week</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">walk_forward_window_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_accuracy_report</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_classification_report</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for predict soccer match results</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>Union</em><em>[</em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>pd.DataFrame</em><em>]</em><em>, </em><em>pd.DataFrame</em><em>]</em>) – Data of games in a dictionary or in a DataFrame. If dictionary passed
+then the key is the season and value is the data.</p></li>
+<li><p><strong>outcome</strong> (<a class="reference internal" href="ratingslib.application.html#ratingslib.application.SportOutcome" title="ratingslib.application.SportOutcome"><em>SportOutcome</em></a>) – The <code class="docutils literal notranslate"><span class="pre">outcome</span></code> parameter is related with
+application type. For sports application it must be an instance
+of subclass of SportOutcome class.
+e.g. for soccer the type of outcome is
+<a class="reference internal" href="ratingslib.application.html#ratingslib.application.SoccerOutcome" title="ratingslib.application.SoccerOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.application.SoccerOutcome</span></code></a>.
+For more details see <a class="reference internal" href="ratingslib.application.html#module-ratingslib.application" title="ratingslib.application"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ratingslib.application</span></code></a> module.</p></li>
+<li><p><strong>pred_method</strong> (<em>Union</em><em>[</em><em>Literal</em><em>[</em><em>'MLE'</em><em>, </em><em>'RANK'</em><em>]</em><em>, </em><em>sklearn.base.BaseEstimator</em><em>]</em>) – Three available methods for predictions: ‘RANK’ or ‘MLE’
+or a scikit classifier.
+More details for ‘RANK’ or ‘MLE’ at <a class="reference internal" href="ratingslib.application.html#ratingslib.application.SoccerOutcome" title="ratingslib.application.SoccerOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.application.SoccerOutcome</span></code></a></p></li>
+<li><p><strong>features_names</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of feature names (each name refer to a column of the data)</p></li>
+<li><p><strong>data_test</strong> (<em>Optional</em><em>[</em><em>pd.DataFrame</em><em>]</em><em>, </em><em>default=None</em>) – The test set. If data_test is passed then split and start_from_week
+parameters are ignored</p></li>
+<li><p><strong>split</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – If float, should be between 0.0 and 1.0 and represent the proportion
+of the dataset to include in the test split. If int, represents the
+absolute number of test samples.</p></li>
+<li><p><strong>start_from_week</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>default=None</em>) – The match week that the walk-forward procedure starts predictions</p></li>
+<li><p><strong>walk_forward_window_size</strong> (<em>int</em><em>, </em><em>default = -1</em>) – Only valid if week is not <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">-1</span></code> then walk-forward procedure will not run.
+For example if walk_forward_window_size is <code class="docutils literal notranslate"><span class="pre">1</span></code> then
+the window size of walk-forward is one week.</p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>, </em><em>default=None</em>) – The column names of data file.
+See <code class="docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters.COLUMNS_DICT</span></code> for more
+details.</p></li>
+<li><p><strong>print_accuracy_report</strong> (<em>bool</em><em>, </em><em>default=True</em>) – If <cite>True</cite> accuracy report will be printed</p></li>
+<li><p><strong>print_classification_report</strong> (<em>bool</em><em>, </em><em>default=True</em>) – If <cite>True</cite>, the classification report will be printed</p></li>
+<li><p><strong>print_predictions</strong> (<em>bool</em><em>, </em><em>default=False</em>) – If <cite>True</cite>, the predictions will be printed</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions._select_X_Y">
+<span class="sig-name descname"><span class="pre">_select_X_Y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SimpleNamespace</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions._select_X_Y" title="Permalink to this definition"></a></dt>
+<dd><p>Selects from data the given features. In this function we remove the
+non-rated weeks.
+Non rated weeks is the case where all instances have the same value
+(e.g. massey case: sometimes massey rating system requires more data
+and as a result it starts from 4th week to rate teams. This means
+that the second and third week have rating 0 for all teams.
+First is not included if we have selected to remove it during
+preprocess</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – Games data</p></li>
+<li><p><strong>features</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of feature names (each name refer to a column of the data)</p></li>
+<li><p><strong>col_names</strong> (<em>SimpleNamespace</em>) – A simple object subclass that provides attribute access to its
+namespace. The attributes are the keys of <code class="xref py py-attr docutils literal notranslate"><span class="pre">columns_dict</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>data_X</strong> (<em>pandas.DataFrame</em>) – Dataset that includes only the features after removing
+not rated weeks, if they have found.</p></li>
+<li><p><strong>data_Y</strong> (<em>pandas.DataFrame</em>) – Dataset that contains only the outcomes after removing
+not rated weeks, if they have found.</p></li>
+<li><p><strong>data</strong> (<em>pandas.DataFrame</em>) – Dataset after removing not rated weeks. If non rated weeks not
+found returns the dataset without any changes.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions._predict">
+<span class="sig-name descname"><span class="pre">_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MLE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RANK'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">BaseEstimator</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_Y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions._predict" title="Permalink to this definition"></a></dt>
+<dd><p>Train first according to the given method and then predict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pred_method</strong> (<em>Union</em><em>[</em><em>Literal</em><em>[</em><em>'MLE'</em><em>, </em><em>'RANK'</em><em>]</em><em>, </em><em>sklearn.base.BaseEstimator</em><em>]</em>) – Three available methods for predictions: ‘RANK’ or ‘MLE’ or a scikit classifier
+More details for ‘RANK’ or ‘MLE’ at <a class="reference internal" href="ratingslib.application.html#ratingslib.application.SoccerOutcome" title="ratingslib.application.SoccerOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.application.SoccerOutcome</span></code></a></p></li>
+<li><p><strong>train_X</strong> (<em>pd.DataFrame</em>) – The training set that includes only the features</p></li>
+<li><p><strong>train_Y</strong> (<em>pd.Series</em>) – The outcome labels of training set</p></li>
+<li><p><strong>test_X</strong> (<em>pd.DataFrame</em>) – The outcome labels of test set</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The predictions for the target outcome and the
+predictions distribution</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions._train_and_test">
+<span class="sig-name descname"><span class="pre">_train_and_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MLE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RANK'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">BaseEstimator</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions._train_and_test" title="Permalink to this definition"></a></dt>
+<dd><p>Training and testing based on the given method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pred_method</strong> (<em>Union</em><em>[</em><em>Literal</em><em>[</em><em>'MLE'</em><em>, </em><em>'RANK'</em><em>]</em><em>, </em><em>sklearn.base.BaseEstimator</em><em>]</em>) – Three available methods for predictions: ‘RANK’ or ‘MLE’ or a scikit classifier
+More details for ‘RANK’ or ‘MLE’ at <a class="reference internal" href="ratingslib.application.html#ratingslib.application.SoccerOutcome" title="ratingslib.application.SoccerOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.application.SoccerOutcome</span></code></a></p></li>
+<li><p><strong>features_names</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of feature names (each name refer to a column of the data)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>test_Y (The outcome labels of test set) and predictions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions.classifier_features_repr">
+<span class="sig-name descname"><span class="pre">classifier_features_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions.classifier_features_repr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions.ml_pred">
+<span class="sig-name descname"><span class="pre">ml_pred</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BaseEstimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions.ml_pred" title="Permalink to this definition"></a></dt>
+<dd><p>Predict with ml classifiers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>clf</strong> (<em>sklearn.base.BaseEstimator</em>) – A scikit classifier instance</p></li>
+<li><p><strong>features_names</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of feature names (each name refer to a column of the data)</p></li>
+<li><p><strong>to_dict</strong> (<em>bool</em><em>, </em><em>default = False</em>) – If <cite>True</cite> then results will be returned as a dictionary where
+the key is the name of clf</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Prediction results as tuple (test_Y, predictions) or
+dictionary {clf_repr: (test_Y, predictions)}</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[Tuple[List, List], dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions.ml_pred_parallel">
+<span class="sig-name descname"><span class="pre">ml_pred_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clf_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">BaseEstimator</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features_names_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions.ml_pred_parallel" title="Permalink to this definition"></a></dt>
+<dd><p>Runs the ml predictions to test each one of the classifiers from the
+given list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>clf_list</strong> (<em>List</em><em>[</em><em>sklearn.base.BaseEstimator</em><em>]</em>) – List of scikit estimators</p></li>
+<li><p><strong>features_names_list</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List that contains list of feature names
+(each name refer to a column of the data)</p></li>
+<li><p><strong>n_jobs</strong> (<em>int</em><em>, </em><em>default=-1</em>) – Number of jobs to run in parallel.
+<code class="docutils literal notranslate"><span class="pre">-1</span></code> means using all processors.
+<code class="docutils literal notranslate"><span class="pre">None</span></code> means 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary that maps classifier represenations to their
+test_Y (The outcome labels of test set) and predictions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions.rs_pred">
+<span class="sig-name descname"><span class="pre">rs_pred</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MLE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RANK'</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions.rs_pred" title="Permalink to this definition"></a></dt>
+<dd><p>Prediction with one of two available methods: MLE or RANK</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pred_method</strong> (<em>Literal</em><em>[</em><em>'MLE'</em><em>, </em><em>'RANK'</em><em>]</em>) – Two available methods for predictions: ‘RANK’ or ‘MLE’
+More details at <a class="reference internal" href="ratingslib.application.html#ratingslib.application.SoccerOutcome" title="ratingslib.application.SoccerOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.application.SoccerOutcome</span></code></a></p></li>
+<li><p><strong>ratings</strong> (<a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a>) – Rating system instance</p></li>
+<li><p><strong>to_dict</strong> (<em>bool</em><em>, </em><em>default = False</em>) – If <cite>True</cite> then results will be returned as a dictionary where
+the key is the name of pred_method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>prediction results as tuple (test_Y, predictions) or dictionary
+{pred_name: (test_Y, predictions)}</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Union[Tuple[List, List], dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions.rs_pred_parallel">
+<span class="sig-name descname"><span class="pre">rs_pred_parallel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_methods_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MLE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RANK'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating_systems</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions.rs_pred_parallel" title="Permalink to this definition"></a></dt>
+<dd><p>Runs the rating prediction for each one from the methods in the
+given list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pred_methods_list</strong> (<em>List</em><em>[</em><em>Literal</em><em>[</em><em>'MLE'</em><em>, </em><em>'RANK'</em><em>]</em><em>]</em>) – List of prediction methods</p></li>
+<li><p><strong>rating_systems</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>] or </em><em>List</em><em>[</em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>]</em><em>]</em><em>] or </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em> or </em><em>None</em><em>, </em><em>default=None</em>) – If type is dictionary then it is mapping names (or rating keys) to
+rating systems.
+If type is list of rating systems instances then it firstly converted
+to dictionary.
+If type is RatingSystem instance then it firstly converted
+to dictionary.
+If it is set to <code class="docutils literal notranslate"><span class="pre">None</span></code> then rating values are not included in data
+attributes for preparation.</p></li>
+<li><p><strong>n_jobs</strong> (<em>int</em><em>, </em><em>default=-1</em>) – Number of jobs to run in parallel.
+<code class="docutils literal notranslate"><span class="pre">-1</span></code> means using all processors.
+<code class="docutils literal notranslate"><span class="pre">None</span></code> means 1</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary that maps prediction name method to results per
+rating system</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions.rs_tuning_params">
+<span class="sig-name descname"><span class="pre">rs_tuning_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratings_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predict_with</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MLE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RANK'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">BaseEstimator</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_norm_ratings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'accuracy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions.rs_tuning_params" title="Permalink to this definition"></a></dt>
+<dd><p>Tuning of rating systems parameters for the given metric
+with grid-search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ratings_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>]</em>) – Dictionary that maps names to ratings. Note that ratings are stored in
+a <cite>pandas.DataFrame</cite>.</p></li>
+<li><p><strong>predict_with</strong> (<em>Union</em><em>[</em><em>Literal</em><em>[</em><em>'MLE'</em><em>, </em><em>'RANK'</em><em>]</em><em>, </em><em>sklearn.base.BaseEstimator</em><em>]</em>) – Three available methods for predictions: ‘RANK’ or ‘MLE’ or
+a scikit classifier.
+More details for ‘RANK’ or ‘MLE’ at <a class="reference internal" href="ratingslib.application.html#ratingslib.application.SoccerOutcome" title="ratingslib.application.SoccerOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.application.SoccerOutcome</span></code></a></p></li>
+<li><p><strong>use_norm_ratings</strong> (<em>bool</em><em>, </em><em>default=True</em>) – if <cite>True</cite> then normalized rating values</p></li>
+<li><p><strong>metric_name</strong> (<em>str</em><em>, </em><em>default='accuracy'</em>) – The optimization metric, available metrics name at
+<a class="reference external" href="https://scikit-learn.org/stable/modules/model_evaluation.html">https://scikit-learn.org/stable/modules/model_evaluation.html</a></p></li>
+<li><p><strong>maximize</strong> (<em>bool</em><em>, </em><em>default = True</em>) – If True the maximize, else minimize</p></li>
+<li><p><strong>print_out</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Print results if True</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – All keyword arguments are passed to _score_func of scikit</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>best</strong> – Dictionary that maps rating system versions with best values</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.Predictions.ml_tuning_params">
+<span class="sig-name descname"><span class="pre">ml_tuning_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clf_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">BaseEstimator</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'accuracy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_out</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.app_sports.methods.Predictions.ml_tuning_params" title="Permalink to this definition"></a></dt>
+<dd><p>Tuning the classifiers hyper-parameters for
+the given metric with grid-search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>clf_list</strong> (<em>List</em><em>[</em><em>sklearn.base.BaseEstimator</em><em>]</em>) – List of scikit estimators</p></li>
+<li><p><strong>features_names_list</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – List that contains list of feature names
+(each name refer to a column of the data)</p></li>
+<li><p><strong>metric_name</strong> (<em>str</em><em>, </em><em>default='accuracy'</em>) – The optimization metric, available metrics name at
+<a class="reference external" href="https://scikit-learn.org/stable/modules/model_evaluation.html">https://scikit-learn.org/stable/modules/model_evaluation.html</a></p></li>
+<li><p><strong>maximize</strong> (<em>bool</em><em>, </em><em>default = True</em>) – If True the maximize, else minimize</p></li>
+<li><p><strong>print_out</strong> (<em>bool</em><em>, </em><em>default=True</em>) – Print results if True</p></li>
+<li><p><strong>n_jobs</strong> (<em>int</em><em>, </em><em>default=-1</em>) – Number of jobs to run in parallel.
+<code class="docutils literal notranslate"><span class="pre">-1</span></code> means using all processors.
+<code class="docutils literal notranslate"><span class="pre">None</span></code> means 1</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – All keyword arguments are passed to _score_func of scikit</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>best</strong> – Dictionary that maps classifier representations with best values</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.rating_norm_features">
+<span class="sig-name descname"><span class="pre">rating_norm_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratings</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.rating_norm_features" title="Permalink to this definition"></a></dt>
+<dd><p>Function to use normalized ratings as ml features
+For example: For AccuRATE:
+=&gt; for Home = H + ratingnorm + key = HratingnormAccuRATE
+=&gt; for Away = A + ratingnorm + key = AratingnormAccuRATE</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rating_systems</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>] or </em><em>List</em><em>[</em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>]</em><em>]</em><em>] or </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em> or </em><em>None</em><em>, </em><em>default=None</em>) – If type is dictionary then it is mapping names (or rating keys) to
+rating systems.
+If type is list of rating systems instances then it firstly converted
+to dictionary.
+If type is RatingSystem instance then it firstly converted
+to dictionary.
+If it is set to <code class="docutils literal notranslate"><span class="pre">None</span></code> then rating values are not included in data
+attributes for preparation.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>features</strong> – List of normalized features (each name refer to a column of the data)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.enter_values">
+<span class="sig-name descname"><span class="pre">enter_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">teams_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">teams_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating_systems</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_attributes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.enter_values" title="Permalink to this definition"></a></dt>
+<dd><p>Enter the calculated values (from rating and statistic attributes)
+for each data-instance and return the data. Also, truncation is applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – Games data with statistics and rating values for the teams</p></li>
+<li><p><strong>teams_df</strong> (<em>pd.DataFrame</em>) – Set of teams.</p></li>
+<li><p><strong>teams_dict</strong> (<em>Dict</em><em>[</em><em>Any</em><em>, </em><em>int</em><em>]</em>) – <p>Dictionary that maps teams’ names to integer value.
+For instance</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">teams_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Arsenal&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s1">&#39;Aston Villa&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s1">&#39;Birmingham&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+              <span class="s1">&#39;Blackburn&#39;</span><span class="p">:</span> <span class="mi">3</span>
+              <span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>rating_systems</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>] or </em><em>List</em><em>[</em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>]</em><em>]</em><em>] or </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em> or </em><em>None</em><em>, </em><em>default=None</em>) – If type is dictionary then it is mapping names (or rating keys) to
+rating systems.
+If type is list of rating systems instances then it firstly converted
+to dictionary.
+If type is RatingSystem instance then it firstly converted
+to dictionary.
+If it is set to <code class="docutils literal notranslate"><span class="pre">None</span></code> then rating values are not included in data
+attributes for preparation.</p></li>
+<li><p><strong>stats_attributes</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>Any</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – The statistic attributes
+e.g. soccer sport: TW (Total Wins), TG (Total Goals),
+TS (Total Shots), TST (Total Shots on Target).</p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – A dictionary mapping the column names of the dataset.
+See the module <a class="reference internal" href="ratingslib.datasets.parameters.html#module-ratingslib.datasets.parameters" title="ratingslib.datasets.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters</span></code></a> for more details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data_truncate_df</strong> – Completed data-instances</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods._create_rating_data">
+<span class="sig-name descname"><span class="pre">_create_rating_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rs_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_train</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">teams_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.app_sports.methods._create_rating_data" title="Permalink to this definition"></a></dt>
+<dd><p>Rate teams and also create column for normalized rating values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rs_name</strong> (<em>str</em>) – Name of rating system (from the key of dictionary)</p></li>
+<li><p><strong>rs</strong> (<a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a>) – RatingSystem instance</p></li>
+<li><p><strong>data_train</strong> (<em>pd.DataFrame</em>) – Games data for training</p></li>
+<li><p><strong>teams_df</strong> (<em>pd.DataFrame</em>) – Set of teams.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>teams_df</strong> – Teams DataFrame with rating values, and normalized rating values.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.prepare_sport_dataset">
+<span class="sig-name descname"><span class="pre">prepare_sport_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_season</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">teams_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating_systems</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_week</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preprocess</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ratingslib.datasets.preprocess.html#ratingslib.datasets.preprocess.Preprocess" title="ratingslib.datasets.preprocess.Preprocess"><span class="pre">Preprocess</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">BasicPreprocess()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.prepare_sport_dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Prepares the sport dataset in order to enter values of ratings and
+calculated games statistics to the teams every match-week.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_season</strong> (<em>pd.DataFrame</em>) – Games data of season</p></li>
+<li><p><strong>teams_df</strong> (<em>pd.DataFrame</em>) – Set of teams</p></li>
+<li><p><strong>rating_systems</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>] or </em><em>List</em><em>[</em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>]</em><em>]</em><em>] or </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em> or </em><em>None</em><em>, </em><em>default=None</em>) – If type is dictionary then it is mapping names (or rating keys) to
+rating systems.
+If type is list of rating systems instances then it firstly converted
+to dictionary.
+If type is RatingSystem instance then it firstly converted
+to dictionary.
+If it is set to <code class="docutils literal notranslate"><span class="pre">None</span></code> then rating values are not included in data
+attributes for preparation.</p></li>
+<li><p><strong>stats_attributes</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>Any</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – The statistic attributes
+e.g. soccer sport: TW (Total Wins), TG (Total Goals),
+TS (Total Shots), TST (Total Shots on Target).</p></li>
+<li><p><strong>start_week</strong> (<em>int</em><em>, </em><em>optional</em>) – The match-week that rating procedure starts. For example if match-week
+is 4 then rating of teams will start from 4th week. Each week ratings
+are computed based on the previous weeks. e.g. 7th week -&gt; 1,2,3,4,5,6</p></li>
+<li><p><strong>preprocess</strong> (<a class="reference internal" href="ratingslib.datasets.preprocess.html#ratingslib.datasets.preprocess.Preprocess" title="ratingslib.datasets.preprocess.Preprocess"><em>Preprocess</em></a>) – The preprocess procedure for the dataset. It must be an instance of
+subclass of <a class="reference internal" href="ratingslib.datasets.preprocess.html#ratingslib.datasets.preprocess.Preprocess" title="ratingslib.datasets.preprocess.Preprocess"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.datasets.preprocess.Preprocess</span></code></a></p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – A dictionary mapping the column names of the dataset.
+See the module <a class="reference internal" href="ratingslib.datasets.parameters.html#module-ratingslib.datasets.parameters" title="ratingslib.datasets.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters</span></code></a> for more details</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DataFrame of prepared data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_sports.methods.prepare_sports_seasons">
+<span class="sig-name descname"><span class="pre">prepare_sports_seasons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filenames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcome</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="ratingslib.application.html#ratingslib.application.SportOutcome" title="ratingslib.application.SportOutcome"><span class="pre">SportOutcome</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating_systems</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><span class="pre">RatingSystem</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_week</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preprocess</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ratingslib.datasets.preprocess.html#ratingslib.datasets.preprocess.Preprocess" title="ratingslib.datasets.preprocess.Preprocess"><span class="pre">Preprocess</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">BasicPreprocess()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.app_sports.methods.prepare_sports_seasons" title="Permalink to this definition"></a></dt>
+<dd><p>Prepares datasets for multiple files that are passed as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filenames</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em><em>]</em>) – Filename or dictionary that maps seasons to filename paths.
+e.g. {2009: ‘sports/pl2009.csv’}</p></li>
+<li><p><strong>outcome</strong> (<a class="reference internal" href="ratingslib.application.html#ratingslib.application.SportOutcome" title="ratingslib.application.SportOutcome"><em>SportOutcome</em></a>) – The <cite>outcome</cite> parameter is associated with application type
+e.g. for soccer the type of outcome is
+<a class="reference internal" href="ratingslib.application.html#ratingslib.application.SoccerOutcome" title="ratingslib.application.SoccerOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.application.SoccerOutcome</span></code></a>.
+For more details see <a class="reference internal" href="ratingslib.application.html#module-ratingslib.application" title="ratingslib.application"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ratingslib.application</span></code></a> module.</p></li>
+<li><p><strong>rating_systems</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>] or </em><em>List</em><em>[</em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em>]</em><em>]</em><em>] or </em><a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><em>RatingSystem</em></a><em> or </em><em>None</em><em>, </em><em>default=None</em>) – If type is dictionary then it is mapping names (or rating keys) to
+rating systems.
+If type is list of rating systems instances then it firstly converted
+to dictionary.
+If type is RatingSystem instance then it firstly converted
+to dictionary.
+If it is set to <code class="docutils literal notranslate"><span class="pre">None</span></code> then rating values are not included in data
+attributes for preparation.</p></li>
+<li><p><strong>stats_attributes</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>Any</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – The statistic attributes
+e.g. soccer sport: TW (Total Wins), TG (Total Goals),
+TS (Total Shots), TST (Total Shots on Target).</p></li>
+<li><p><strong>start_week</strong> (<em>int</em><em>, </em><em>optional</em>) – The match-week that rating procedure starts. For example if match-week
+is 4 then rating of teams will start from 4th week. Each week ratings
+are computed based on the previous weeks. e.g. 7th week -&gt; 1,2,3,4,5,6</p></li>
+<li><p><strong>preprocess</strong> (<a class="reference internal" href="ratingslib.datasets.preprocess.html#ratingslib.datasets.preprocess.Preprocess" title="ratingslib.datasets.preprocess.Preprocess"><em>Preprocess</em></a>) – The preprocess procedure for the dataset. It must be an instance of
+subclass of <a class="reference internal" href="ratingslib.datasets.preprocess.html#ratingslib.datasets.preprocess.Preprocess" title="ratingslib.datasets.preprocess.Preprocess"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.datasets.preprocess.Preprocess</span></code></a></p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>default=None</em>) – A dictionary mapping the column names of the dataset.
+See the module <a class="reference internal" href="ratingslib.datasets.parameters.html#module-ratingslib.datasets.parameters" title="ratingslib.datasets.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters</span></code></a> for more details</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data_seasons_dict</strong> – Dictionary that maps season to DataFrame prepared data. Note that if
+only one filename passed then the dictionary will be returned with
+the following structure {1: data}</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict[int, pd.DataFrame]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ratingslib.app_sports.tests.test_methods.html" class="btn btn-neutral float-left" title="ratingslib.app_sports.tests.test_methods module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ratingslib.datasets.html" class="btn btn-neutral float-right" title="ratingslib.datasets package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

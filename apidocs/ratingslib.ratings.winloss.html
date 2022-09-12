@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib.ratings.winloss module &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ratingslib.tests package" href="ratingslib.tests.html" />
+    <link rel="prev" title="ratingslib.ratings.rating module" href="ratingslib.ratings.rating.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ratingslib.html">ratingslib package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.tests.html">ratingslib.ratings.tests package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.accurate.html">ratingslib.ratings.accurate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.aggregation.html">ratingslib.ratings.aggregation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.colley.html">ratingslib.ratings.colley module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.elo.html">ratingslib.ratings.elo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.keener.html">ratingslib.ratings.keener module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.markov.html">ratingslib.ratings.markov module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.massey.html">ratingslib.ratings.massey module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.methods.html">ratingslib.ratings.methods module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.metrics.html">ratingslib.ratings.metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.od.html">ratingslib.ratings.od module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.ratings.rating.html">ratingslib.ratings.rating module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ratingslib.ratings.winloss module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="ratingslib.html">ratingslib package</a> &raquo;</li>
+          <li><a href="ratingslib.ratings.html">ratingslib.ratings package</a> &raquo;</li>
+      <li>ratingslib.ratings.winloss module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.ratings.winloss.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib.ratings.winloss">
+<span id="ratingslib-ratings-winloss-module"></span><h1>ratingslib.ratings.winloss module<a class="headerlink" href="#module-ratingslib.ratings.winloss" title="Permalink to this heading"></a></h1>
+<p>WinLoss Rating System</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.ratings.winloss.Winloss">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Winloss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ratings.WINLOSS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.winloss.Winloss" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="ratingslib.ratings.rating.html#ratingslib.ratings.rating.RatingSystem" title="ratingslib.ratings.rating.RatingSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">RatingSystem</span></code></a></p>
+<p>The traditional rating method which is popular in the field of sports.
+In the case of sports teams the method takes into account
+the total wins of each team. The first-ranked team is the team
+with the most wins.
+Note that for any kind of items, there are many ways to define the
+notion of a hypothetical matchup and then to determine scores and winners.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version</strong> (<em>str</em><em>, </em><em>default=ratings.WINLOSS</em>) – A string that shows the version of rating system. The available
+versions can be found in <a class="reference internal" href="ratingslib.utils.enums.html#ratingslib.utils.enums.ratings" title="ratingslib.utils.enums.ratings"><code class="xref py py-class docutils literal notranslate"><span class="pre">ratingslib.utils.enums.ratings</span></code></a> class.</p></li>
+<li><p><strong>normalization</strong> (<em>bool</em><em>, </em><em>default = True</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code> then the result will be normalized according to the total
+times each item occurs in the dataset.
+For example in sport teams set normalization = <code class="docutils literal notranslate"><span class="pre">True</span></code> if the teams
+haven’t played same number of games. This means that each element of
+W vector is divided by the total number of games played by the
+respective team.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.ratings.winloss.Winloss.W">
+<span class="sig-name descname"><span class="pre">W</span></span><a class="headerlink" href="#ratingslib.ratings.winloss.Winloss.W" title="Permalink to this definition"></a></dt>
+<dd><p>The WinLoss vector for items of shape (n,)
+where n = the total number of items. Each element of vector represents
+the total wins of the respective item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<p>The following example demonstrates Winloss rating system,
+for the 20 first soccer matches that took place during the 2018-2019
+season of English Premier League.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.datasets.filenames</span> <span class="kn">import</span> <span class="n">dataset_path</span><span class="p">,</span> <span class="n">FILENAME_EPL_2018_2019_20_GAMES</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.ratings.winloss</span> <span class="kn">import</span> <span class="n">Winloss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="n">dataset_path</span><span class="p">(</span><span class="n">FILENAME_EPL_2018_2019_20_GAMES</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Winloss</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">rate_from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="go">              Item  rating  ranking</span>
+<span class="go">0          Arsenal     0.0        3</span>
+<span class="go">1      Bournemouth     2.0        1</span>
+<span class="go">2         Brighton     1.0        2</span>
+<span class="go">3          Burnley     0.0        3</span>
+<span class="go">4          Cardiff     0.0        3</span>
+<span class="go">5          Chelsea     2.0        1</span>
+<span class="go">6   Crystal Palace     1.0        2</span>
+<span class="go">7          Everton     1.0        2</span>
+<span class="go">8           Fulham     0.0        3</span>
+<span class="go">9     Huddersfield     0.0        3</span>
+<span class="go">10       Leicester     1.0        2</span>
+<span class="go">11       Liverpool     2.0        1</span>
+<span class="go">12        Man City     2.0        1</span>
+<span class="go">13      Man United     1.0        2</span>
+<span class="go">14       Newcastle     0.0        3</span>
+<span class="go">15     Southampton     0.0        3</span>
+<span class="go">16       Tottenham     2.0        1</span>
+<span class="go">17         Watford     2.0        1</span>
+<span class="go">18        West Ham     0.0        3</span>
+<span class="go">19          Wolves     0.0        3</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.winloss.Winloss.computation_phase">
+<span class="sig-name descname"><span class="pre">computation_phase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.winloss.Winloss.computation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>All the calculations are made in
+<a class="reference internal" href="#ratingslib.ratings.winloss.Winloss.create_win_loss_vector" title="ratingslib.ratings.winloss.Winloss.create_win_loss_vector"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ratingslib.ratings.winloss.Winloss.create_win_loss_vector()</span></code></a> method.
+Winloss vector is the rating vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.winloss.Winloss.create_win_loss_vector">
+<span class="sig-name descname"><span class="pre">create_win_loss_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#ratingslib.ratings.winloss.Winloss.create_win_loss_vector" title="Permalink to this definition"></a></dt>
+<dd><p>Construction of WinLoss vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.winloss.Winloss.preparation_phase">
+<span class="sig-name descname"><span class="pre">preparation_phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.winloss.Winloss.preparation_phase" title="Permalink to this definition"></a></dt>
+<dd><p>To be overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.ratings.winloss.Winloss.rate">
+<span class="sig-name descname"><span class="pre">rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#ratingslib.ratings.winloss.Winloss.rate" title="Permalink to this definition"></a></dt>
+<dd><p>This method computes ratings for a pairwise data.
+(e.g. soccer teams games). To be overridden in subclasses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_df</strong> (<em>pandas.DataFrame</em>) – The pairwise data.</p></li>
+<li><p><strong>items_df</strong> (<em>pandas.DataFrame</em>) – Set of items (e.g. teams) to be rated</p></li>
+<li><p><strong>sort</strong> (<em>bool</em><em>, </em><em>default=``True``.</em>) – If true, the output is sorted by rating value</p></li>
+<li><p><strong>columns_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) – The column names of data file.
+See <code class="docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters.COLUMNS_DICT</span></code> for more
+details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>items_df</strong> – The set of items with their rating and ranking.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ratingslib.ratings.rating.html" class="btn btn-neutral float-left" title="ratingslib.ratings.rating module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ratingslib.tests.html" class="btn btn-neutral float-right" title="ratingslib.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

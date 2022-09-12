@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib.app_movies.preparedata module &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ratingslib.app_sports package" href="ratingslib.app_sports.html" />
+    <link rel="prev" title="ratingslib.app_movies.tests.test_preparedata module" href="ratingslib.app_movies.tests.test_preparedata.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ratingslib.html">ratingslib package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ratingslib.app_movies.tests.html">ratingslib.app_movies.tests package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ratingslib.app_movies.preparedata module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.application.html">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="ratingslib.html">ratingslib package</a> &raquo;</li>
+          <li><a href="ratingslib.app_movies.html">ratingslib.app_movies package</a> &raquo;</li>
+      <li>ratingslib.app_movies.preparedata module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.app_movies.preparedata.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib.app_movies.preparedata">
+<span id="ratingslib-app-movies-preparedata-module"></span><h1>ratingslib.app_movies.preparedata module<a class="headerlink" href="#module-ratingslib.app_movies.preparedata" title="Permalink to this heading"></a></h1>
+<p>Module for data preparation for movies
+The dataset used <a class="footnote-reference brackets" href="#id3" id="id1">1</a> is obtained from: <a class="reference external" href="https://grouplens.org/datasets/movielens/">https://grouplens.org/datasets/movielens/</a> and it has the following details:
+Small: 100,000 ratings and 3,600 tag applications applied to 9,000 movies by 600 users. Last updated 9/2018.
+Link: <a class="reference external" href="https://files.grouplens.org/datasets/movielens/ml-latest-small.zip">https://files.grouplens.org/datasets/movielens/ml-latest-small.zip</a>
+More details for the dataset used can be found at: <a class="reference external" href="https://files.grouplens.org/datasets/movielens/ml-latest-small-README.html">https://files.grouplens.org/datasets/movielens/ml-latest-small-README.html</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.app_movies.preparedata.create_movie_users">
+<span class="sig-name descname"><span class="pre">create_movie_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">movies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_votes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.app_movies.preparedata.create_movie_users" title="Permalink to this definition"></a></dt>
+<dd><p>Data preparation for data movies. Creates user-movie matrix and
+maps movie ids to movie details.
+This function is based on the structure of MovieLens dataset <a class="footnote-reference brackets" href="#id3" id="id2">1</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ratings</strong> (<em>pd.DataFrame</em>) – DataFrame of user ratings</p></li>
+<li><p><strong>movies</strong> (<em>pd.DataFrame</em>) – DataFrame of movies</p></li>
+<li><p><strong>min_votes</strong> (<em>int</em>) – Minimum number of total votes per user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>user_movie_df<span class="classifier">pd.DataFrame</span></dt><dd><p>User - Movie matrix</p>
+</dd>
+<dt>movie_ratings_df<span class="classifier">pd.DataFrame</span></dt><dd><p>User - Movie matrix with movie details</p>
+</dd>
+<dt>movies_dict<span class="classifier">dict</span></dt><dd><p>Dictionary that maps movie ids to movie attributes</p>
+</dd>
+<dt>id_titles_dict<span class="classifier">dict</span></dt><dd><p>Dictionary that maps movie ids to titles</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[pd.DataFrame, pd.DataFrame, dict, dict]</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>F. Maxwell Harper and Joseph A. Konstan. 2015.
+The MovieLens Datasets: History and Context.
+ACM Transactions on Interactive Intelligent Systems (TiiS) 5, 4: 19:1–19:19. &lt;<a class="reference external" href="https://doi.org/10.1145/2827872">https://doi.org/10.1145/2827872</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.app_movies.preparedata</span> <span class="kn">import</span> <span class="n">create_movie_users</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ratingslib.datasets.filenames</span> <span class="kn">import</span> <span class="n">MOVIES_SMALL_PATH</span><span class="p">,</span> <span class="n">datasets_paths</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">MIN_VOTES</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filename_ratings</span><span class="p">,</span> <span class="n">filename_movies</span> <span class="o">=</span> <span class="n">datasets_paths</span><span class="p">(</span><span class="n">MOVIES_SMALL_PATH</span><span class="o">+</span><span class="s2">&quot;ratings.csv&quot;</span><span class="p">,</span> <span class="n">MOVIES_SMALL_PATH</span><span class="o">+</span><span class="s2">&quot;movies.csv&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ratings_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename_ratings</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">movies_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename_movies</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user_movie_df</span><span class="p">,</span> <span class="n">mr_df</span><span class="p">,</span> <span class="n">movies_dict</span><span class="p">,</span> <span class="n">id_titles_dict</span> <span class="o">=</span> <span class="n">create_movie_users</span><span class="p">(</span>
+<span class="go">    ratings_df, movies_df, min_votes=MIN_VOTES)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ratingslib.app_movies.tests.test_preparedata.html" class="btn btn-neutral float-left" title="ratingslib.app_movies.tests.test_preparedata module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ratingslib.app_sports.html" class="btn btn-neutral float-right" title="ratingslib.app_sports package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

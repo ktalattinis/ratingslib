@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soccer Data &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/ratingslib.html">ratingslib package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Soccer Data</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/examples/sports/soccer_data.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="soccer-data">
+<h1>Soccer Data<a class="headerlink" href="#soccer-data" title="Permalink to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following game statistics have been selected:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>FTHG = Full Time Home Team Goals</p></li>
+<li><p>FTAG = Full Time Away Team Goals</p></li>
+<li><p>HS = Home Team Shots</p></li>
+<li><p>AS = Away Team Shots</p></li>
+<li><p>HST = Home Team Shots on Target</p></li>
+<li><p>AST = Away Team Shots on Target</p></li>
+<li><p>FTR= Full Time Result (H=Home Win, D=Draw, A=Away Win)</p></li>
+</ul>
+</div></blockquote>
+<p>In a soccer match there are three possible outcomes, namely, the win of the home team or the win of the visiting team or the draw.</p>
+</div>
+<p class="rubric" id="soccer-data-20first">Soccer Data: The first 20 games of EPL (2018-2019 season)</p>
+<table class="colwidths-given docutils align-default" id="label1">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Date</p></th>
+<th class="head"><p>HomeTeam</p></th>
+<th class="head"><p>AwayTeam</p></th>
+<th class="head"><p>FTHG</p></th>
+<th class="head"><p>FTAG</p></th>
+<th class="head"><p>HS</p></th>
+<th class="head"><p>AS</p></th>
+<th class="head"><p>HST</p></th>
+<th class="head"><p>AST</p></th>
+<th class="head"><p>FTR</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10/08/2018</p></td>
+<td><p>Man United</p></td>
+<td><p>Leicester</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>8</p></td>
+<td><p>13</p></td>
+<td><p>6</p></td>
+<td><p>4</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>11/08/2018</p></td>
+<td><p>Bournemouth</p></td>
+<td><p>Cardiff</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>10</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-even"><td><p>11/08/2018</p></td>
+<td><p>Fulham</p></td>
+<td><p>Crystal Palace</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>15</p></td>
+<td><p>10</p></td>
+<td><p>6</p></td>
+<td><p>9</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>11/08/2018</p></td>
+<td><p>Huddersfield</p></td>
+<td><p>Chelsea</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+<td><p>13</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>11/08/2018</p></td>
+<td><p>Newcastle</p></td>
+<td><p>Tottenham</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>15</p></td>
+<td><p>15</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>11/08/2018</p></td>
+<td><p>Watford</p></td>
+<td><p>Brighton</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>19</p></td>
+<td><p>6</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-even"><td><p>11/08/2018</p></td>
+<td><p>Wolves</p></td>
+<td><p>Everton</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>11</p></td>
+<td><p>6</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>12/08/2018</p></td>
+<td><p>Arsenal</p></td>
+<td><p>Man City</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>9</p></td>
+<td><p>17</p></td>
+<td><p>3</p></td>
+<td><p>8</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>12/08/2018</p></td>
+<td><p>Liverpool</p></td>
+<td><p>West Ham</p></td>
+<td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>18</p></td>
+<td><p>5</p></td>
+<td><p>8</p></td>
+<td><p>2</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>12/08/2018</p></td>
+<td><p>Southampton</p></td>
+<td><p>Burnley</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>18</p></td>
+<td><p>16</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>18/08/2018</p></td>
+<td><p>Cardiff</p></td>
+<td><p>Newcastle</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>12</p></td>
+<td><p>1</p></td>
+<td><p>6</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>18/08/2018</p></td>
+<td><p>Chelsea</p></td>
+<td><p>Arsenal</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>24</p></td>
+<td><p>15</p></td>
+<td><p>11</p></td>
+<td><p>6</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-even"><td><p>18/08/2018</p></td>
+<td><p>Everton</p></td>
+<td><p>Southampton</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>13</p></td>
+<td><p>15</p></td>
+<td><p>7</p></td>
+<td><p>4</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>18/08/2018</p></td>
+<td><p>Leicester</p></td>
+<td><p>Wolves</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>6</p></td>
+<td><p>11</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-even"><td><p>18/08/2018</p></td>
+<td><p>Tottenham</p></td>
+<td><p>Fulham</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>25</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>3</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>18/08/2018</p></td>
+<td><p>West Ham</p></td>
+<td><p>Bournemouth</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>19/08/2018</p></td>
+<td><p>Brighton</p></td>
+<td><p>Man United</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>9</p></td>
+<td><p>3</p></td>
+<td><p>3</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>19/08/2018</p></td>
+<td><p>Burnley</p></td>
+<td><p>Watford</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>19/08/2018</p></td>
+<td><p>Man City</p></td>
+<td><p>Huddersfield</p></td>
+<td><p>6</p></td>
+<td><p>1</p></td>
+<td><p>32</p></td>
+<td><p>5</p></td>
+<td><p>14</p></td>
+<td><p>1</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>20/08/2018</p></td>
+<td><p>Crystal Palace</p></td>
+<td><p>Liverpool</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>8</p></td>
+<td><p>16</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>A</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric" id="soccer-data-third">Soccer Data: The 3rd match-week of EPL (2018-2019 season)</p>
+<table class="colwidths-given docutils align-default" id="label2">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Date</p></th>
+<th class="head"><p>HomeTeam</p></th>
+<th class="head"><p>AwayTeam</p></th>
+<th class="head"><p>FTHG</p></th>
+<th class="head"><p>FTAG</p></th>
+<th class="head"><p>HS</p></th>
+<th class="head"><p>AS</p></th>
+<th class="head"><p>HST</p></th>
+<th class="head"><p>AST</p></th>
+<th class="head"><p>FTR</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>25/08/2018</p></td>
+<td><p>Arsenal</p></td>
+<td><p>West Ham</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>17</p></td>
+<td><p>13</p></td>
+<td><p>10</p></td>
+<td><p>5</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>25/08/2018</p></td>
+<td><p>Bournemouth</p></td>
+<td><p>Everton</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>17</p></td>
+<td><p>11</p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>25/08/2018</p></td>
+<td><p>Huddersfield</p></td>
+<td><p>Cardiff</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>14</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>25/08/2018</p></td>
+<td><p>Liverpool</p></td>
+<td><p>Brighton</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>22</p></td>
+<td><p>6</p></td>
+<td><p>8</p></td>
+<td><p>2</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-even"><td><p>25/08/2018</p></td>
+<td><p>Southampton</p></td>
+<td><p>Leicester</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>11</p></td>
+<td><p>8</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-odd"><td><p>25/08/2018</p></td>
+<td><p>Wolves</p></td>
+<td><p>Man City</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>11</p></td>
+<td><p>18</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>26/08/2018</p></td>
+<td><p>Fulham</p></td>
+<td><p>Burnley</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>25</p></td>
+<td><p>12</p></td>
+<td><p>12</p></td>
+<td><p>2</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>26/08/2018</p></td>
+<td><p>Newcastle</p></td>
+<td><p>Chelsea</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>15</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>26/08/2018</p></td>
+<td><p>Watford</p></td>
+<td><p>Crystal Palace</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>13</p></td>
+<td><p>9</p></td>
+<td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>27/08/2018</p></td>
+<td><p>Man United</p></td>
+<td><p>Tottenham</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>23</p></td>
+<td><p>9</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>A</p></td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a class="reference external" href="https://www.football-data.co.uk/data.php">https://www.football-data.co.uk/data.php</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

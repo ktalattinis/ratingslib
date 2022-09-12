@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domain Names Ranking &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Domain market Example" href="notebooks/domainmarket.html" />
+    <link rel="prev" title="Portfolios Example" href="../finance/notebooks/portfolios.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Applications &amp; Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../sports/sports.html">Sports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../finance/finance.html">Finance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Domain Names Ranking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="notebooks/domainmarket.html">Domain market Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../movies/movies.html">Movies</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/ratingslib.html">ratingslib package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../examples.html">Applications &amp; Examples</a> &raquo;</li>
+      <li>Domain Names Ranking</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/examples/domain_names/domain_names.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="domain-names-ranking">
+<h1>Domain Names Ranking<a class="headerlink" href="#domain-names-ranking" title="Permalink to this heading"></a></h1>
+<p>In this application we present modifications of the sports teams rating methods, in order to use them in ranking of domain names.
+This kind of ranking is considered important because it is associated with the formation of the price at which domain names can be sold.
+Specifically, these two figures are proportional amounts, i.e., the higher the rank of a domain name, the higher its selling price will be.
+This is an illustrative example that is included in the paper <a class="footnote-reference brackets" href="#id2" id="id1">1</a>:</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Talattinis, K., Zervopoulou, C., &amp; Stephanides, G. (2014, June). Ranking Domain Names Using Various Rating Methods. Proceedings of the Ninth International Multi-Conference on Computing in the Global Information Technology (pp. 107-114). Seville: IARIA.</p>
+</dd>
+</dl>
+<p>In this example, there are five domain names that have been sold in early 2014,
+which are jean.com, desirous.com, authorization.com, true.com and finally, peaked.com.
+We will attempt to rank these domains based on search volume average they get by
+Google trends during 2013.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following statistics have been selected:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>TrendsI = score of google trends relative search volume for domain name i</p></li>
+<li><p>TrendsJ = score of google trends relative search volume for domain name j</p></li>
+</ul>
+</div></blockquote>
+</div>
+<p class="rubric">Domain Names Example</p>
+<table class="docutils align-default" id="label1">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>DomainNameI</p></th>
+<th class="head"><p>DomainNameJ</p></th>
+<th class="head"><p>TrendsI</p></th>
+<th class="head"><p>TrendsJ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>jean.com</p></td>
+<td><p>desirous.com</p></td>
+<td><p>88</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>jean.com</p></td>
+<td><p>authorization.com</p></td>
+<td><p>88</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>jean.com</p></td>
+<td><p>true.com</p></td>
+<td><p>76</p></td>
+<td><p>73</p></td>
+</tr>
+<tr class="row-odd"><td><p>jean.com</p></td>
+<td><p>peaked.com</p></td>
+<td><p>88</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>desirous.com</p></td>
+<td><p>authorization.com</p></td>
+<td><p>1</p></td>
+<td><p>93</p></td>
+</tr>
+<tr class="row-odd"><td><p>desirous.com</p></td>
+<td><p>true.com</p></td>
+<td><p>0</p></td>
+<td><p>73</p></td>
+</tr>
+<tr class="row-even"><td><p>desirous.com</p></td>
+<td><p>peaked.com</p></td>
+<td><p>20</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-odd"><td><p>authorization.com</p></td>
+<td><p>true.com</p></td>
+<td><p>3</p></td>
+<td><p>73</p></td>
+</tr>
+<tr class="row-even"><td><p>authorization.com</p></td>
+<td><p>peaked.com</p></td>
+<td><p>93</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>true.com</p></td>
+<td><p>peaked.com</p></td>
+<td><p>73</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/domainmarket.html">Domain market Example</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../finance/notebooks/portfolios.html" class="btn btn-neutral float-left" title="Portfolios Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="notebooks/domainmarket.html" class="btn btn-neutral float-right" title="Domain market Example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

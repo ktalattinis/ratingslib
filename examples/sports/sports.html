@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sports &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data from football-data.co.uk" href="soccer_get_data.html" />
+    <link rel="prev" title="Applications &amp; Examples" href="../examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Applications &amp; Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="soccer_get_data.html">Data from football-data.co.uk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_ratings.html">Rating/Ranking Soccer Teams Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_rankings_compare.html">Comparisons of Ranking List Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_predictions.html">Foresight and Hindsight Predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_rs.html">Rating systems and predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_ml.html">Combination of rating systems and ML methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nfl_ratings.html">Ranking NFL Teams Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../finance/finance.html">Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_names/domain_names.html">Domain Names Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movies/movies.html">Movies</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/ratingslib.html">ratingslib package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../examples.html">Applications &amp; Examples</a> &raquo;</li>
+      <li>Sports</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/examples/sports/sports.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="sports">
+<h1>Sports<a class="headerlink" href="#sports" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="soccer_get_data.html">Data from football-data.co.uk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soccer_ratings.html">Rating/Ranking Soccer Teams Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_winloss.html">WinLoss Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_colley.html">Colley Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_massey.html">Massey Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_keener.html">Keener Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_elowin.html">Elo-Win Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_elopoint.html">Elo-Point Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_od.html">Offense Defense Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_accurate.html">AccuRATE Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_gem.html">GeM (Markov) Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soccer_rankings_compare.html">Comparisons of Ranking List Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soccer_predictions.html">Foresight and Hindsight Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="soccer_rs.html">Rating systems and predictions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_rs_2009_2018.html">Prediction of soccer outcome by combining rating and ML methods (2009/10 to 2017/18 EPL)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="soccer_ml.html">Combination of rating systems and ML methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_ml_1.html">Prediction of soccer outcome (2009-2010 EPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_ml_rs_stats.html">Prediction of soccer outcome (2009-2010 EPL) by combining game statistics and rating values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_ml_2009_2018.html">Prediction of soccer outcome by combining rating and ML methods (2009/10 to 2017/18 EPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_ml_rs_tuning.html">Tuning ELO parameters (2009-2010 EPL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/soccer_ml_clf_tuning.html">Tuning KNN hyper-parameters (2009-2010 EPL)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nfl_ratings.html">Ranking NFL Teams Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/nfl_keener.html">Keener Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/nfl_elowin.html">Elo-Win Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/nfl_elopoint.html">Elo-Point Example</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../examples.html" class="btn btn-neutral float-left" title="Applications &amp; Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="soccer_get_data.html" class="btn btn-neutral float-right" title="Data from football-data.co.uk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparisons of Ranking List Example &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Foresight and Hindsight Predictions" href="soccer_predictions.html" />
+    <link rel="prev" title="GeM (Markov) Example" href="notebooks/soccer_gem.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">Applications &amp; Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sports.html">Sports</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="soccer_get_data.html">Data from football-data.co.uk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_ratings.html">Rating/Ranking Soccer Teams Example</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Comparisons of Ranking List Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_predictions.html">Foresight and Hindsight Predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_rs.html">Rating systems and predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="soccer_ml.html">Combination of rating systems and ML methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nfl_ratings.html">Ranking NFL Teams Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../finance/finance.html">Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../domain_names/domain_names.html">Domain Names Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movies/movies.html">Movies</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../apidocs/ratingslib.html">ratingslib package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../examples.html">Applications &amp; Examples</a> &raquo;</li>
+          <li><a href="sports.html">Sports</a> &raquo;</li>
+      <li>Comparisons of Ranking List Example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/examples/sports/soccer_rankings_compare.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="comparisons-of-ranking-list-example">
+<h1>Comparisons of Ranking List Example<a class="headerlink" href="#comparisons-of-ranking-list-example" title="Permalink to this heading"></a></h1>
+<p>An example of code is provided to illustrate the rating of teams with various methods and then to compare the ranking lists.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Teams ratings are produced by the following methods:</p>
+<ul class="simple">
+<li><p>WinLoss</p></li>
+<li><p>Colley</p></li>
+<li><p>Massey</p></li>
+<li><p>Elo (win version)</p></li>
+<li><p>Elo (points version)</p></li>
+<li><p>Keener</p></li>
+<li><p>OffenseDefense</p></li>
+<li><p>AccuRATE</p></li>
+<li><p>GeM</p></li>
+</ul>
+</li>
+<li><p>Ranking lists are compared with Kendall tau</p></li>
+<li><p>In this example we have considered the first 20 matches of EPL 2018-2019</p></li>
+</ol>
+</div></blockquote>
+<dl class="simple">
+<dt>Data</dt><dd><p><a class="reference internal" href="soccer_data.html#soccer-data-20first"><span class="std std-ref">Soccer Data: The first 20 games of EPL (2018-2019 season)</span></a></p>
+</dd>
+</dl>
+<section id="python-code">
+<h2>Python code<a class="headerlink" href="#python-code" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Ranking Lists comparisons&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">ratingslib.ratings</span> <span class="k">as</span> <span class="nn">rl</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="linenos"> 5</span><span class="kn">from</span> <span class="nn">ratingslib.datasets.filenames</span> <span class="kn">import</span> <span class="p">(</span><span class="n">FILENAME_EPL_2018_2019_20_GAMES</span><span class="p">,</span>
+<span class="linenos"> 6</span>                                           <span class="n">dataset_path</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="kn">from</span> <span class="nn">ratingslib.ratings.methods</span> <span class="kn">import</span> <span class="n">rating_systems_to_dict</span>
+<span class="linenos"> 8</span><span class="kn">from</span> <span class="nn">ratingslib.ratings.metrics</span> <span class="kn">import</span> <span class="n">kendall_tau_table</span>
+<span class="linenos"> 9</span><span class="kn">from</span> <span class="nn">ratingslib.utils.enums</span> <span class="kn">import</span> <span class="n">ratings</span>
+<span class="linenos">10</span><span class="kn">from</span> <span class="nn">ratingslib.utils.methods</span> <span class="kn">import</span> <span class="n">print_info</span><span class="p">,</span> <span class="n">print_pandas</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="c1"># ==========================================================================</span>
+<span class="linenos">13</span><span class="c1"># Rating teams for the FILENAME_EPL_2018_2019_20_GAMES that contains the first</span>
+<span class="linenos">14</span><span class="c1"># two match weeks of EPL 2018-2019</span>
+<span class="linenos">15</span><span class="c1"># ==========================================================================</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="n">stats_markov_dict</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">18</span>    <span class="s1">&#39;TW&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;VOTE&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;ITEM_I&#39;</span><span class="p">:</span> <span class="s1">&#39;FTHG&#39;</span><span class="p">,</span> <span class="s1">&#39;ITEM_J&#39;</span><span class="p">:</span> <span class="s1">&#39;FTAG&#39;</span><span class="p">,</span>
+<span class="linenos">19</span>           <span class="s1">&#39;METHOD&#39;</span><span class="p">:</span> <span class="s1">&#39;VotingWithLosses&#39;</span><span class="p">},</span>
+<span class="linenos">20</span>    <span class="s1">&#39;TG&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;VOTE&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;ITEM_I&#39;</span><span class="p">:</span> <span class="s1">&#39;FTHG&#39;</span><span class="p">,</span> <span class="s1">&#39;ITEM_J&#39;</span><span class="p">:</span> <span class="s1">&#39;FTAG&#39;</span><span class="p">,</span>
+<span class="linenos">21</span>           <span class="s1">&#39;METHOD&#39;</span><span class="p">:</span> <span class="s1">&#39;WinnersAndLosersVotePoint&#39;</span><span class="p">},</span>
+<span class="linenos">22</span>    <span class="s1">&#39;TST&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;VOTE&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;ITEM_I&#39;</span><span class="p">:</span> <span class="s1">&#39;HST&#39;</span><span class="p">,</span> <span class="s1">&#39;ITEM_J&#39;</span><span class="p">:</span> <span class="s1">&#39;AST&#39;</span><span class="p">,</span>
+<span class="linenos">23</span>            <span class="s1">&#39;METHOD&#39;</span><span class="p">:</span> <span class="s1">&#39;WinnersAndLosersVotePoint&#39;</span><span class="p">},</span>
+<span class="linenos">24</span>    <span class="s1">&#39;TS&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;VOTE&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;ITEM_I&#39;</span><span class="p">:</span> <span class="s1">&#39;HS&#39;</span><span class="p">,</span> <span class="s1">&#39;ITEM_J&#39;</span><span class="p">:</span> <span class="s1">&#39;AS&#39;</span><span class="p">,</span>
+<span class="linenos">25</span>           <span class="s1">&#39;METHOD&#39;</span><span class="p">:</span> <span class="s1">&#39;WinnersAndLosersVotePoint&#39;</span><span class="p">},</span>
+<span class="linenos">26</span><span class="p">}</span>
+<span class="linenos">27</span><span class="n">attributes_votes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TW&#39;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span> <span class="s1">&#39;TG&#39;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span> <span class="s1">&#39;TST&#39;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span> <span class="s1">&#39;TS&#39;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">}</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="n">ratings_list</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos">30</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Winloss</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">31</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Colley</span><span class="p">(),</span>
+<span class="linenos">32</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Massey</span><span class="p">(),</span>
+<span class="linenos">33</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Elo</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">ELOWIN</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">ks</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">HA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">34</span>           <span class="n">starting_point</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos">35</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Elo</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">ELOPOINT</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">ks</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">HA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos">36</span>           <span class="n">starting_point</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos">37</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Keener</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">38</span>    <span class="n">rl</span><span class="o">.</span><span class="n">OffenseDefense</span><span class="p">(</span><span class="n">tol</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">),</span>
+<span class="linenos">39</span>    <span class="n">rl</span><span class="o">.</span><span class="n">Markov</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">stats_markov_dict</span><span class="o">=</span><span class="n">stats_markov_dict</span><span class="p">),</span>
+<span class="linenos">40</span>    <span class="n">rl</span><span class="o">.</span><span class="n">AccuRate</span><span class="p">()</span>
+<span class="linenos">41</span><span class="p">]</span>
+<span class="linenos">42</span><span class="n">ratings_dict</span> <span class="o">=</span> <span class="n">rating_systems_to_dict</span><span class="p">(</span><span class="n">ratings_list</span><span class="p">,</span> <span class="n">key_based_on</span><span class="o">=</span><span class="s1">&#39;version&#39;</span><span class="p">)</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="n">filename</span> <span class="o">=</span> <span class="n">dataset_path</span><span class="p">(</span><span class="n">FILENAME_EPL_2018_2019_20_GAMES</span><span class="p">)</span>
+<span class="linenos">45</span><span class="c1"># Dictionary that maps column names of csv files</span>
+<span class="linenos">46</span><span class="n">COLUMNS_DICT</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">47</span>    <span class="s1">&#39;item_i&#39;</span><span class="p">:</span> <span class="s1">&#39;HomeTeam&#39;</span><span class="p">,</span>
+<span class="linenos">48</span>    <span class="s1">&#39;item_j&#39;</span><span class="p">:</span> <span class="s1">&#39;AwayTeam&#39;</span><span class="p">,</span>
+<span class="linenos">49</span>    <span class="s1">&#39;points_i&#39;</span><span class="p">:</span> <span class="s1">&#39;FTHG&#39;</span><span class="p">,</span>
+<span class="linenos">50</span>    <span class="s1">&#39;points_j&#39;</span><span class="p">:</span> <span class="s1">&#39;FTAG&#39;</span><span class="p">,</span>
+<span class="linenos">51</span>    <span class="s1">&#39;ts_i&#39;</span><span class="p">:</span> <span class="s1">&#39;HS&#39;</span><span class="p">,</span>
+<span class="linenos">52</span>    <span class="s1">&#39;ts_j&#39;</span><span class="p">:</span> <span class="s1">&#39;AS&#39;</span><span class="p">,</span>
+<span class="linenos">53</span>    <span class="s1">&#39;tst_i&#39;</span><span class="p">:</span> <span class="s1">&#39;HST&#39;</span><span class="p">,</span>
+<span class="linenos">54</span>    <span class="s1">&#39;tst_j&#39;</span><span class="p">:</span> <span class="s1">&#39;AST&#39;</span><span class="p">,</span>
+<span class="linenos">55</span><span class="p">}</span>
+<span class="linenos">56</span><span class="n">rating_values_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">rate_from_file</span><span class="p">(</span>
+<span class="linenos">57</span>    <span class="n">filename</span><span class="p">,</span> <span class="n">columns_dict</span><span class="o">=</span><span class="n">COLUMNS_DICT</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">ratings_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="linenos">58</span>
+<span class="linenos">59</span><span class="c1"># Print Ratings and Rankings</span>
+<span class="linenos">60</span><span class="n">print_info</span><span class="p">(</span><span class="s2">&quot;Rating and ranking results&quot;</span><span class="p">)</span>
+<span class="linenos">61</span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="linenos">62</span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;float_format&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+<span class="linenos">63</span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rating_values_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="linenos">64</span>    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="linenos">65</span>    <span class="n">print_pandas</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="linenos">66</span>    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="linenos">67</span>
+<span class="linenos">68</span>
+<span class="linenos">69</span><span class="c1"># ==========================================================================</span>
+<span class="linenos">70</span><span class="c1"># Kendall Tau comparison of ranking lists.</span>
+<span class="linenos">71</span><span class="c1"># ==========================================================================</span>
+<span class="linenos">72</span><span class="n">print_info</span><span class="p">(</span><span class="s2">&quot;Kendall Tau comparison of ranking lists&quot;</span><span class="p">)</span>
+<span class="linenos">73</span><span class="n">kendall_tau_results</span> <span class="o">=</span> <span class="n">kendall_tau_table</span><span class="p">(</span>
+<span class="linenos">74</span>    <span class="n">ratings_dict</span><span class="o">=</span><span class="n">rating_values_dict</span><span class="p">,</span> <span class="n">print_out</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">75</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h2>
+<p>The results of rating values are the same with <a class="reference internal" href="soccer_ratings.html"><span class="std std-ref">Rating/Ranking Soccer Teams Example</span></a></p>
+<p>The table below compares the ranking lists generated by the rating methods.
+The lower diagonal elements represent Kendall’s tau values of each pair, while the upper diagonal elements the p-values of each pair from the two-sided hypothesis test,
+whose null hypothesis is an absence of association.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=====Kendall Tau comparison of ranking lists=====</span>
+<span class="go">               Winloss   Colley  Massey    EloWin  EloPoint    Keener OffenseDefense  Markov  AccuRATE</span>
+<span class="go">Winloss            1.0  5.9e-06  0.0631  4.92e-06   1.6e-05  6.06e-06         0.0385   0.194  8.15e-06</span>
+<span class="go">Colley           0.831      1.0   0.111   7.1e-08  6.28e-06  1.78e-06         0.0347  0.0739  7.02e-06</span>
+<span class="go">Massey           0.339     0.26     1.0      0.14     0.186     0.186          0.186  0.0468     0.205</span>
+<span class="go">EloWin           0.859    0.907   0.247       1.0  5.17e-07  1.82e-07         0.0279  0.0821  2.46e-07</span>
+<span class="go">EloPoint         0.786    0.737   0.221     0.839       1.0  1.37e-13         0.0336  0.0638  1.28e-08</span>
+<span class="go">Keener           0.824     0.78   0.221     0.872     0.937       1.0         0.0336  0.0638  5.93e-09</span>
+<span class="go">OffenseDefense   0.377    0.345   0.221     0.367     0.347     0.347            1.0   0.288    0.0551</span>
+<span class="go">Markov           0.236    0.292  -0.326     0.291     0.305     0.305          0.179     1.0    0.0639</span>
+<span class="go">AccuRATE         0.818    0.738   0.207     0.868     0.928      0.95          0.313   0.302       1.0</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="notebooks/soccer_gem.html" class="btn btn-neutral float-left" title="GeM (Markov) Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="soccer_predictions.html" class="btn btn-neutral float-right" title="Foresight and Hindsight Predictions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

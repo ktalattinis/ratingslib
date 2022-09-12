@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ratingslib.application module &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="ratingslib.utils.validation module" href="ratingslib.utils.validation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Applications &amp; Examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="ratingslib.html">ratingslib package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_movies.html">ratingslib.app_movies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.app_sports.html">ratingslib.app_sports package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.datasets.html">ratingslib.datasets package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.ratings.html">ratingslib.ratings package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.tests.html">ratingslib.tests package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ratingslib.utils.html">ratingslib.utils package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ratingslib.application module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="ratingslib.html">ratingslib package</a> &raquo;</li>
+      <li>ratingslib.application module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidocs/ratingslib.application.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-ratingslib.application">
+<span id="ratingslib-application-module"></span><h1>ratingslib.application module<a class="headerlink" href="#module-ratingslib.application" title="Permalink to this heading"></a></h1>
+<p>Module for the outcome of application</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.application.Outcome">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Outcome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcomes_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.application.Outcome" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>A base class for the outcome of application</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.Outcome.get_outcomes">
+<span class="sig-name descname"><span class="pre">get_outcomes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ratingslib.application.Outcome.get_outcomes" title="Permalink to this definition"></a></dt>
+<dd><p>Creates and returns a dictionary with outcomes.
+The keys are the possible outcomes that defined by the property of
+<code class="docutils literal notranslate"><span class="pre">outcomes_list</span></code> and the values of the dictionary are
+positive integers. For example for three possible outcomes then the
+values are 1,2,3.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.Outcome.set_col_indices">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_col_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pairs_data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.application.Outcome.set_col_indices" title="Permalink to this definition"></a></dt>
+<dd><p>To be overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.Outcome._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ratingslib.application.Outcome._abc_impl" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.application.SportOutcome">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SportOutcome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcomes_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.application.SportOutcome" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ratingslib.application.Outcome" title="ratingslib.application.Outcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">Outcome</span></code></a></p>
+<p>An abstract class for Outcome. The term of outcome is related with
+application type. For example in sports like soccer for every matchup
+between two teams there are three possible final outcomes:
+Home Win, Away Win and Draw.
+In other applications like a backgammon game, there are two possible
+outcomes. Another example with two possible outcomes is the under 2.5 goals
+or over 2.5 goals in soccer. Under 2.5 means that the total number of
+goals scored during the match will be under or 2 and over means 3 or above.
+Also in soccer if the outcome is defined by the final score this
+means that there are many possible results e.g. (0-0, 0-1, 1-0, 1-1, etc.).</p>
+<p>Extend this class and override abstract methods to define the application
+outcomes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of outcome. In soccer possible outcomes names are
+‘FT’ (from Full Time) or ‘FTR’ (from Full Time Result).</p></li>
+<li><p><strong>outcomes_list</strong> (<em>list</em>) – The list of outcome names.</p></li>
+<li><p><strong>columns_dict</strong> (<em>dict</em><em>, </em><em>default=None</em>) – A dictionary mapping the column names of the dataset.
+See the module <a class="reference internal" href="ratingslib.datasets.parameters.html#module-ratingslib.datasets.parameters" title="ratingslib.datasets.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ratingslib.datasets.parameters</span></code></a> for more details.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.SportOutcome.outcomes_dict">
+<span class="sig-name descname"><span class="pre">outcomes_dict</span></span><a class="headerlink" href="#ratingslib.application.SportOutcome.outcomes_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Outcome names mapped to their values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.SportOutcome.outcomes_values_list">
+<span class="sig-name descname"><span class="pre">outcomes_values_list</span></span><a class="headerlink" href="#ratingslib.application.SportOutcome.outcomes_values_list" title="Permalink to this definition"></a></dt>
+<dd><p>list of outcome values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.SportOutcome.outcome_value">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">outcome_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.application.SportOutcome.outcome_value" title="Permalink to this definition"></a></dt>
+<dd><p>To be overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.SportOutcome.fit_and_predict">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fit_and_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MLE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RANK'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'RANK'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ratingslib.application.SportOutcome.fit_and_predict" title="Permalink to this definition"></a></dt>
+<dd><p>To be overridden in subclasses.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.SportOutcome._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ratingslib.application.SportOutcome._abc_impl" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SoccerOutcome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.application.SoccerOutcome" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ratingslib.application.SportOutcome" title="ratingslib.application.SportOutcome"><code class="xref py py-class docutils literal notranslate"><span class="pre">SportOutcome</span></code></a></p>
+<p>In soccer the final outcome during a matchup between two teams there
+are three possible outcomes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>H : Home Win     (1)</p></li>
+<li><p>A : Away Win     (2)</p></li>
+<li><p>D : Draw         (3)</p></li>
+</ul>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#ratingslib.application.SoccerOutcome.name" title="Permalink to this definition"></a></dt>
+<dd><p>Name of outcome. In soccer possible outcome names can be set to
+‘FT’ (from Full Time) or ‘FTR’ (from Full Time Result)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.columns_odds_dict">
+<span class="sig-name descname"><span class="pre">columns_odds_dict</span></span><a class="headerlink" href="#ratingslib.application.SoccerOutcome.columns_odds_dict" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>dictionary mapping the odd columns from dataset</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>dictionary keys:</dt><dd><ul>
+<li><p><cite>H</cite> for home odds,</p></li>
+<li><p><cite>D</cite> for draw odds,</p></li>
+<li><p><cite>A</cite> for away odds</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>dictionary values:</dt><dd><p>list of column names of betting odds from selected bookmakers</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.home_points_col_index">
+<span class="sig-name descname"><span class="pre">home_points_col_index</span></span><a class="headerlink" href="#ratingslib.application.SoccerOutcome.home_points_col_index" title="Permalink to this definition"></a></dt>
+<dd><p>the index number of column for the goals of home team</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.away_points_col_index">
+<span class="sig-name descname"><span class="pre">away_points_col_index</span></span><a class="headerlink" href="#ratingslib.application.SoccerOutcome.away_points_col_index" title="Permalink to this definition"></a></dt>
+<dd><p>the index number of column for the goals of away team</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Notes</p>
+<p>The odds of the final outcome are offered from the following bookmaker
+companies:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Bet365</p></li>
+<li><p>Bet&amp;Win</p></li>
+<li><p>Interwetten</p></li>
+</ul>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.outcomes_list">
+<span class="sig-name descname"><span class="pre">outcomes_list</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['H',</span> <span class="pre">'A',</span> <span class="pre">'D']</span></em><a class="headerlink" href="#ratingslib.application.SoccerOutcome.outcomes_list" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.set_col_indices">
+<span class="sig-name descname"><span class="pre">set_col_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pairs_data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.application.SoccerOutcome.set_col_indices" title="Permalink to this definition"></a></dt>
+<dd><p>Set the indices for home and away goals</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pairs_data_df</strong> (<em>pd.DataFrame</em>) – the games data of teams</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.outcome_value">
+<span class="sig-name descname"><span class="pre">outcome_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#ratingslib.application.SoccerOutcome.outcome_value" title="Permalink to this definition"></a></dt>
+<dd><p>This method returns the outcome by given match. The decision is
+based on the goals scored by each team.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>integer value of outcome (1 = ‘H’, 2 = ‘A’, 3 = ‘D’)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome._fit">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_Y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcomes_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.application.SoccerOutcome._fit" title="Permalink to this definition"></a></dt>
+<dd><p>Find a, h parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome._fit_and_predict">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_fit_and_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_Y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcomes_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MLE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RANK'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'RANK'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.application.SoccerOutcome._fit_and_predict" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.fit_and_predict">
+<span class="sig-name descname"><span class="pre">fit_and_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'MLE'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'RANK'</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'RANK'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.application.SoccerOutcome.fit_and_predict" title="Permalink to this definition"></a></dt>
+<dd><p>Fit and predict the final outcome</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_X</strong> (<em>numpy.ndarray</em>) – The training set that includes only the features</p></li>
+<li><p><strong>train_Y</strong> (<em>numpy.ndarray</em>) – The outcome labels of training set</p></li>
+<li><p><strong>test_X</strong> (<em>numpy.ndarray</em>) – The outcome labels of test set</p></li>
+<li><p><strong>method</strong> (<em>Literal</em><em>[</em><em>'MLE'</em><em>, </em><em>'RANK'</em><em>]</em><em>, </em><em>default='RANK'</em>) – Two available methods for predictions: ‘RANK’ or ‘MLE’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The predictions for the target outcome and the
+predictions distribution</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.predict_from_ratings_mle">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">predict_from_ratings_mle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rating_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating_away</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcomes_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.application.SoccerOutcome.predict_from_ratings_mle" title="Permalink to this definition"></a></dt>
+<dd><p>The ratings can be turned into predictions by selecting the highest
+probability from outcomes.
+The probabilities can be computed by applying the modified logistic
+function proposed by <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rating_home</strong> (<em>float</em>) – the rating value of home-team</p></li>
+<li><p><strong>rating_away</strong> (<em>float</em>) – the rating value of away-team</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – parameter in probability equation</p></li>
+<li><p><strong>h</strong> (<em>float</em>) – home advantage parameter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>result</strong> (<em>int</em>) – The value of predicted result</p></li>
+<li><p><strong>rating_prob</strong> (<em>list</em>) – Prediction probabilities for each outcome</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Lasek, J., Szlávik, Z., &amp; Bhulai, S. (2013).
+The predictive power of ranking systems in association football.
+International Journal of Applied Pattern Recognition, 1, 27–46.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome.predict_from_ratings_logic">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">predict_from_ratings_logic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rating_home</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rating_away</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outcomes_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_prob</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ratingslib.application.SoccerOutcome.predict_from_ratings_logic" title="Permalink to this definition"></a></dt>
+<dd><p>Prediction of the final outcome in a game between two teams is based
+on their ratings. The logic of prediction is that a higher rating is
+preferred over the lower rating.
+For example in a match between teamA and teamB
+with ratingA and ratingB respectively,</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>if ratingA &gt; ratingB then prediction of the winner is teamA</p></li>
+<li><p>if ratingA &lt; ratingB then prediction of the winner is teamB</p></li>
+<li><p>if ratingA = ratingB then prediction is the Draw.</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rating_home</strong> (<em>float</em>) – the rating value of home-team</p></li>
+<li><p><strong>rating_away</strong> (<em>float</em>) – the rating value of away-team</p></li>
+<li><p><strong>calc_prob</strong> (<em>bool</em><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code> calculate the probability of winning.
+Probabilities are calculated after ratings normalization.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>result</strong> (<em>int</em>) – The value of predicted result</p></li>
+<li><p><strong>rating_prob</strong> (<em>list</em>) – Prediction probabilities for each outcome</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ratingslib.application.SoccerOutcome._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ratingslib.application.SoccerOutcome._abc_impl" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ratingslib.utils.validation.html" class="btn btn-neutral float-left" title="ratingslib.utils.validation module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

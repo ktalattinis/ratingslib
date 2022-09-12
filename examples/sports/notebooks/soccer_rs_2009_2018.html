@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prediction of soccer outcome by combining rating and ML methods (2009/10 to 2017/18 EPL) &mdash; ratingslib 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Combination of rating systems and ML methods" href="../soccer_ml.html" />
+    <link rel="prev" title="Rating systems and predictions" href="../soccer_rs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> ratingslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../examples.html">Applications &amp; Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../sports.html">Sports</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../soccer_get_data.html">Data from football-data.co.uk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../soccer_ratings.html">Rating/Ranking Soccer Teams Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../soccer_rankings_compare.html">Comparisons of Ranking List Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../soccer_predictions.html">Foresight and Hindsight Predictions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../soccer_rs.html">Rating systems and predictions</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Prediction of soccer outcome by combining rating and ML methods (2009/10 to 2017/18 EPL)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../soccer_ml.html">Combination of rating systems and ML methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nfl_ratings.html">Ranking NFL Teams Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../finance/finance.html">Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../domain_names/domain_names.html">Domain Names Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../movies/movies.html">Movies</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidocs/ratingslib.html">ratingslib package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ratingslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../examples.html">Applications &amp; Examples</a> &raquo;</li>
+          <li><a href="../sports.html">Sports</a> &raquo;</li>
+          <li><a href="../soccer_rs.html">Rating systems and predictions</a> &raquo;</li>
+      <li>Prediction of soccer outcome by combining rating and ML methods (2009/10 to 2017/18 EPL)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/examples/sports/notebooks/soccer_rs_2009_2018.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Prediction-of-soccer-outcome-by-combining-rating-and-ML-methods-(2009/10-to-2017/18-EPL)">
+<h1>Prediction of soccer outcome by combining rating and ML methods (2009/10 to 2017/18 EPL)<a class="headerlink" href="#Prediction-of-soccer-outcome-by-combining-rating-and-ML-methods-(2009/10-to-2017/18-EPL)" title="Permalink to this heading"></a></h1>
+<p>In this example, we assess the predictive performance of each rating system with two different prediciton methods. The target class is the final outcome of soccer matches in the English Premier League (2009-2018 seasons). Prediction methods are: 1. RANK (based on rankings) and 2. MLE (based on probabilities). For the predictions we apply the walk-forward procedure.</p>
+<p>Load packages</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ratingslib.ratings</span> <span class="k">as</span> <span class="nn">rl</span>
+<span class="kn">from</span> <span class="nn">ratingslib.app_sports.methods</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Predictions</span><span class="p">,</span> <span class="n">prepare_sports_seasons</span><span class="p">,</span>
+                                        <span class="n">rating_norm_features</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">ratingslib.application</span> <span class="kn">import</span> <span class="n">SoccerOutcome</span>
+<span class="kn">from</span> <span class="nn">ratingslib.datasets.filenames</span> <span class="kn">import</span> <span class="n">get_seasons_dict_footballdata_online</span>
+<span class="kn">from</span> <span class="nn">ratingslib.datasets.parameters</span> <span class="kn">import</span> <span class="n">championships</span><span class="p">,</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">ratingslib.utils.enums</span> <span class="kn">import</span> <span class="n">ratings</span>
+</pre></div>
+</div>
+</div>
+<p>Set target outcome</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outcome</span> <span class="o">=</span> <span class="n">SoccerOutcome</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Get filenames from football-data.co.uk for seasons 2009-2018 (English Premier League).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filenames_dict</span> <span class="o">=</span> <span class="n">get_seasons_dict_footballdata_online</span><span class="p">(</span>
+    <span class="n">season_start</span><span class="o">=</span><span class="mi">2009</span><span class="p">,</span> <span class="n">season_end</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span>
+    <span class="n">championship</span><span class="o">=</span><span class="n">championships</span><span class="o">.</span><span class="n">PREMIERLEAGUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We create a list of rating methods and then we convert it to dictionary. * For Massey a minimum limit of 20 games has been set to start the rating of teams. This number has been selected to provide enough games, and it ensures that the games graph is connected. * For Markov the damping factor b was set to 0.85 * For ELO The choice of parameters is those suggested by FIFA, K=40, ks=400 without taking into account the home field advantage (HA=0) * For WinLoss and Keener normalization is
+employed to produce fairer ratings since the teams may have a different number of games played (due to postponed or rescheduled matches). * For OffenseDefense the tolerance number we have selected to be 0.0001</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratings_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">rl</span><span class="o">.</span><span class="n">Winloss</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">rl</span><span class="o">.</span><span class="n">Colley</span><span class="p">(),</span>
+    <span class="n">rl</span><span class="o">.</span><span class="n">Massey</span><span class="p">(</span><span class="n">data_limit</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">rl</span><span class="o">.</span><span class="n">Elo</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">ELOWIN</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">ks</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">HA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+           <span class="n">starting_point</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+    <span class="n">rl</span><span class="o">.</span><span class="n">Elo</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">ratings</span><span class="o">.</span><span class="n">ELOPOINT</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">ks</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">HA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+           <span class="n">starting_point</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+    <span class="n">rl</span><span class="o">.</span><span class="n">Keener</span><span class="p">(</span><span class="n">normalization</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">rl</span><span class="o">.</span><span class="n">OffenseDefense</span><span class="p">(</span><span class="n">tol</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">),</span>
+    <span class="n">rl</span><span class="o">.</span><span class="n">Markov</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">stats_markov_dict</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">STATS_MARKOV_DICT</span><span class="p">),</span>
+    <span class="n">rl</span><span class="o">.</span><span class="n">AccuRate</span><span class="p">()</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>The ratings in the dataset start from the second match week.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">prepare_sports_seasons</span><span class="p">(</span><span class="n">filenames_dict</span><span class="p">,</span>
+                              <span class="n">outcome</span><span class="p">,</span>
+                              <span class="n">rating_systems</span><span class="o">=</span><span class="n">ratings_list</span><span class="p">,</span>
+                              <span class="n">start_week</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Load season: 2009 - 2010
+2.9%5.7%8.6%11.4%14.3%17.1%20.0%22.9%25.7%28.6%31.4%34.3%37.1%40.0%42.9%45.7%48.6%51.4%54.3%57.1%60.0%62.9%65.7%68.6%71.4%74.3%77.1%80.0%82.9%85.7%88.6%91.4%94.3%97.1%100.0%
+Load season: 2010 - 2011
+2.8%5.6%8.3%11.1%13.9%16.7%19.4%22.2%25.0%27.8%30.6%33.3%36.1%38.9%41.7%44.4%47.2%50.0%52.8%55.6%58.3%61.1%63.9%66.7%69.4%72.2%75.0%77.8%80.6%83.3%86.1%88.9%91.7%94.4%97.2%100.0%
+Load season: 2011 - 2012
+2.9%5.7%8.6%11.4%14.3%17.1%20.0%22.9%25.7%28.6%31.4%34.3%37.1%40.0%42.9%45.7%48.6%51.4%54.3%57.1%60.0%62.9%65.7%68.6%71.4%74.3%77.1%80.0%82.9%85.7%88.6%91.4%94.3%97.1%100.0%
+Load season: 2012 - 2013
+2.9%5.7%8.6%11.4%14.3%17.1%20.0%22.9%25.7%28.6%31.4%34.3%37.1%40.0%42.9%45.7%48.6%51.4%54.3%57.1%60.0%62.9%65.7%68.6%71.4%74.3%77.1%80.0%82.9%85.7%88.6%91.4%94.3%97.1%100.0%
+Load season: 2013 - 2014
+3.0%6.1%9.1%12.1%15.2%18.2%21.2%24.2%27.3%30.3%33.3%36.4%39.4%42.4%45.5%48.5%51.5%54.5%57.6%60.6%63.6%66.7%69.7%72.7%75.8%78.8%81.8%84.8%87.9%90.9%93.9%97.0%100.0%
+Load season: 2014 - 2015
+3.0%6.1%9.1%12.1%15.2%18.2%21.2%24.2%27.3%30.3%33.3%36.4%39.4%42.4%45.5%48.5%51.5%54.5%57.6%60.6%63.6%66.7%69.7%72.7%75.8%78.8%81.8%84.8%87.9%90.9%93.9%97.0%100.0%
+Load season: 2015 - 2016
+2.9%5.7%8.6%11.4%14.3%17.1%20.0%22.9%25.7%28.6%31.4%34.3%37.1%40.0%42.9%45.7%48.6%51.4%54.3%57.1%60.0%62.9%65.7%68.6%71.4%74.3%77.1%80.0%82.9%85.7%88.6%91.4%94.3%97.1%100.0%
+Load season: 2016 - 2017
+2.9%5.9%8.8%11.8%14.7%17.6%20.6%23.5%26.5%29.4%32.4%35.3%38.2%41.2%44.1%47.1%50.0%52.9%55.9%58.8%61.8%64.7%67.6%70.6%73.5%76.5%79.4%82.4%85.3%88.2%91.2%94.1%97.1%100.0%
+Load season: 2017 - 2018
+3.0%6.1%9.1%12.1%15.2%18.2%21.2%24.2%27.3%30.3%33.3%36.4%39.4%42.4%45.5%48.5%51.5%54.5%57.6%60.6%63.6%66.7%69.7%72.7%75.8%78.8%81.8%84.8%87.9%90.9%93.9%97.0%100.0%
+</pre></div></div>
+</div>
+<p>We will use the normalized ratings values as ml features, thus we create the feature list.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_names_list</span> <span class="o">=</span> <span class="n">rating_norm_features</span><span class="p">(</span><span class="n">ratings_list</span><span class="p">)</span>
+<span class="n">features_names_list</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[&#39;HratingnormWinloss[normalization=True]&#39;,
+  &#39;AratingnormWinloss[normalization=True]&#39;],
+ [&#39;HratingnormColley&#39;, &#39;AratingnormColley&#39;],
+ [&#39;HratingnormMassey[data_limit=20]&#39;, &#39;AratingnormMassey[data_limit=20]&#39;],
+ [&#39;HratingnormEloWin[HA=0_K=40_ks=400]&#39;,
+  &#39;AratingnormEloWin[HA=0_K=40_ks=400]&#39;],
+ [&#39;HratingnormEloPoint[HA=0_K=40_ks=400]&#39;,
+  &#39;AratingnormEloPoint[HA=0_K=40_ks=400]&#39;],
+ [&#39;HratingnormKeener[normalization=True]&#39;,
+  &#39;AratingnormKeener[normalization=True]&#39;],
+ [&#39;HratingnormOffenseDefense[tol=0.0001]&#39;,
+  &#39;AratingnormOffenseDefense[tol=0.0001]&#39;],
+ [&#39;HratingnormMarkov[b=0.85]&#39;, &#39;AratingnormMarkov[b=0.85]&#39;],
+ [&#39;HratingnormAccuRATE&#39;, &#39;AratingnormAccuRATE&#39;]]
+</pre></div></div>
+</div>
+<p>We test two different methods: MLE and RANK and we start making predictions from the 4th week. We apply the anchored walk-farward procedure with window size = 1 which means that every week we make predictions by using previous weeks data for training set. For example for the 4th week, the training set is consisted of the 1st, 2nd and 3rd week. Note that in every season we restart the walk-forward procedure.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">Predictions</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">outcome</span><span class="p">,</span><span class="n">start_from_week</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">rs_pred_parallel</span><span class="p">(</span>
+                                      <span class="n">rating_systems</span><span class="o">=</span><span class="n">ratings_list</span><span class="p">,</span>
+                                      <span class="n">pred_methods_list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;MLE&#39;</span><span class="p">,</span> <span class="s1">&#39;RANK&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+
+=====MLE=====
+
+
+=====Accuracy results=====
+
+                             Accuracy  Correct Games  Wrong Games  Total Games
+Winloss[normalization=True]  0.506675           1594         1552         3146
+Colley                       0.510490           1606         1540         3146
+Massey[data_limit=20]        0.517880           1593         1483         3076
+EloWin[HA=0_K=40_ks=400]     0.513032           1614         1532         3146
+EloPoint[HA=0_K=40_ks=400]   0.513032           1614         1532         3146
+Keener[normalization=True]   0.515257           1621         1525         3146
+OffenseDefense[tol=0.0001]   0.504768           1588         1558         3146
+Markov[b=0.85]               0.507947           1598         1548         3146
+AccuRATE                     0.514304           1618         1528         3146
+
+
+=====RANK=====
+
+
+=====Accuracy results=====
+
+                             Accuracy  Correct Games  Wrong Games  Total Games
+Winloss[normalization=True]  0.487921           1535         1611         3146
+Colley                       0.479339           1508         1638         3146
+Massey[data_limit=20]        0.488557           1537         1609         3146
+EloWin[HA=0_K=40_ks=400]     0.480292           1511         1635         3146
+EloPoint[HA=0_K=40_ks=400]   0.487921           1535         1611         3146
+Keener[normalization=True]   0.485378           1527         1619         3146
+OffenseDefense[tol=0.0001]   0.486014           1529         1617         3146
+Markov[b=0.85]               0.494278           1555         1591         3146
+AccuRATE                     0.489828           1541         1605         3146
+</pre></div></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../soccer_rs.html" class="btn btn-neutral float-left" title="Rating systems and predictions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../soccer_ml.html" class="btn btn-neutral float-right" title="Combination of rating systems and ML methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Kyriacos Talattinis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
