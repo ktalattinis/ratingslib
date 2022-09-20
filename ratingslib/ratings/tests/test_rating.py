@@ -11,7 +11,7 @@ import unittest
 import numpy as np
 import pandas as pd
 from ratingslib.datasets.filenames import (
-    FILENAME_ACCURATE_PAPER_EXAMPLE, FILENAME_ACCURATE_PERFECT_SEASON,
+    FILENAME_ACCURATE_PAPER_EXAMPLE,
     FILENAME_NCAA_2005_ATLANTIC, FILENAME_CHARTIER_PAPER_MOVIES, FILENAME_EPL_2018_2019_20_GAMES,
     FILENAME_GOVAN_THESIS, FILENAME_NFL_2009_2010_FULLNAMES_GAMES_AND_PLAYOFFS,
     FILENAME_NFL_2009_2010_SHORTNAMES_NO_PLAYOFF, FILENAME_OOSA,
@@ -39,14 +39,13 @@ FP_FILENAME_NCAA_2005_ATLANTIC, FP_FILENAME_EPL_2018_2019_20_GAMES, FP_FILENAME_
     FP_FILENAME_ACCURATE_PAPER_EXAMPLE, \
     FP_FILENAME_NFL_2009_2010_FULLNAMES_GAMES_AND_PLAYOFFS, \
     FP_FILENAME_NFL_2009_2010_SHORTNAMES_NO_PLAYOFF, \
-    FP_FILENAME_ACCURATE_PERFECT_SEASON, \
     FP_FILENAME_OOSA, FP_FILENAME_BOOK_MOVIES = datasets_paths(
         FILENAME_NCAA_2005_ATLANTIC, FILENAME_EPL_2018_2019_20_GAMES,
         FILENAME_GOVAN_THESIS,
         FILENAME_ACCURATE_PAPER_EXAMPLE,
         FILENAME_NFL_2009_2010_FULLNAMES_GAMES_AND_PLAYOFFS,
         FILENAME_NFL_2009_2010_SHORTNAMES_NO_PLAYOFF,
-        FILENAME_ACCURATE_PERFECT_SEASON, FILENAME_OOSA, FILENAME_CHARTIER_PAPER_MOVIES)
+        FILENAME_OOSA, FILENAME_CHARTIER_PAPER_MOVIES)
 
 
 class TestRatingSystems(unittest.TestCase):
@@ -232,11 +231,6 @@ class TestRatingSystems(unittest.TestCase):
         ac = AccuRate().rate_from_file(FP_FILENAME_ACCURATE_PAPER_EXAMPLE)
         assert_array_almost_equal(ac.rating.values,
                                   np.array([1.68, -1.59]),
-                                  decimal=2)
-        # perfect season example
-        ac = AccuRate().rate_from_file(FP_FILENAME_ACCURATE_PERFECT_SEASON)
-        assert_array_almost_equal(ac.rating.values,
-                                  np.array([10, 3.14, -0.33, -3.96, -8.18]),
                                   decimal=2)
 
     @printdetails

@@ -53,8 +53,7 @@ class TestMethods(unittest.TestCase):
         pred, _ = predict_hindsight(
             data, ac, outcome, columns_dict=columns_dict)
         self.assertListEqual(pred,
-                             [2, 1, 2, 2, 2, 1, 2, 2, 1, 1, 2, 1, 1, 1, 1, 2,
-                              3, 2, 1, 2])
+                             [2, 1, 2, 2, 2, 1, 2, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 2])
 
 
 if __name__ == '__main__':
