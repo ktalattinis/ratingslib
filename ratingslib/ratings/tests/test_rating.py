@@ -231,12 +231,12 @@ class TestRatingSystems(unittest.TestCase):
         # paper example todo [reference]
         ac = AccuRate().rate_from_file(FP_FILENAME_ACCURATE_PAPER_EXAMPLE)
         assert_array_almost_equal(ac.rating.values,
-                                  np.array([1.68, -1.26]),
+                                  np.array([1.68, -1.59]),
                                   decimal=2)
         # perfect season example
         ac = AccuRate().rate_from_file(FP_FILENAME_ACCURATE_PERFECT_SEASON)
         assert_array_almost_equal(ac.rating.values,
-                                  np.array([10, 3.14, 0, -2.50, -4.71]),
+                                  np.array([10, 3.14, -0.33, -3.96, -8.18]),
                                   decimal=2)
 
     @printdetails
