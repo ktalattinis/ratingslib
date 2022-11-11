@@ -27,8 +27,8 @@ ratings_list = [
            starting_point=0),
     rl.Keener(normalization=False),
     rl.OffenseDefense(tol=0.0001),
-    rl.Markov(b=0.85, stats_markov_dict=stats.STATS_MARKOV_DICT),
-    rl.AccuRate(),
+    rl.Markov(b=0.85, stats_markov_dict=stats.STATS_MARKOV_EQUAL_DICT),
+    rl.AccuRate()
 ]
 # convert list to dictionary
 ratings_dict = rating_systems_to_dict(ratings_list)
