@@ -53,15 +53,16 @@ data_train, teams_df = parse_pairs_data(filename,
 # ==========================================================================
 # HINDSIGHT PREDICTIONS
 # ==========================================================================
-pred_list = []
-test_Y_list = []
+
 print_info("HINDSIGHT RESULTS")
 for pm in pred_methods_list:
+    pred_list = []
+    test_Y_list = []
     for rs in ratings_list:
         pred, test_y = predict_hindsight(
             data_train, rs.rate_from_file(filename), outcome, pm)
-        test_Y_list.append(pred)
-        pred_list.append(test_y)
+        test_Y_list.append(test_y)
+        pred_list.append(pred)
     print_info(pm)
     show_list_of_accuracy_results(
         list(ratings_dict.keys()), test_Y_list, pred_list, print_predictions=True)
