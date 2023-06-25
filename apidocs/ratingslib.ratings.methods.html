@@ -227,6 +227,37 @@ In the case of dictionary the function only validates the values.</p>
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="ratingslib.ratings.methods.plot_ratings">
+<span class="sig-name descname"><span class="pre">plot_ratings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratings_i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratings_j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">starting_game</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ratingslib.ratings.methods.plot_ratings" title="Permalink to this definition"></a></dt>
+<dd><p>Plots the ratings based on games ratings data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data_df</strong> (<em>pd.DataFrame</em>) – <p>Games dataframe (item_i vs item_j)
+e.g.
+HomeTeam     AwayTeam  HEloWin[HA=0_K=40_ks=400]  AEloWin[HA=0_K=40_ks=400]</p>
+<blockquote>
+<div><p>Wolves     West Ham                  1500.0000                  1500.0000</p>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>item_i<span class="classifier">str</span></dt><dd><p>Item i column name e.g. HomeTeam</p>
+</dd>
+<dt>item_j<span class="classifier">str</span></dt><dd><p>Item j column name e.g. AwayTeam</p>
+</dd>
+<dt>ratings_i<span class="classifier">str</span></dt><dd><p>ratings i column e.g. HEloWin[HA=0_K=40_ks=400]</p>
+</dd>
+<dt>ratings_j<span class="classifier">str</span></dt><dd><p>ratings j column e.g. AEloWin[HA=0_K=40_ks=400]</p>
+</dd>
+<dt>starting_game<span class="classifier">int, default=2</span></dt><dd><p>starts from the game number in the plot (axis x).</p>
+</dd>
+<dt>items_list<span class="classifier">Optional[List], default=None</span></dt><dd><p>Items to be included in the plot. If None all items will be plot.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
