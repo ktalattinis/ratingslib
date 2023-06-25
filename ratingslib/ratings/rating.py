@@ -95,7 +95,7 @@ class RatingSystem(object):
         items_df : pandas.DataFrame
             Set of items (e.g. teams) to be rated
 
-        sort : bool, default=``True``.
+        sort : bool, default=True.
             If true, the output is sorted by rating value
 
         columns_dict : Optional[Dict[str, str]]
@@ -124,11 +124,11 @@ class RatingSystem(object):
         filename : str
             The name of file or file path+filename.
 
-        sort : bool, default=``True``.
-            If true, the output is sorted by rating value.
+        sort : bool, default=True
+            If ``True``, the output is sorted by rating value.
 
-        pairwise : bool, default=``True``
-            if true then data is in pairwise structure.
+        pairwise : bool, default=True
+            If ``True`` then data is in pairwise structure.
 
         reverse_attributes_cols : Optional[List[str]], default = None
             Name of columns (from csv file) where the numerical scoring scale runs
@@ -160,7 +160,7 @@ class RatingSystem(object):
         # log_pandas(items_df)
         return items_df
 
-    def set_rating(self, items_df: pd.DataFrame,
+    def set_rating(self, items_df: pd.DataFrame, rating_lower_best: bool = False,
                    sort: bool = False) -> pd.DataFrame:
         """Set the rating values and produce items rankings
 
@@ -168,6 +168,9 @@ class RatingSystem(object):
         ----------
         items_df : pandas.DataFrame
             Set of items (e.g. teams) to be rated
+
+        rating_lower_best : bool, default=True
+            If ``True`` then lower rating is better, else ``False``
 
         sort : bool, default=True
             Sort the items by rating value if ``True``
@@ -180,7 +183,7 @@ class RatingSystem(object):
         items_df['rating'] = self.rating
         items_df['rating'] = items_df['rating'].astype(float)
         items_df['ranking'] = items_df.rating.rank(method='dense',
-                                                   ascending=False).astype(int)
+                                                   ascending=rating_lower_best).astype(int)
         if sort:
             items_df = items_df.sort_values(by=['rating'], ascending=False)
         return items_df

@@ -184,7 +184,8 @@ class RatingAggregation(RatingSystem):
         self.rating = RatingAggregation.rating_aggregation(
             matrices_dict=self.matrices_dict,
             aggregation_method=self.version,
-            votes_or_weights=self.votes_or_weights
+            votes_or_weights=self.votes_or_weights,
+            b=self.b
         )
 
     def preparation_phase(self, data_df: pd.DataFrame, items_df: pd.DataFrame,
@@ -249,10 +250,16 @@ class RankingAggregation(RatingSystem):
             don't have the same size
         """
         ranking_columns = []
+        if aggregation_method == ratings.RANKINGAVG:
+            rating_lower_best = True
+            len_items = len(data_df.index)+1
+        else:
+            rating_lower_best = False
+            len_items = len(data_df.index)
         for rc in rating_columns:
             rank_column = rc+"_rank"
             data_df[rank_column] = -data_df[rc].rank(
-                method='dense', ascending=False).astype(int) + len(data_df.index)
+                method='dense', ascending=rating_lower_best).astype(int) + len_items
             ranking_columns.append(rc+"_rank")
         data = data_df[ranking_columns].values
         if aggregation_method == ratings.RANKINGBORDA:
@@ -279,5 +286,7 @@ class RankingAggregation(RatingSystem):
         items_dict = create_items_dict(items_df)
         self.preparation_phase(data_df, items_df, columns_dict=columns_dict)
         self.computation_phase()
-        items_df = self.set_rating(items_df, sort=sort)
+        rating_lower_best = True if self.version == ratings.RANKINGAVG else False
+        items_df = self.set_rating(
+            items_df, rating_lower_best=rating_lower_best, sort=sort)
         return items_df

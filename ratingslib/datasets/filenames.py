@@ -302,7 +302,7 @@ def download_and_store_footballdata(season_start: int,
         The starting sport season-year, e.g. 2007 means 2007-2008.
 
     season_end : Optional[int], default=-1
-        The last sport season-year, e.g. 2017 means 2017-2018.
+        The last sport season-year, e.g. 2018 means 2017-2018.
         The default value indicates only one season.
 
     championship : Optional[str], default=championships.PREMIERLEAGUE
@@ -321,7 +321,7 @@ def download_and_store_footballdata(season_start: int,
     >>> from ratingslib.datasets.soccer import championships
 
     >>> epl = championships.PREMIERLEAGUE  # ENGLISH PREMIER LEAGUE
-    >>> download_and_store_footballdata(2005, 2017, championship=epl)
+    >>> download_and_store_footballdata(2005, 2018, championship=epl)
     """
     if save_path is None:
         save_path = FOOTBALL_DATA_PATH

@@ -19,7 +19,7 @@ from ratingslib.datasets.filenames import (
 from ratingslib.datasets.parse import create_pairs_data, parse_pairs_data
 from ratingslib.datasets.soccer import COLUMNS_DICT, stats
 from ratingslib.ratings.accurate import AccuRate
-from ratingslib.ratings.aggregation import RatingAggregation
+from ratingslib.ratings.aggregation import RankingAggregation, RatingAggregation
 from ratingslib.ratings.colley import Colley
 from ratingslib.ratings.elo import Elo
 from ratingslib.ratings.keener import Keener
@@ -52,7 +52,7 @@ class TestRatingSystems(unittest.TestCase):
     """
     Test for rating methods.
     The following tests: test_colley, test_massey, test_winloss, test_markov,
-    test_offense_defense, test_rating_movies, test_aggregation.
+    test_offense_defense, test_rating_movies, and test_aggregation
     are based on NCAA 2005 data of an isolated group of Atlantic Coast.
     Conference teams. This example is provided in the book
     "Who's #1? The Science of Rating and Ranking" [1]_.
@@ -251,7 +251,27 @@ class TestRatingSystems(unittest.TestCase):
         columns_dict = {'item': 'Item',
                         'ratings': list(ratings_dict.keys()-{'Item'})}
         data_df = pd.DataFrame.from_dict(ratings_dict)
-        ra_markov = RatingAggregation(version=ratings.AGGREGATIONMARKOV).rate(
+        ra_borda = RankingAggregation(ratings.RANKINGBORDA).rate(data_df, items_df,
+                                                                 columns_dict=columns_dict)
+        self.assertListEqual(
+            ra_borda['rating'].values.tolist(),
+            [0.0, 11.0, 4.0, 5.0, 10.0])
+        self.assertListEqual(
+            ra_borda['ranking'].values.tolist(),
+            [5, 1, 4, 3, 2])
+
+        ra_avg = RankingAggregation(ratings.RANKINGAVG).rate(data_df, items_df,
+                                                             columns_dict=columns_dict)
+        print(ra_avg)
+        assert_array_almost_equal(
+            ra_avg['rating'].values.tolist(),
+            np.array([5.0, 1.33, 3.66, 3.33, 1.66]),
+            decimal=2)
+        self.assertListEqual(
+            ra_avg['ranking'].values.tolist(),
+            [5, 1, 4, 3, 2])
+
+        ra_markov = RatingAggregation(version=ratings.AGGREGATIONMARKOV, b=0.9).rate(
             data_df, items_df, columns_dict=columns_dict, sort=True)
 
         assert_array_almost_equal(

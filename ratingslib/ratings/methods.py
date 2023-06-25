@@ -209,3 +209,55 @@ def rating_systems_to_dict(
             rating_sys_dict = {value.version: value
                                for value in rating_list}
     return rating_sys_dict
+
+
+def plot_ratings(data_df: pd.DataFrame, item_i: str, item_j: str, ratings_i: str, ratings_j: str,
+                 starting_game=2,
+                 items_list: Optional[List] = None):
+    """Plots the ratings based on games ratings data
+
+    Parameters
+    ----------
+    data_df : pd.DataFrame
+        Games dataframe (item_i vs item_j)
+        e.g.     
+        HomeTeam     AwayTeam  HEloWin[HA=0_K=40_ks=400]  AEloWin[HA=0_K=40_ks=400]
+         Wolves     West Ham                  1500.0000                  1500.0000
+
+
+    item_i : str
+        Item i column name e.g. HomeTeam
+
+    item_j : str
+        Item j column name e.g. AwayTeam
+
+    ratings_i : str
+        ratings i column e.g. HEloWin[HA=0_K=40_ks=400]
+
+    ratings_j : str
+        ratings j column e.g. AEloWin[HA=0_K=40_ks=400]
+
+    starting_game : int, default=2
+        starts from the game number in the plot (axis x).
+
+    items_list : Optional[List], default=None
+        Items to be included in the plot. If None all items will be plot.
+    """
+    import matplotlib.pyplot as plt
+    if items_list is None:
+        items_list = data_df[item_i].unique()
+    for team in items_list:
+        games_df = data_df[(data_df[item_i] == team) |
+                           (data_df[item_j] == team)]
+        games_df = games_df.sort_index()
+        # print(games_df[[item_i, item_j, ratings_i, ratings_j]])
+        indices = range(starting_game, len(games_df)+starting_game)
+        plot_df = games_df[ratings_i].where(
+            games_df[item_i] == team, games_df[ratings_j])
+        plt.plot(indices, plot_df, label=team)
+    plt.xlabel('Games')
+    plt.xticks(indices)
+    plt.ylabel('Ratings')
+    plt.title('Ratings of Teams Over Time')
+    plt.legend(loc='upper left')
+    plt.show()
